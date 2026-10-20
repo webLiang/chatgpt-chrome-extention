@@ -1,6 +1,6 @@
 # Load the Chrome extension locally and connect Codex
 
-[Project README](../README.en.md) · [简体中文](INSTALL.zh-CN.md)
+[Project README](../README.md) · [简体中文](INSTALL.zh-CN.md)
 
 This guide uses the **Chrome native connection already provided by the Codex desktop app**. Chrome loads this project's `extention/` directory, and the extension connects through the Native Messaging host managed by the desktop app. The directory is intentionally spelled `extention`; select that exact directory.
 

@@ -1,6 +1,6 @@
 # 改动与连接方式 / Changes and connection path
 
-[中文首页](../README.md) · [English](../README.en.md) · [实测 / Verification](VERIFICATION.md)
+[中文首页](../README.zh-CN.md) · [English](../README.md) · [实测 / Verification](VERIFICATION.md)
 
 ## 当前使用方案 / Current route
 

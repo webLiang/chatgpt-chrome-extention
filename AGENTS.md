@@ -4,7 +4,7 @@ Scope: this project and its subdirectories. / 适用于本项目及子目录。
 
 ## Start / 先读
 
-- Read [README.md](README.md) or [README.en.md](README.en.md), [installation](docs/INSTALL.md) / [中文安装](docs/INSTALL.zh-CN.md), and [Codex prompts](docs/CODEX_PROMPTS.md).
+- Read the English [README.md](README.md) or [中文首页](README.zh-CN.md), [installation](docs/INSTALL.md) / [中文安装](docs/INSTALL.zh-CN.md), and [Codex prompts](docs/CODEX_PROMPTS.md).
 - Before version changes, read [维护交接](docs/MAINTAINER.zh-CN.md) / [maintainer handoff](docs/MAINTAINER.md) and `maintenance/` baselines. The current background AST matches a recovered historical input; no authentication-removal patch is established. Diagnose actual failures and preserve precise diffs rather than inventing a bypass history or replaying old minified names.
 - Loadable directory: **`extention/`**. Keep this actual spelling. It contains the ChatGPT extension, not an independent MCP server.
 - 本项目复用 Codex 桌面端已有的 Chrome 原生通道。用户在桌面设置启用 Chrome，并在 Chrome 开发者模式加载 `extention/`。

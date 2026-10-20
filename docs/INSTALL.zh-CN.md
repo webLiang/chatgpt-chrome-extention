@@ -1,6 +1,6 @@
 # 本地加载 Chrome 扩展并连接 Codex
 
-[项目首页](../README.md) · [English](INSTALL.md)
+[项目首页](../README.zh-CN.md) · [English](INSTALL.md)
 
 本指南使用 **Codex 桌面应用已有的 Chrome 原生连接**。Chrome 加载本项目的 `extention/`，扩展通过桌面应用管理的 Native Messaging 宿主连接。这里的目录名就是 `extention`，请保留拼写并选择正确目录。
 

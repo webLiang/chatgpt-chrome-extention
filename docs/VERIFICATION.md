@@ -1,6 +1,6 @@
 # 实测记录 / Verification record
 
-[中文首页](../README.md) · [English](../README.en.md) · [安装 / Installation](INSTALL.zh-CN.md)
+[中文首页](../README.zh-CN.md) · [English](../README.md) · [安装 / Installation](INSTALL.zh-CN.md)
 
 2026-10-20，在当前用户的 macOS、Google Chrome 与 Codex 桌面环境中，完成了重新加载后的连接检查。
 
