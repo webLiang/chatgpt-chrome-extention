@@ -1,0 +1,23 @@
+# Local experiments and backups / 本地实验与备份
+/local-chrome-mcp/
+/archive/
+/backups/
+/upstream/
+
+# OS files, caches, logs, state and credentials
+.DS_Store
+__pycache__/
+*.py[cod]
+*.log
+*.sock
+*.lock
+*.tmp
+.env
+.env.*
+!.env.example
+/browser-profile/
+/browser-profiles/
+.local-chrome-mcp/
+
+# extention/ is the loadable package documented by this project.
+# Review its third-party distribution rights before any publication.

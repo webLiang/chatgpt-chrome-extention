@@ -1,0 +1,9 @@
+{
+  "name": "chatgpt-chrome-extention",
+  "version": "1.0.0",
+  "description": "Locally loaded ChatGPT Chrome extension using Codex's existing native Chrome connection, with bilingual setup and maintenance documentation.",
+  "keywords": [],
+  "author": "mengxianliang",
+  "license": "UNLICENSED",
+  "packageManager": "pnpm@10.34.4"
+}

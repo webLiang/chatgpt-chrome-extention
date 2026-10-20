@@ -1,0 +1,310 @@
+{
+  "schema_version": 1,
+  "recorded_date": "2026-10-20",
+  "kind": "known-working local unpacked extension snapshot; not authenticated vendor distribution",
+  "extension": {
+    "directory": "extention",
+    "name": "ChatGPT",
+    "version": "1.26.1005.11759",
+    "manifest_version": 3,
+    "extension_id": "hehggadaopoacecdllhhajmbjkdcmajg",
+    "manifest_key_der_sha256": "74766030efe02423bb7709c19a32c096c1ba75c6a68547111c7cd6b3fe89f59e",
+    "extension_id_derivation": "SHA-256 of base64-decoded manifest.key DER; take the first 32 hexadecimal digits and map 0..f to a..p",
+    "native_host": "com.openai.codexextension",
+    "build_info": {
+      "build_flavor": "release",
+      "release_channel": "stable",
+      "sha": "8a9e1adbcb586efc783b4694aad9b0d56783b526"
+    }
+  },
+  "confirmed_authentication_removal_patches": [],
+  "confirmed_state": [
+    "The user restored the original manifest public key; the derived extension ID matches the loaded extension and the permitted native-host origin.",
+    "The project was relocated and Chrome loads extention/ from the current project.",
+    "The background startup still calls Cw() through the existing desktop native channel.",
+    "The old independent bridge startup injection is not part of this running copy."
+  ],
+  "historical_background_comparison": {
+    "checked_at_utc": "2026-10-20T04:00:06.935Z",
+    "historical_input_sha256": "5559009e49123ca8ed1bb3f44bd55202cf856f40ba09a7e9689c5f366f239088",
+    "historical_input_bytes": 429882,
+    "historical_input_recovery": "Reverse exactly one archived local startup injection in memory; recovered hash matches the historical build record. The archived inputs are not part of this distribution.",
+    "original_startup_anchor": "var Pw=Ow(()=>{Cw()});",
+    "archived_patched_background_sha256": "d1f93ba70a5aa7c2529c2863033398e14c523b4a77cd67a0fc1e5bbb1921e22c",
+    "archived_bootstrap_sha256": "ef28cce45ac8a83855690b15705754a584b1e09366c09e6dc00ae2d7d0861fe6",
+    "parser": {
+      "module": "playwright/lib/transform/babelBundle.js",
+      "module_sha256": "01511e45db7646e2a12890de8d7866caa0754c8799db6407a6345236f4bed0c4",
+      "playwright_version": "1.62.1",
+      "embedded_babel_core_version": "7.29.7",
+      "embedded_babel_parser": {
+        "moduleMarker": "// node_modules/@babel/parser/lib/index.js",
+        "moduleRegionSHA256": "5ebcb264efe35184ca62f0249b5ecb7dd165e5ba650d060ee29bee606704dac6",
+        "independentlyExposedPackageVersion": null,
+        "versionNote": "The embedded @babel/parser module exposes no separate package version here; identify it by the exact Playwright bundle and parser-region hashes. The reported 7.x version is @babel/core, not an independently verified @babel/parser package version."
+      },
+      "api": "babelParse(code, filename, isModule)",
+      "historical_call": {
+        "filename": "historical-background.js",
+        "isModule": false
+      },
+      "current_call": {
+        "filename": "current-background.js",
+        "isModule": false
+      },
+      "wrapper_options": {
+        "browserslistConfigFile": false,
+        "babelrc": false,
+        "configFile": false,
+        "assumptions": {
+          "setPublicClassFields": true
+        },
+        "presets": [],
+        "pluginsInOrder": [
+          {
+            "name": "@babel/plugin-syntax-import-attributes",
+            "options": {
+              "deprecatedAssertSyntax": true
+            }
+          },
+          {
+            "name": "@babel/plugin-transform-react-jsx",
+            "options": {
+              "throwIfNamespace": false,
+              "runtime": "automatic"
+            }
+          },
+          {
+            "name": "@babel/plugin-transform-modules-commonjs",
+            "options": "defaults"
+          },
+          {
+            "name": "css-to-identity-obj-proxy",
+            "options": "inline plugin as bundled"
+          }
+        ],
+        "compact": false,
+        "sourceMaps": "both",
+        "sourceType": "not explicitly supplied by wrapper; observed AST values below"
+      },
+      "operation": "Babel parse only; no transform or execution of either compared bundle",
+      "observed_program_source_type": "module"
+    },
+    "normalization": {
+      "removedObjectKeysAtEveryDepth": [
+        "start",
+        "end",
+        "loc",
+        "extra",
+        "tokens",
+        "comments",
+        "leadingComments",
+        "trailingComments",
+        "innerComments"
+      ],
+      "arrayRule": "Preserve element order and recursively normalize each element.",
+      "objectRule": "Object.keys(value).sort() using JavaScript default lexicographic UTF-16 code unit order; insert normalized retained values into a new object in that order.",
+      "scalarRule": "Preserve all retained scalar values unchanged; identifiers and literal values are not renamed or removed.",
+      "JSONRule": "JSON.stringify(normalizedAST) with no replacer and no indentation; no trailing newline. Standard JSON.stringify omission rules apply to undefined values.",
+      "hashRule": "SHA-256 over UTF-8 bytes of the exact compact JSON string."
+    },
+    "result": {
+      "normalizedASTEqual": true,
+      "historicalNormalizedASTSHA256": "4e7a156e2b5e479513de73321961969186db794bd0f04ff964a603e8a6d0001e",
+      "currentNormalizedASTSHA256": "4e7a156e2b5e479513de73321961969186db794bd0f04ff964a603e8a6d0001e",
+      "historicalNormalizedJSONBytes": 5692576,
+      "currentNormalizedJSONBytes": 5692576,
+      "historicalASTNodeCount": 116619,
+      "currentASTNodeCount": 116619,
+      "firstDifferences": []
+    },
+    "scope": "background.js only; equality of retained AST structure after source metadata normalization",
+    "limitations": [
+      "Historical local input provenance is not independently authenticated against a vendor package.",
+      "The complete original vendor package, signed CRX, store metadata and original manifest are unavailable.",
+      "AST equality is not a runtime behavior test, live browser check, or whole-package authenticity check.",
+      "Source-observing behavior, comments, whitespace, raw literal representation and source locations are outside the normalized comparison."
+    ]
+  },
+  "live_verification": {
+    "record": "docs/VERIFICATION.md",
+    "date": "2026-10-20",
+    "environment": [
+      "macOS",
+      "Google Chrome",
+      "current Codex desktop app"
+    ],
+    "observed": [
+      "Chrome details confirmed unpacked source extention/ and expected ID",
+      "Existing Chrome extension channel returned live tabs",
+      "The same channel read the Quetta homepage title and body"
+    ]
+  },
+  "file_hashes": {
+    "root": "extention/",
+    "algorithm": "SHA-256",
+    "excluded_filenames": [
+      ".DS_Store"
+    ],
+    "files": {
+      "assets/codex-work-sidepanel-5HNvaIW9.css": {
+        "sha256": "c3f7a41da3b4b4fd559e5450b999044b1b86fe6e0df58c9e0441a36943b8fb77",
+        "bytes": 1102
+      },
+      "assets/edge-ss8wdWNR.svg": {
+        "sha256": "23c8319878fb96a1ab44108f981b3bbf84fc8b825d7968b7752c647dbfd1a9ed",
+        "bytes": 4339
+      },
+      "assets/microphone-permission-ku1E_AUN.css": {
+        "sha256": "516b47415c6ab76f1f74a1c331f2d8aad8d8b30ad79689e359b756564a5c2fe7",
+        "bytes": 50166
+      },
+      "assets/waiting-room-B8ErwGS9.css": {
+        "sha256": "cf939f95ce3f88ce580d28e41c3571fa16aea3420d172a632ff96b58fa39b166",
+        "bytes": 1501
+      },
+      "assets/zxing_reader-vui-RP1A.wasm": {
+        "sha256": "0e8d688d71932ebb6b8b33f700d43d3cb997f59ed9cab3c05102d7f10288a392",
+        "bytes": 1065866
+      },
+      "background.js": {
+        "sha256": "36571d39c6c3693aba971e41560e38e8609d6115eebb32cb8e6c7b763bf958cd",
+        "bytes": 703867
+      },
+      "chunks/_virtual_wxt-html-plugins-vINxzu2L.js": {
+        "sha256": "160e11dc4903bc5b39674284aee4105460645521181f0e6f55807c8fb6f60ead",
+        "bytes": 711
+      },
+      "chunks/browser-accessibility-B3FAtEZ4.js": {
+        "sha256": "180dc715b6dc1ca57be277330f43bb97aedefb02193ecfbf76fe01b5dcf34058",
+        "bytes": 6799
+      },
+      "chunks/chunk-BbOYAc3o.js": {
+        "sha256": "8e5c8dfa16b193dc56090c92926b7c288ef1db11cd960c88141d26816717e52c",
+        "bytes": 238
+      },
+      "chunks/codex-work-sidepanel-16q48QQM.js": {
+        "sha256": "1c221a947016f93a5b479e40e0d9a1be9634c340669b208221beb0531415c5fe",
+        "bytes": 13962
+      },
+      "chunks/google-workspace-BnXIlG7d.js": {
+        "sha256": "a3fabfffeec68d0dceb204c9ad0efe244e93f3b99edcce0a8edb170266ff7dc0",
+        "bytes": 1666
+      },
+      "chunks/js-kernel-Ja-7IJxY.js": {
+        "sha256": "c8e5c4d74114d40b9a6e5da743e734fea4f1d83092d31f94604d35a0247fb00c",
+        "bytes": 197799
+      },
+      "chunks/js-kernel-host-Biytnb6r.js": {
+        "sha256": "e16f585691654eb9dd8d6b9f79d9da9c712c217d8a6592f1c2d1d8dd96ce0fac",
+        "bytes": 1195831
+      },
+      "chunks/js-kernel-offscreen-DIYPN8p_.js": {
+        "sha256": "c7e158e488e9d0e1e76cfbe39f4a19d5b45b3ce48ddb94fa0e63a5616f154251",
+        "bytes": 3071
+      },
+      "chunks/microphone-permission-CrXqf8eG.js": {
+        "sha256": "a485ac1f3532c7b8bf8ed5e1c59b9482f1b2f95017e23b0c3f2ce62695058059",
+        "bytes": 3590
+      },
+      "chunks/protocol-B9H2UyBu.js": {
+        "sha256": "2e7dec0df5363ad10b2b525b24211a7c02f58c3ab6641255b7e3fc4874a8edf7",
+        "bytes": 678
+      },
+      "chunks/src-BYK9sZgI.js": {
+        "sha256": "b091de0ecf836601b7db8418d63920c9353d46d20961b7a74ceef08b048a478c",
+        "bytes": 33251
+      },
+      "chunks/waiting-room-D5QBoI60.js": {
+        "sha256": "b03abe317529ef817f5b023b8110da3bc5599c80d5f9f10b1e55b57d0732d971",
+        "bytes": 6844
+      },
+      "codex/build-info.json": {
+        "sha256": "9a92c292f9365c6ceef516094e07d95d5d315a2a5f2445c337033396c8ad26f4",
+        "bytes": 116
+      },
+      "codex-work-sidepanel.html": {
+        "sha256": "8a7331ccc3226ef25af2d714416a91024d9b55b25b7efeb5149bbb700cb58dc9",
+        "bytes": 867
+      },
+      "content-scripts/chatgpt-website.js": {
+        "sha256": "24165ca174358043ba2cc65a2a1a784001d44944e98af8bdaee8edf7b4f30902",
+        "bytes": 17100
+      },
+      "content-scripts/codex-work-preload.js": {
+        "sha256": "d4b26e9ccde9abbda3668849517fc626beb6a9111dd1cd092bd5134773f7720d",
+        "bytes": 1920
+      },
+      "content-scripts/codex.js": {
+        "sha256": "a15b0caf080d82b711ad9f91068c6d61a94cc51fb1ae74c1ec6cf30b5d47d568",
+        "bytes": 35172
+      },
+      "content-scripts/foreign-frame-monitor.js": {
+        "sha256": "337ad4ff3ec7846134e5d39528936b1cbb68107de3c4da0e0641c712bda66129",
+        "bytes": 5158
+      },
+      "content-scripts/side-chat-tab-mentions.js": {
+        "sha256": "48f9ad512f9ac1f576fbada854ff9b700daa1ba946381e9370f264df4fda75be",
+        "bytes": 15992
+      },
+      "images/app-icon.png": {
+        "sha256": "979e5947e37e579b00b07f5e0e5f12c66d9dfe3b17238652432d0ba8219a091b",
+        "bytes": 76511
+      },
+      "images/cursor-chat.png": {
+        "sha256": "c575bc277bab1b09518433aa465be98a8c04b305fe78ed674bf016bfa350e491",
+        "bytes": 1843
+      },
+      "images/icon128.png": {
+        "sha256": "b7f651ebd6b9a7b77f264772cbed3e9d9e121fe7d081ce7a19b2625b4bc3888e",
+        "bytes": 4348
+      },
+      "images/icon16.png": {
+        "sha256": "b3b3710b61be365164e0c3e75c279efc677fc3c02d6b21088153ef96c4cf7128",
+        "bytes": 573
+      },
+      "images/icon32.png": {
+        "sha256": "40faa4a3dc42448ef9a616bdede2799455d408b7d2ddf3fa92c57d04698d90b3",
+        "bytes": 1208
+      },
+      "images/icon48.png": {
+        "sha256": "4b5afd873552f65095b3a1078483790d62605f7c8fccd15a8c3c2de1d87320ce",
+        "bytes": 1683
+      },
+      "js-kernel-host.html": {
+        "sha256": "ea7d44abc399ec6c4b4e27e57ea38597f04ba02791150afe656b00e30ac2441c",
+        "bytes": 635
+      },
+      "js-kernel-offscreen.html": {
+        "sha256": "18302831d9885997b76e59df821af68983cb50c29fd427d5736249ae655332e6",
+        "bytes": 409
+      },
+      "js-kernel.html": {
+        "sha256": "02455765b5b9eaac7cf39995d70ae21112a628409030437f511e18fbd7538b45",
+        "bytes": 234
+      },
+      "manifest.json": {
+        "sha256": "fc75c615e22a7ea7a82b8c9ed04cb11cfefced9102b7be3b9eca75189f6cf030",
+        "bytes": 3630
+      },
+      "microphone-permission.html": {
+        "sha256": "84741b33213b06165fd6f6e55d046704fa921e43f8bda27b91c279a2f7519a1a",
+        "bytes": 1105
+      },
+      "side-panel-loading.html": {
+        "sha256": "ed175ea270d839f1ad11db142e1b48d1a2bcea083b2eb2f54d60b57acec98377",
+        "bytes": 230
+      },
+      "waiting-room.html": {
+        "sha256": "cc5009f43a142f0db5d2aae77d1dd94f9e9d40bee27ac51f973a49b1421e18fe",
+        "bytes": 5538
+      }
+    }
+  },
+  "maintenance_notes": [
+    "Retain this baseline when adding a new release baseline.",
+    "Do not treat every difference between release versions as a local patch.",
+    "Record exact before/after hashes, unique patch context, unified diffs and live verification for actual compatibility changes.",
+    "See docs/MAINTAINER.md or docs/MAINTAINER.zh-CN.md before updating."
+  ]
+}
