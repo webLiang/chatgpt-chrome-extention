@@ -1,8 +1,8 @@
 # 更新、迁移与卸载 / Updating, relocation, and removal
 
-版本升级前先读[维护交接](MAINTAINER.zh-CN.md)及[版本基线](../maintenance/baseline-1.26.1005.11759.json)，其中记录真实改动证据、代码定位和给下一次 Codex 的提示词。
+版本升级前先读[维护交接](MAINTAINER.zh-CN.md)及[当前版本基线](../maintenance/baseline-1.26.1020.11845.json)，其中记录真实改动证据、代码定位和给下一次 Codex 的提示词。旧版 [1.26.1005.11759 基线](../maintenance/baseline-1.26.1005.11759.json)仍保留供比较和回滚。
 
-Before upgrading, read the [maintainer handoff](MAINTAINER.md) and [version baseline](../maintenance/baseline-1.26.1005.11759.json) for change evidence, code locations, and the next-session prompt.
+Before upgrading, read the [maintainer handoff](MAINTAINER.md) and [current version baseline](../maintenance/baseline-1.26.1020.11845.json) for change evidence, code locations, and the next-session prompt. The [1.26.1005.11759 baseline](../maintenance/baseline-1.26.1005.11759.json) remains available for comparison and rollback.
 
 本项目通过 Codex 桌面应用已有的 Chrome 扩展原生通道连接。这里的目录名称是 `extention/`。更新扩展文件后，必须在 Chrome 实际重新加载并验证通信；仅修改磁盘内容不会更新正在运行的扩展。
 
@@ -43,6 +43,6 @@ Confirm the ID and loaded source in Chrome's extension management page, then rem
 
 ## 本次验证记录 / Verification record
 
-2026-10-20 已通过实际加载路径、扩展 ID、实时标签列表及公共网页读取验证，详见[实测记录](VERIFICATION.md)。
+2026-10-27，用户确认手动重载及 Chrome 详情中的 `1.26.1020.11845`；随后 Chrome `extension` 工具成功枚举实时标签，并读取已打开的公开测试页面标题与正文，完成更新后的连接检查。新版版本由用户确认，实时读取由工具完成。2026-10-20 的 `1.26.1005.11759` 历史验证仍保留，各次范围见[实测记录](VERIFICATION.md)。
 
-Verified on 2026-10-20 using the loaded source path, extension ID, live tabs, and public-page reading. See the [verification record](VERIFICATION.md).
+On 2026-10-27, the user confirmed manual reload and version `1.26.1020.11845` in Chrome's details. The Chrome `extension` tools then successfully listed live tabs and read a public test page's title and body, completing the post-update connection check. The version was user-confirmed; live reads were performed by the tools. The historical 2026-10-20 check of `1.26.1005.11759` remains in the dated [verification record](VERIFICATION.md).

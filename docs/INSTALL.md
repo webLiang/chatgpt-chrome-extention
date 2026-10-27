@@ -10,11 +10,13 @@ No additional language runtime, dependencies, or separate MCP server are require
 
 You need a working local **Codex desktop app**, Google Chrome, and Chrome/computer-control capabilities supported by the installed desktop-app version. In that version's browser or computer-control settings, confirm that Chrome is enabled and complete any app-managed extension or host setup. Setting names and locations can change between versions; this guide does not assume a fixed menu path.
 
-This guide records only the current local **macOS + Google Chrome** route. It does not establish support for other Codex versions, sign-in methods, operating systems, managed devices, or Chromium browsers. The manifest's declared Chrome 116 minimum is not a complete compatibility test.
+The recorded compatibility environment is **macOS + Google Chrome**. It does not establish support for other Codex versions, sign-in methods, operating systems, managed devices, or Chromium browsers. The manifest's declared Chrome 116 minimum is not a complete compatibility test.
 
 Verification record for this setup:
 
-On 2026-10-20, Chrome confirmed this project's `extention/` as the loaded unpacked extension. Its existing Chrome extension channel successfully listed live tabs and read a public webpage. See the [verification record](VERIFICATION.md) for scope and evidence.
+On 2026-10-27, the user confirmed manual reload and version `1.26.1020.11845` in Chrome's extension details. After reload, the existing Chrome `extension` channel successfully listed live tabs and read the title and body of an already-open public test page. The version was user-confirmed; the live tab and page reads were performed by the tools.
+
+The earlier 2026-10-20 check of `1.26.1005.11759` confirmed the unpacked source path and ID, tab listing, and public-page reading. See the [verification record](VERIFICATION.md) for each check's scope and evidence. Repeat these checks in your own environment.
 
 The native connection also requires `com.openai.codexextension`, installed and managed by the desktop app. Loading an extension does not establish that its host is installed or connected. If the installed desktop version does not support Chrome, address client support first; adding a custom MCP entry is not a substitute.
 
@@ -33,7 +35,7 @@ project-directory/
 Static information for the current target extension:
 
 - Manifest name: `ChatGPT`
-- Extension version: `1.26.1005.11759`
+- Extension version: `1.26.1020.11845`
 - ID derived from the manifest public key: `hehggadaopoacecdllhhajmbjkdcmajg`
 - Native host: `com.openai.codexextension`
 

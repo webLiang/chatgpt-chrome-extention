@@ -2,34 +2,40 @@
 
 [中文首页](../README.zh-CN.md) · [English](../README.md) · [安装 / Installation](INSTALL.zh-CN.md)
 
-2026-10-20，在当前用户的 macOS、Google Chrome 与 Codex 桌面环境中，完成了重新加载后的连接检查。
+公开记录保留验证方法、版本及结果；测试站点、网页内容、个人路径和浏览器会话信息已省略。
 
-On 2026-10-20, the reloaded extension was checked in the current user's macOS, Google Chrome, and Codex desktop environment.
+This public record retains verification methods, versions, and results. Test-site identities, page contents, personal paths, and browser-session details are omitted.
 
-## 实际观察 / Observations
+## 2026-10-27：1.26.1020.11845 重载后验证 / Post-reload verification
 
-1. Chrome 扩展详情页显示名称 **ChatGPT**、版本 `1.26.1005.11759`、ID `hehggadaopoacecdllhhajmbjkdcmajg`，扩展已启用。来源明确显示为**未打包的扩展程序**，加载路径是当前项目根目录下的 **`extention/`**。
+`extention/` 已同步为 `1.26.1020.11845`。官方 CRX3 签名、扩展身份、39 个发行文件的来源差异、19 个 JavaScript 文件语法及本地资源引用检查通过，见[版本基线](../maintenance/baseline-1.26.1020.11845.json)。
 
-   Chrome's extension details showed **ChatGPT**, version `1.26.1005.11759`, ID `hehggadaopoacecdllhhajmbjkdcmajg`, enabled. Its source was **unpacked**, loaded from **`extention/`** in this project.
+The extension is `1.26.1020.11845`. CRX signatures, extension identity, package differences, JavaScript syntax, and resource references passed static checks.
 
-2. 本地 manifest 的公钥导出的 ID 与 Chrome 显示一致；现有 `com.openai.codexextension` 宿主的 `allowed_origins` 包含对应来源。此次没有修改宿主注册或认证配置。
+1. 用户手动重新加载扩展，并确认 Chrome 详情显示版本 **`1.26.1020.11845`**。更新前，工具已确认未打包扩展的 ID 为 `hehggadaopoacecdllhhajmbjkdcmajg`，加载目录为项目的 `extention/`；重载后的版本由用户确认，工具未再次独立读取详情页。
 
-   The ID derived from the local manifest public key matched Chrome. The existing `com.openai.codexextension` host allowed that origin. This check did not change host registration or authentication settings.
+   The user manually reloaded the extension and confirmed the new version in Chrome details. Before the update, tools had confirmed the expected ID and the project's unpacked `extention/` source. The post-reload version was user-confirmed rather than independently reread by the tools.
 
-3. 通过当前会话已有的 `cua_repl` 浏览器工具发现在线 **Chrome / extension** 通道，并成功取得实时标签页清单。
+2. 重载后，通过 Codex 现有 **Chrome / extension** 通道成功取得实时标签页列表。
 
-   The session's existing `cua_repl` browser tools discovered an online **Chrome / extension** channel and returned live tabs.
+   After reload, Codex's existing **Chrome / extension** channel successfully listed live tabs.
 
-4. 使用同一 Chrome 通道读取已打开的 [Quetta 官网](https://www.quetta.net/)，获得实时标题 **Quetta - Video Downloader, Ad Blocker & Extensions Browser**、主标题和正文。此次没有对网页进行输入、提交或修改。
+3. 使用同一通道读取已打开的公开测试页面，成功获得实际标题、主标题及正文。检查保持只读，没有输入、提交或修改测试页。
 
-   The same Chrome channel read the already-open [Quetta homepage](https://www.quetta.net/), returning its live title, **Quetta - Video Downloader, Ad Blocker & Extensions Browser**, heading, and body. No input, submission, or page modification was performed.
+   The same channel read an existing public test page's actual title, heading, and body. The check was read-only, with no input, submission, or page modification.
 
-以上结果确认：当前本地加载副本可通过桌面应用现有 Chrome 通道完成标签枚举与只读网页访问，未使用独立 MCP 服务。检查扩展来源时临时打开的管理页已关闭。
+## 2026-10-20：1.26.1005.11759 历史验证 / Previous-version verification
 
-These results confirm that the currently loaded local copy supports tab listing and read-only page access through the desktop application's existing Chrome channel, without a separate MCP server. The temporary extension-management tab was closed after inspecting its source.
+Chrome 详情确认名称 **ChatGPT**、版本 `1.26.1005.11759`、预期扩展 ID，以及项目 `extention/` 的未打包加载来源。manifest 公钥导出的 ID 与 Chrome 显示一致，原生宿主 `com.openai.codexextension` 允许对应来源。
 
-## 范围 / Scope
+Chrome details confirmed **ChatGPT**, version `1.26.1005.11759`, the expected extension ID, and the project's unpacked `extention/` source. The manifest public key derived the same ID, and the existing native host allowed that origin.
 
-这是单台机器当前环境中的实测，不覆盖其他系统、浏览器、桌面版本、账户方式或全部浏览器操作。它不证明“所有校验已去除”，也不表明账户、功能权限或网页授权已被绕过。其他用户应按[安装说明](INSTALL.zh-CN.md)在自己的环境复测。
+现有 **Chrome / extension** 通道成功列出实时标签页，并只读获取公开测试页面的标题和正文。
 
-This is a check of one machine's current environment. It does not cover other operating systems, browsers, desktop versions, authentication methods, or every browser operation. It does not establish that all checks were removed or that account, feature, or page authorization was bypassed. Other users should repeat the [installation checks](INSTALL.md) in their own environment.
+The existing **Chrome / extension** channel listed live tabs and read a public test page's title and body without modifying the page.
+
+## 验证范围 / Scope
+
+已验证环境为 **macOS + Google Chrome + Codex 桌面应用**，验证内容限于上述版本的标签枚举及公开网页读取。不覆盖其他系统、客户端版本、登录方式或全部浏览器操作，也不表明账户、功能权限或网页授权被绕过。其他环境应按[安装说明](INSTALL.zh-CN.md)复测。
+
+The tested configuration is **macOS + Google Chrome + the Codex desktop app**. These results cover tab listing and public-page reading for the versions above. They do not establish support for other systems, client versions, sign-in methods, or all browser operations, and do not establish an authentication or authorization bypass. Repeat the [installation checks](INSTALL.md) in other environments.

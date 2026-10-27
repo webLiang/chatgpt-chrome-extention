@@ -1,0 +1,13 @@
+---
+description: Keep public documentation, verification records, and maintenance baselines free of personal test-site and environment details.
+alwaysApply: true
+---
+
+# Public documentation and verification records
+
+Follow the root [AGENTS.md](../../AGENTS.md), especially **Public records and privacy / 公开记录与隐私**, for every task in this project.
+
+- Publish generic descriptions of actual verification; omit test-site identities, page contents, personal paths, browser profile/session details, and exact tab counts.
+- Preserve truthful outcomes, version-confirmation sources, public package evidence, and unchanged vendor code.
+- Apply sanitization to duplicate bilingual summaries and version baselines, then check the working tree and Git index.
+- Use generic examples in the rules themselves. Do not publish, upload local evidence, or rewrite history without authorization.

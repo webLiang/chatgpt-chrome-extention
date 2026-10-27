@@ -4,15 +4,15 @@
 
 ## 为什么有这个工程
 
-这个工程来自维护者的本机使用场景：macOS 上的 Codex 使用第三方模型路由，同时需要连接 Chrome 扩展来操控浏览器。模型接入和浏览器连接是两项独立配置。如果所在网络限制了 Chrome 商店访问，获取扩展也可能遇到困难，因此本项目提供可下载、本地加载的安装包。
+本项目提供可本地加载的 ChatGPT Chrome 扩展、中英文安装说明和后续更新所需的版本基线。Chrome 商店访问受限时，可下载本地安装包作为另一条安装路径。
 
-在这台机器上，保留扩展原版公钥、在 Chrome 本地加载扩展并启用 Codex 的 Chrome 功能后，现有原生通道已能列出实时标签页并读取公共网页。本项目将这个可用副本、中英文说明和版本维护基线放在一起，方便其他用户复现安装，也方便后续版本比较和维护。这条路线不需要另装独立 MCP 服务或自建桥接。
-
-已验证解决的是这台机器的本地 Chrome 连接问题。目前没有证据认定第三方模型路由就是此前连接问题的原因；本包也不能修复所有网络限制或替代 Codex 的账户认证。
+扩展保留原版公钥，通过 Codex 桌面应用已有的 Chrome 原生通道连接，支持实时标签枚举和授权网页读取，无需另装独立 MCP 服务或自建桥接。模型接入与浏览器连接分别配置，Codex 的正常账户认证仍然适用。
 
 ## 下载
 
-- **扩展版本：`1.26.1005.11759`** — [下载扩展 ZIP](https://github.com/webLiang/chatgpt-chrome-extention/releases/download/v1.26.1005.11759/chatgpt-chrome-extention-v1.26.1005.11759.zip)
+仓库中的 `extention/` 当前为 **`1.26.1020.11845`**，于 2026-10-27 同步自 [Chrome 商店](https://chromewebstore.google.com/detail/chatgpt/hehggadaopoacecdllhhajmbjkdcmajg) 2026-10-22 的更新，保留原公钥供本地加载。2026-10-27 已完成重载和实时读取检查，见[验证记录](docs/VERIFICATION.md)。
+
+- **已发布 ZIP（上一版本）：`1.26.1005.11759`** — [下载扩展 ZIP](https://github.com/webLiang/chatgpt-chrome-extention/releases/download/v1.26.1005.11759/chatgpt-chrome-extention-v1.26.1005.11759.zip)
 - [SHA-256 校验和](https://github.com/webLiang/chatgpt-chrome-extention/releases/download/v1.26.1005.11759/SHA256SUMS.txt) · [版本说明](https://github.com/webLiang/chatgpt-chrome-extention/releases/tag/v1.26.1005.11759)
 
 ZIP 内是可以直接加载的 **`extention/`** 目录。请解压到长期保留的位置；`extention` 是本项目实际使用的拼写。GitHub 自动生成的源码压缩包还包含说明文档，安装扩展时优先下载上面单独提供的扩展 ZIP。
@@ -27,9 +27,11 @@ ZIP 内是可以直接加载的 **`extention/`** 目录。请解压到长期保�
 
 原版 `manifest.key` 用于保持原生宿主预期的扩展身份。它是公钥，保留它不代表删除了全部校验；桌面端正常登录、功能权限和浏览器授权仍然适用。详细步骤见[安装说明](docs/INSTALL.zh-CN.md)。
 
-## 本机验证
+## 连接验证
 
-**2026-10-20**，Chrome 管理页确认本地未打包扩展的版本、ID、加载目录及启用状态。Codex 的现有 Chrome 扩展通道成功列出实时标签，并读取 Quetta 官网的标题和正文，详见[验证记录](docs/VERIFICATION.md)。
+**2026-10-27**，用户确认已手动重载，Chrome 扩展详情显示 **`1.26.1020.11845`**。重载后，Codex 的 **Chrome / extension** 工具成功枚举实时标签，并读取已打开的公开测试页面标题与正文。新版版本由用户确认，实时标签和公共页读取由工具完成，详见[验证记录](docs/VERIFICATION.md)。
+
+此前 **2026-10-20** 对 `1.26.1005.11759` 的检查已确认 Chrome 中的本地加载路径、ID，并完成标签枚举和公开测试页面读取；历史结果继续保留在记录中。
 
 测试环境为 **macOS + Google Chrome + 当前 Codex 桌面端**。其他系统、客户端版本及模型路由配置需要在各自环境验证。
 
@@ -38,7 +40,7 @@ ZIP 内是可以直接加载的 **`extention/`** 目录。请解压到长期保�
 - [安装与连接验证](docs/INSTALL.zh-CN.md) · [English installation guide](docs/INSTALL.md)
 - [可复制的 Codex 安装与验证提示词](docs/CODEX_PROMPTS.md)
 - [更新、重新加载与迁移](docs/UPDATING.md)
-- [维护交接与代码定位](docs/MAINTAINER.zh-CN.md) · [版本基线](maintenance/baseline-1.26.1005.11759.json)
+- [维护交接与代码定位](docs/MAINTAINER.zh-CN.md) · [当前版本基线](maintenance/baseline-1.26.1020.11845.json)
 - [改动说明](docs/CHANGES.md) · [打包流程与发布范围](docs/RELEASE.md)
 
 本项目为非官方项目，包含第三方扩展代码和资源；公开仓库与 Release 不授予第三方文件许可证，详见上面的发布范围说明。

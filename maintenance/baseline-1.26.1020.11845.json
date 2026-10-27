@@ -1,0 +1,485 @@
+{
+  "schema_version": 1,
+  "recorded_date": "2026-10-27",
+  "kind": "Chrome Web Store CRX with verified signatures, prepared for local unpacked loading; public-page live read passed after user-confirmed reload",
+  "extension": {
+    "directory": "extention",
+    "name": "ChatGPT",
+    "version": "1.26.1020.11845",
+    "manifest_version": 3,
+    "extension_id": "hehggadaopoacecdllhhajmbjkdcmajg",
+    "manifest_key_der_sha256": "74766030efe02423bb7709c19a32c096c1ba75c6a68547111c7cd6b3fe89f59e",
+    "extension_id_derivation": "SHA-256 of base64-decoded manifest.key DER; take the first 32 hexadecimal digits and map 0..f to a..p",
+    "native_host": "com.openai.codexextension",
+    "build_info": {
+      "build_flavor": "release",
+      "release_channel": "stable",
+      "sha": "d7fb3e608fc517af57123329367a16fccc79f9b6"
+    }
+  },
+  "upstream": {
+    "store_url": "https://chromewebstore.google.com/detail/chatgpt/hehggadaopoacecdllhhajmbjkdcmajg",
+    "store_updated_date": "2026-10-22",
+    "downloaded_date": "2026-10-27",
+    "download_url": "https://clients2.google.com/service/update2/crx?response=redirect&prodversion=146.0.0.0&acceptformat=crx3&x=id%3Dhehggadaopoacecdllhhajmbjkdcmajg%26installsource%3Dondemand%26uc",
+    "resolved_download_url": "https://clients2.googleusercontent.com/crx/blobs/AZPVhcR_DHn1dpdnJIfIUtF5z2btFKokLk3ssBJYZiJsIQLDQKvnoYPeFKLX7ruZxxtJPofqI72ARbnXVYrWAqQNE7SJ5Rdx6YlN_KsEPtAT8MscTyO5uyNSiRHqXVUAivsAxlKa5XAlFghsTFcinRV-eIdOJNeuTliX/HEHGGADAOPOACECDLLHHAJMBJKDCMAJG_1_26_1020_11845.crx",
+    "crx_format_version": 3,
+    "crx_sha256": "328c3dc8230a8157c354f66068ee685fb55a56cf011d67880805c171967ad9fb",
+    "crx_bytes": 1210185,
+    "signature_verification": {
+      "tool": "openssl dgst -sha256 -verify <public-key.der> -keyform DER -signature <proof.sig> <signed-message.bin>",
+      "signed_message": "ASCII CRX3 SignedData + NUL + uint32le signed_header_data byte length + signed_header_data + ZIP payload",
+      "signed_header_crx_id_matches_retained_key": true,
+      "proofs": [
+        {
+          "kind": 2,
+          "public_key_sha256": "b5e4096227b83f82101fc2aa49f2a251accde3d98471464dd17d1819b43786b0",
+          "matches_extension_id": false,
+          "verified": true,
+          "result": "Verified OK"
+        },
+        {
+          "kind": 2,
+          "public_key_sha256": "74766030efe02423bb7709c19a32c096c1ba75c6a68547111c7cd6b3fe89f59e",
+          "matches_extension_id": true,
+          "verified": true,
+          "result": "Verified OK"
+        },
+        {
+          "kind": 3,
+          "public_key_sha256": "61f7f2a6bfcf74cd0bc1fe2497cc9b04254c658f79f2145392867ea8366367cf",
+          "matches_extension_id": false,
+          "verified": true,
+          "result": "Verified OK"
+        }
+      ],
+      "scope": "Cryptographic verification of the downloaded CRX proofs, including the key whose SHA-256 prefix derives the expected extension ID; no store metadata was regenerated."
+    },
+    "file_hashes": {
+      "root": "original/",
+      "algorithm": "SHA-256",
+      "files": {
+        "_metadata/verified_contents.json": {
+          "sha256": "f516d099d25838351eab70cc9d730d010ecadd3c5a6cb7f1773223a4cba706c0",
+          "bytes": 6285
+        },
+        "assets/codex-work-sidepanel-5HNvaIW9.css": {
+          "sha256": "c3f7a41da3b4b4fd559e5450b999044b1b86fe6e0df58c9e0441a36943b8fb77",
+          "bytes": 1102
+        },
+        "assets/edge-ss8wdWNR.svg": {
+          "sha256": "23c8319878fb96a1ab44108f981b3bbf84fc8b825d7968b7752c647dbfd1a9ed",
+          "bytes": 4339
+        },
+        "assets/microphone-permission-ku1E_AUN.css": {
+          "sha256": "516b47415c6ab76f1f74a1c331f2d8aad8d8b30ad79689e359b756564a5c2fe7",
+          "bytes": 50166
+        },
+        "assets/waiting-room-B8ErwGS9.css": {
+          "sha256": "cf939f95ce3f88ce580d28e41c3571fa16aea3420d172a632ff96b58fa39b166",
+          "bytes": 1501
+        },
+        "assets/zxing_reader-vui-RP1A.wasm": {
+          "sha256": "0e8d688d71932ebb6b8b33f700d43d3cb997f59ed9cab3c05102d7f10288a392",
+          "bytes": 1065866
+        },
+        "background.js": {
+          "sha256": "2564d018e01f71365db8adfb5ccd36de981446328854d84328bddcda236b8e39",
+          "bytes": 518896
+        },
+        "chunks/_virtual_wxt-html-plugins-vINxzu2L.js": {
+          "sha256": "160e11dc4903bc5b39674284aee4105460645521181f0e6f55807c8fb6f60ead",
+          "bytes": 711
+        },
+        "chunks/browser-accessibility-xrpAC-cb.js": {
+          "sha256": "196a06e1dc0ef4a0675050d63012a9c5145718ac391c1792881a803fb76c09c4",
+          "bytes": 6799
+        },
+        "chunks/chunk-BbOYAc3o.js": {
+          "sha256": "8e5c8dfa16b193dc56090c92926b7c288ef1db11cd960c88141d26816717e52c",
+          "bytes": 238
+        },
+        "chunks/codex-work-sidepanel-CCrbBg1a.js": {
+          "sha256": "7e5e1900e93f991f460a28da28291c79e3824fbc2f15e1ecc8d72f9dfa3fbb31",
+          "bytes": 16089
+        },
+        "chunks/google-workspace-BnXIlG7d.js": {
+          "sha256": "a3fabfffeec68d0dceb204c9ad0efe244e93f3b99edcce0a8edb170266ff7dc0",
+          "bytes": 1666
+        },
+        "chunks/js-kernel-BCcxYUuj.js": {
+          "sha256": "2dec5d58b26a2705486da2241087f072ec7c4294bb1e19366f2f5e4b46e76df6",
+          "bytes": 198456
+        },
+        "chunks/js-kernel-host-B4ilWFF8.js": {
+          "sha256": "8b89d42a93e8e209aa191f853b27812d41dc9b36cc1ecea0df41b0d90fead9ea",
+          "bytes": 1316113
+        },
+        "chunks/js-kernel-offscreen-7jIPJNl2.js": {
+          "sha256": "7c2a8b3e8b30dff644cc589889a4dfed33f4cab127d53c3a9e31e1c3b9bc92c8",
+          "bytes": 3134
+        },
+        "chunks/microphone-permission-KvJdhEAR.js": {
+          "sha256": "72974d5d9455ff31ab36f45d0e9977bc4641645a76609db77c8c243bb4239b83",
+          "bytes": 3695
+        },
+        "chunks/protocol-DmTED-28.js": {
+          "sha256": "2e7dec0df5363ad10b2b525b24211a7c02f58c3ab6641255b7e3fc4874a8edf7",
+          "bytes": 678
+        },
+        "chunks/sentry-DA6_M-2w.js": {
+          "sha256": "e125820c74cdc03ccd2fa601fb063f38226da034b7d04d6221bea253b32c034d",
+          "bytes": 79146
+        },
+        "chunks/src-B7kAvDDE.js": {
+          "sha256": "b38267b38c9330145ddd7359f1efff92b9f79fbf6734b421128f2ac8bbe7c9ba",
+          "bytes": 36314
+        },
+        "chunks/waiting-room-CDU_ZquZ.js": {
+          "sha256": "4cb6d0b7a00b1115a1fe9ad9cbe3080426057a87a9a12ca0c66afe1b47d944c8",
+          "bytes": 6844
+        },
+        "codex/build-info.json": {
+          "sha256": "48a55019b11eb91026b3680e5e77a53e2fa67b6283f71d0897ed37e3314eb3b6",
+          "bytes": 116
+        },
+        "codex-work-sidepanel.html": {
+          "sha256": "00f0efd7ae6da64077eeda05c254c88e4ed822d19e0ba9b36242d0001b4888e7",
+          "bytes": 944
+        },
+        "content-scripts/chatgpt-website.js": {
+          "sha256": "e3a115ecb20aa24abe417688a43b2ec01db85acae7e5af8e0188b46cce65a318",
+          "bytes": 17227
+        },
+        "content-scripts/codex-work-preload.js": {
+          "sha256": "bda10ae0882eeb01fe38e68c96a0f51785e71393609abf7764d087ff6a5de8e9",
+          "bytes": 1954
+        },
+        "content-scripts/codex.js": {
+          "sha256": "168b307ff1e936bcfdc9344f4e668b4767cf91b6ac8d7dd868e927c9474c9221",
+          "bytes": 35191
+        },
+        "content-scripts/foreign-frame-monitor.js": {
+          "sha256": "337ad4ff3ec7846134e5d39528936b1cbb68107de3c4da0e0641c712bda66129",
+          "bytes": 5158
+        },
+        "content-scripts/side-chat-tab-mentions.js": {
+          "sha256": "94718278ed82a5e7d5cd6b02761802f4719b5d7eb06f984404004eac8735f867",
+          "bytes": 16046
+        },
+        "images/app-icon.png": {
+          "sha256": "979e5947e37e579b00b07f5e0e5f12c66d9dfe3b17238652432d0ba8219a091b",
+          "bytes": 76511
+        },
+        "images/cursor-chat.png": {
+          "sha256": "c575bc277bab1b09518433aa465be98a8c04b305fe78ed674bf016bfa350e491",
+          "bytes": 1843
+        },
+        "images/icon128.png": {
+          "sha256": "f5074a78799a2b2675499c4ab7ab87c75e3910e36b4f452a9df0b94b653d4de8",
+          "bytes": 4345
+        },
+        "images/icon16.png": {
+          "sha256": "cd60f5c4014396c2290dbd51233223d6d60094d0e7f5be02ee58829c0017deee",
+          "bytes": 587
+        },
+        "images/icon32.png": {
+          "sha256": "68bfa160cafc7e0a6ef8cc56e46690fc26eea51a9a441c6a1b627496a0b4b2bd",
+          "bytes": 1086
+        },
+        "images/icon48.png": {
+          "sha256": "781538311d7210375603fc2abcce352f9328efced33cc27589bc9903b9088bc0",
+          "bytes": 1591
+        },
+        "js-kernel-host.html": {
+          "sha256": "7fd0854724e86fc99bb31a258a38d8303b0842561e8b008cef8822d7edb231ab",
+          "bytes": 712
+        },
+        "js-kernel-offscreen.html": {
+          "sha256": "18c752fbb00b9ec7afba1e221bc03f5d8813365ce1df902a1eee100d4658b0f3",
+          "bytes": 486
+        },
+        "js-kernel.html": {
+          "sha256": "274073e161567586178aa0c88b6fb11391aabec6f4615fecb512f3cc5d30f6e1",
+          "bytes": 234
+        },
+        "manifest.json": {
+          "sha256": "40441a6e40c8db850c11ad3a6d3c948c92d0284db71422699260fd5d102d3100",
+          "bytes": 3417
+        },
+        "microphone-permission.html": {
+          "sha256": "abc5b25c176945498c3bc8e75d3db5fce92e3b21a49c27a7de63085385d90b3b",
+          "bytes": 1182
+        },
+        "side-panel-loading.html": {
+          "sha256": "ed175ea270d839f1ad11db142e1b48d1a2bcea083b2eb2f54d60b57acec98377",
+          "bytes": 230
+        },
+        "waiting-room.html": {
+          "sha256": "e2d7b1b7cfeafc7fbfbad4200d1796df759c564d931dd01489d81157c0a48e71",
+          "bytes": 5538
+        }
+      }
+    }
+  },
+  "confirmed_authentication_removal_patches": [],
+  "local_patches": [
+    {
+      "kind": "preserve original extension identity for unpacked loading",
+      "file": "manifest.json",
+      "reason": "The signed store payload omits manifest.key. Add the unchanged previous public key, which also matches the verified extension-identity CRX proof.",
+      "patch_file": "maintenance/local-identity-1.26.1020.11845.patch",
+      "patch_sha256": "430cd4420a1b8a84e16c36c520e165aa8a3e6f2ec88f7b2e8141343a37549524",
+      "input_sha256": "40441a6e40c8db850c11ad3a6d3c948c92d0284db71422699260fd5d102d3100",
+      "output_sha256": "19d7779653ec6c7f600eb03e33ec1a04399704c4d295c93ab3914e465f59c540",
+      "semantic_fields_added": [
+        "key"
+      ],
+      "other_semantic_changes": [],
+      "business_javascript_modified": false
+    }
+  ],
+  "distribution_exclusions": [
+    {
+      "path": "_metadata/verified_contents.json",
+      "reason": "Store-generated verification metadata is not copied into the unpacked distribution after the manifest changes. Its original is retained with the signed source package and is not modified or regenerated."
+    }
+  ],
+  "static_verification": {
+    "javascript_syntax_check": "node --check passed for all 19 JavaScript files without executing extension code",
+    "manifest_html_and_literal_import_references_missing": [],
+    "local_vs_upstream_changed_files": [
+      "manifest.json"
+    ],
+    "local_vs_upstream_added_files": [],
+    "local_vs_upstream_excluded_files": [
+      "_metadata/verified_contents.json"
+    ],
+    "permissions_unchanged_from_previous": true,
+    "optional_permissions_unchanged_from_previous": true,
+    "host_permissions_unchanged_from_previous": true,
+    "content_scripts_unchanged_from_previous": true,
+    "vendor_csp_change": "extension_pages connect-src adds https://o33249.ingest.us.sentry.io; retained without local changes",
+    "native_startup": "background.js line 52: NC.main -> MC() -> new oS(PC(vr(\"prod\"))); line 38: chrome.runtime.connectNative(this.application); production host com.openai.codexextension"
+  },
+  "live_verification": {
+    "record": "docs/VERIFICATION.md",
+    "date": "2026-10-27",
+    "status": "passed_after_user_confirmed_reload",
+    "environment": [
+      "macOS",
+      "Google Chrome",
+      "current Codex desktop app"
+    ],
+    "loaded_version_confirmation": {
+      "version": "1.26.1020.11845",
+      "source": "The user manually reloaded the extension and explicitly confirmed this version in Chrome details.",
+      "independently_rechecked_by_agent_after_reload": false
+    },
+    "loaded_path_confirmation": {
+      "source": "Tools confirmed the unpacked project extention/ source before the update; the update retained that directory.",
+      "directory": "extention/",
+      "extension_id": "hehggadaopoacecdllhhajmbjkdcmajg",
+      "post_reload_scope": "The user confirmed reload; no independent post-reload source-path reading was completed."
+    },
+    "browser_channel": {
+      "browser_family": "Chrome",
+      "type": "extension"
+    },
+    "observed": [
+      "After the user-confirmed reload, the Chrome extension channel successfully listed live tabs.",
+      "The same channel read an existing public test page, returning its actual title, heading, and body.",
+      "The public-page check was read-only, with no input, submission, or page modification."
+    ],
+    "public_page": {
+      "kind": "existing public test page",
+      "title_read": true,
+      "heading_read": true,
+      "body_read": true,
+      "read_only": true
+    },
+    "limitations": [
+      "The post-reload version was confirmed by the user in Chrome details; tools verified live tab listing and public-page reading after that confirmation.",
+      "The expected extension ID and project source directory were confirmed before the update; no independent post-reload details-page capture was completed.",
+      "Results cover the tested configuration and public-page read route, not other client versions, sign-in methods, systems, or all browser actions."
+    ]
+  },
+  "file_hashes": {
+    "root": "extention/",
+    "algorithm": "SHA-256",
+    "excluded_filenames": [
+      ".DS_Store"
+    ],
+    "files": {
+      "assets/codex-work-sidepanel-5HNvaIW9.css": {
+        "sha256": "c3f7a41da3b4b4fd559e5450b999044b1b86fe6e0df58c9e0441a36943b8fb77",
+        "bytes": 1102
+      },
+      "assets/edge-ss8wdWNR.svg": {
+        "sha256": "23c8319878fb96a1ab44108f981b3bbf84fc8b825d7968b7752c647dbfd1a9ed",
+        "bytes": 4339
+      },
+      "assets/microphone-permission-ku1E_AUN.css": {
+        "sha256": "516b47415c6ab76f1f74a1c331f2d8aad8d8b30ad79689e359b756564a5c2fe7",
+        "bytes": 50166
+      },
+      "assets/waiting-room-B8ErwGS9.css": {
+        "sha256": "cf939f95ce3f88ce580d28e41c3571fa16aea3420d172a632ff96b58fa39b166",
+        "bytes": 1501
+      },
+      "assets/zxing_reader-vui-RP1A.wasm": {
+        "sha256": "0e8d688d71932ebb6b8b33f700d43d3cb997f59ed9cab3c05102d7f10288a392",
+        "bytes": 1065866
+      },
+      "background.js": {
+        "sha256": "2564d018e01f71365db8adfb5ccd36de981446328854d84328bddcda236b8e39",
+        "bytes": 518896
+      },
+      "chunks/_virtual_wxt-html-plugins-vINxzu2L.js": {
+        "sha256": "160e11dc4903bc5b39674284aee4105460645521181f0e6f55807c8fb6f60ead",
+        "bytes": 711
+      },
+      "chunks/browser-accessibility-xrpAC-cb.js": {
+        "sha256": "196a06e1dc0ef4a0675050d63012a9c5145718ac391c1792881a803fb76c09c4",
+        "bytes": 6799
+      },
+      "chunks/chunk-BbOYAc3o.js": {
+        "sha256": "8e5c8dfa16b193dc56090c92926b7c288ef1db11cd960c88141d26816717e52c",
+        "bytes": 238
+      },
+      "chunks/codex-work-sidepanel-CCrbBg1a.js": {
+        "sha256": "7e5e1900e93f991f460a28da28291c79e3824fbc2f15e1ecc8d72f9dfa3fbb31",
+        "bytes": 16089
+      },
+      "chunks/google-workspace-BnXIlG7d.js": {
+        "sha256": "a3fabfffeec68d0dceb204c9ad0efe244e93f3b99edcce0a8edb170266ff7dc0",
+        "bytes": 1666
+      },
+      "chunks/js-kernel-BCcxYUuj.js": {
+        "sha256": "2dec5d58b26a2705486da2241087f072ec7c4294bb1e19366f2f5e4b46e76df6",
+        "bytes": 198456
+      },
+      "chunks/js-kernel-host-B4ilWFF8.js": {
+        "sha256": "8b89d42a93e8e209aa191f853b27812d41dc9b36cc1ecea0df41b0d90fead9ea",
+        "bytes": 1316113
+      },
+      "chunks/js-kernel-offscreen-7jIPJNl2.js": {
+        "sha256": "7c2a8b3e8b30dff644cc589889a4dfed33f4cab127d53c3a9e31e1c3b9bc92c8",
+        "bytes": 3134
+      },
+      "chunks/microphone-permission-KvJdhEAR.js": {
+        "sha256": "72974d5d9455ff31ab36f45d0e9977bc4641645a76609db77c8c243bb4239b83",
+        "bytes": 3695
+      },
+      "chunks/protocol-DmTED-28.js": {
+        "sha256": "2e7dec0df5363ad10b2b525b24211a7c02f58c3ab6641255b7e3fc4874a8edf7",
+        "bytes": 678
+      },
+      "chunks/sentry-DA6_M-2w.js": {
+        "sha256": "e125820c74cdc03ccd2fa601fb063f38226da034b7d04d6221bea253b32c034d",
+        "bytes": 79146
+      },
+      "chunks/src-B7kAvDDE.js": {
+        "sha256": "b38267b38c9330145ddd7359f1efff92b9f79fbf6734b421128f2ac8bbe7c9ba",
+        "bytes": 36314
+      },
+      "chunks/waiting-room-CDU_ZquZ.js": {
+        "sha256": "4cb6d0b7a00b1115a1fe9ad9cbe3080426057a87a9a12ca0c66afe1b47d944c8",
+        "bytes": 6844
+      },
+      "codex/build-info.json": {
+        "sha256": "48a55019b11eb91026b3680e5e77a53e2fa67b6283f71d0897ed37e3314eb3b6",
+        "bytes": 116
+      },
+      "codex-work-sidepanel.html": {
+        "sha256": "00f0efd7ae6da64077eeda05c254c88e4ed822d19e0ba9b36242d0001b4888e7",
+        "bytes": 944
+      },
+      "content-scripts/chatgpt-website.js": {
+        "sha256": "e3a115ecb20aa24abe417688a43b2ec01db85acae7e5af8e0188b46cce65a318",
+        "bytes": 17227
+      },
+      "content-scripts/codex-work-preload.js": {
+        "sha256": "bda10ae0882eeb01fe38e68c96a0f51785e71393609abf7764d087ff6a5de8e9",
+        "bytes": 1954
+      },
+      "content-scripts/codex.js": {
+        "sha256": "168b307ff1e936bcfdc9344f4e668b4767cf91b6ac8d7dd868e927c9474c9221",
+        "bytes": 35191
+      },
+      "content-scripts/foreign-frame-monitor.js": {
+        "sha256": "337ad4ff3ec7846134e5d39528936b1cbb68107de3c4da0e0641c712bda66129",
+        "bytes": 5158
+      },
+      "content-scripts/side-chat-tab-mentions.js": {
+        "sha256": "94718278ed82a5e7d5cd6b02761802f4719b5d7eb06f984404004eac8735f867",
+        "bytes": 16046
+      },
+      "images/app-icon.png": {
+        "sha256": "979e5947e37e579b00b07f5e0e5f12c66d9dfe3b17238652432d0ba8219a091b",
+        "bytes": 76511
+      },
+      "images/cursor-chat.png": {
+        "sha256": "c575bc277bab1b09518433aa465be98a8c04b305fe78ed674bf016bfa350e491",
+        "bytes": 1843
+      },
+      "images/icon128.png": {
+        "sha256": "f5074a78799a2b2675499c4ab7ab87c75e3910e36b4f452a9df0b94b653d4de8",
+        "bytes": 4345
+      },
+      "images/icon16.png": {
+        "sha256": "cd60f5c4014396c2290dbd51233223d6d60094d0e7f5be02ee58829c0017deee",
+        "bytes": 587
+      },
+      "images/icon32.png": {
+        "sha256": "68bfa160cafc7e0a6ef8cc56e46690fc26eea51a9a441c6a1b627496a0b4b2bd",
+        "bytes": 1086
+      },
+      "images/icon48.png": {
+        "sha256": "781538311d7210375603fc2abcce352f9328efced33cc27589bc9903b9088bc0",
+        "bytes": 1591
+      },
+      "js-kernel-host.html": {
+        "sha256": "7fd0854724e86fc99bb31a258a38d8303b0842561e8b008cef8822d7edb231ab",
+        "bytes": 712
+      },
+      "js-kernel-offscreen.html": {
+        "sha256": "18c752fbb00b9ec7afba1e221bc03f5d8813365ce1df902a1eee100d4658b0f3",
+        "bytes": 486
+      },
+      "js-kernel.html": {
+        "sha256": "274073e161567586178aa0c88b6fb11391aabec6f4615fecb512f3cc5d30f6e1",
+        "bytes": 234
+      },
+      "manifest.json": {
+        "sha256": "19d7779653ec6c7f600eb03e33ec1a04399704c4d295c93ab3914e465f59c540",
+        "bytes": 3822
+      },
+      "microphone-permission.html": {
+        "sha256": "abc5b25c176945498c3bc8e75d3db5fce92e3b21a49c27a7de63085385d90b3b",
+        "bytes": 1182
+      },
+      "side-panel-loading.html": {
+        "sha256": "ed175ea270d839f1ad11db142e1b48d1a2bcea083b2eb2f54d60b57acec98377",
+        "bytes": 230
+      },
+      "waiting-room.html": {
+        "sha256": "e2d7b1b7cfeafc7fbfbad4200d1796df759c564d931dd01489d81157c0a48e71",
+        "bytes": 5538
+      }
+    }
+  },
+  "rollback": {
+    "previous_baseline": "maintenance/baseline-1.26.1005.11759.json",
+    "previous_release_tag": "v1.26.1005.11759",
+    "local_backup_directory": "backups/2026-10-27-v1.26.1005.11759/extention",
+    "local_upstream_directory": "upstream/2026-10-27-v1.26.1020.11845",
+    "note": "Backup and upstream directories are gitignored local artifacts. Restore the complete previous distribution to the same extention/ path, reload in Chrome, and repeat the public-page check."
+  },
+  "maintenance_notes": [
+    "Keep the previous baseline unchanged.",
+    "Only the retained public key is a local patch; cross-version vendor changes are not authentication-removal patches.",
+    "The old background AST comparison applies only to 1.26.1005.11759.",
+    "See docs/MAINTAINER.md and docs/MAINTAINER.zh-CN.md for version-specific code maps."
+  ]
+}

@@ -20,7 +20,7 @@
   "confirmed_authentication_removal_patches": [],
   "confirmed_state": [
     "The user restored the original manifest public key; the derived extension ID matches the loaded extension and the permitted native-host origin.",
-    "The project was relocated and Chrome loads extention/ from the current project.",
+    "Chrome loads the project extention/ directory with the expected extension identity.",
     "The background startup still calls Cw() through the existing desktop native channel.",
     "The old independent bridge startup injection is not part of this running copy."
   ],
@@ -137,7 +137,7 @@
     "observed": [
       "Chrome details confirmed unpacked source extention/ and expected ID",
       "Existing Chrome extension channel returned live tabs",
-      "The same channel read the Quetta homepage title and body"
+      "The same channel read a public test page title and body"
     ]
   },
   "file_hashes": {

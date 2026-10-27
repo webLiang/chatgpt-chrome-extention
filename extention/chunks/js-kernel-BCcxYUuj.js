@@ -7,7 +7,7 @@
 		});
 		return t || It(a, Symbol.toStringTag, { value: "Module" }), a;
 	};
-	const Oc = (e) => {
+	const Bc = (e) => {
 		if (e === null) return null;
 		if (typeof e == "string" || typeof e == "boolean") return e;
 		if (typeof e == "number") return Number.isFinite(e) ? e : void 0;
@@ -16,13 +16,13 @@
 			const t = e.valueOf();
 			return Number.isFinite(t) ? t : void 0;
 		}
-	}, Bc = (e) => typeof e == "number" && Number.isInteger(e) && e > 0, Pt = (e, t) => {
-		if (!Bc(t)) return e;
+	}, jc = (e) => typeof e == "number" && Number.isInteger(e) && e > 0, Pt = (e, t) => {
+		if (!jc(t)) return e;
 		const a = t;
 		if (e.length <= a) return e;
 		const r = e.length - a;
 		return \`\${e.slice(0, a)}[truncated \${r} chars]\`;
-	}, jc = (e, t) => {
+	}, Lc = (e, t) => {
 		switch (e.type) {
 			case "function": return e;
 			case "error":
@@ -35,7 +35,7 @@
 				value: Pt(e.value, t)
 			};
 		}
-	}, Lc = async (e, t, a) => {
+	}, Zc = async (e, t, a) => {
 		const { displayImage: r, displayValue: s } = e;
 		let c = null;
 		try {
@@ -51,7 +51,7 @@
 				value: void 0
 			};
 			else {
-				const o = Oc(t);
+				const o = Bc(t);
 				o !== void 0 && (c = {
 					type: "value",
 					value: o
@@ -70,10 +70,10 @@
 				value: String(o)
 			};
 		}
-		c && await s(jc(c, a));
+		c && await s(Lc(c, a));
 	};
-	function Zc({ displayBridge: e, displayTruncateMaxChars: t }) {
-		return (a) => Lc(e, a, t);
+	function qc({ displayBridge: e, displayTruncateMaxChars: t }) {
+		return (a) => Zc(e, a, t);
 	}
 	var m = class {
 		constructor(e, t, a) {
@@ -176,7 +176,7 @@
 		"not_multiple_of",
 		"not_finite"
 	]);
-	var j = class Ic extends Error {
+	var j = class Pc extends Error {
 		get errors() {
 			return this.issues;
 		}
@@ -208,7 +208,7 @@
 			return s(this), r;
 		}
 		static assert(t) {
-			if (!(t instanceof Ic)) throw new Error(\`Not a ZodError: \${t}\`);
+			if (!(t instanceof Pc)) throw new Error(\`Not a ZodError: \${t}\`);
 		}
 		toString() {
 			return this.message;
@@ -290,9 +290,9 @@
 		}
 		return { message: a };
 	};
-	let qc = re;
+	let Uc = re;
 	function je() {
-		return qc;
+		return Uc;
 	}
 	const Le = (e) => {
 		const { data: t, path: a, errorMaps: r, issueData: s } = e, c = [...a, ...s.path || []], o = {
@@ -330,7 +330,7 @@
 		});
 		e.common.issues.push(r);
 	}
-	var N = class Pc {
+	var N = class Ec {
 		constructor() {
 			this.value = "valid";
 		}
@@ -360,7 +360,7 @@
 					value: o
 				});
 			}
-			return Pc.mergeObjectSync(t, r);
+			return Ec.mergeObjectSync(t, r);
 		}
 		static mergeObjectSync(t, a) {
 			const r = {};
@@ -652,28 +652,28 @@
 			return this.safeParse(null).success;
 		}
 	};
-	const Uc = /^c[^\\s-]{8,}$/i, Fc = /^[0-9a-z]+$/, Vc = /^[0-9A-HJKMNP-TV-Z]{26}$/i, Hc = /^[0-9a-fA-F]{8}\\b-[0-9a-fA-F]{4}\\b-[0-9a-fA-F]{4}\\b-[0-9a-fA-F]{4}\\b-[0-9a-fA-F]{12}$/i, Wc = /^[a-z0-9_-]{21}$/i, zc = /^[A-Za-z0-9-_]+\\.[A-Za-z0-9-_]+\\.[A-Za-z0-9-_]*$/, Gc = /^[-+]?P(?!$)(?:(?:[-+]?\\d+Y)|(?:[-+]?\\d+[.,]\\d+Y$))?(?:(?:[-+]?\\d+M)|(?:[-+]?\\d+[.,]\\d+M$))?(?:(?:[-+]?\\d+W)|(?:[-+]?\\d+[.,]\\d+W$))?(?:(?:[-+]?\\d+D)|(?:[-+]?\\d+[.,]\\d+D$))?(?:T(?=[\\d+-])(?:(?:[-+]?\\d+H)|(?:[-+]?\\d+[.,]\\d+H$))?(?:(?:[-+]?\\d+M)|(?:[-+]?\\d+[.,]\\d+M$))?(?:[-+]?\\d+(?:[.,]\\d+)?S)?)??$/, Jc = /^(?!\\.)(?!.*\\.\\.)([A-Z0-9_'+\\-\\.]*)[A-Z0-9_+-]@([A-Z0-9][A-Z0-9\\-]*\\.)+[A-Z]{2,}$/i, Kc = "^(\\\\p{Extended_Pictographic}|\\\\p{Emoji_Component})+$";
+	const Fc = /^c[^\\s-]{8,}$/i, Vc = /^[0-9a-z]+$/, Hc = /^[0-9A-HJKMNP-TV-Z]{26}$/i, Wc = /^[0-9a-fA-F]{8}\\b-[0-9a-fA-F]{4}\\b-[0-9a-fA-F]{4}\\b-[0-9a-fA-F]{4}\\b-[0-9a-fA-F]{12}$/i, zc = /^[a-z0-9_-]{21}$/i, Gc = /^[A-Za-z0-9-_]+\\.[A-Za-z0-9-_]+\\.[A-Za-z0-9-_]*$/, Jc = /^[-+]?P(?!$)(?:(?:[-+]?\\d+Y)|(?:[-+]?\\d+[.,]\\d+Y$))?(?:(?:[-+]?\\d+M)|(?:[-+]?\\d+[.,]\\d+M$))?(?:(?:[-+]?\\d+W)|(?:[-+]?\\d+[.,]\\d+W$))?(?:(?:[-+]?\\d+D)|(?:[-+]?\\d+[.,]\\d+D$))?(?:T(?=[\\d+-])(?:(?:[-+]?\\d+H)|(?:[-+]?\\d+[.,]\\d+H$))?(?:(?:[-+]?\\d+M)|(?:[-+]?\\d+[.,]\\d+M$))?(?:[-+]?\\d+(?:[.,]\\d+)?S)?)??$/, Kc = /^(?!\\.)(?!.*\\.\\.)([A-Z0-9_'+\\-\\.]*)[A-Z0-9_+-]@([A-Z0-9][A-Z0-9\\-]*\\.)+[A-Z]{2,}$/i, Yc = "^(\\\\p{Extended_Pictographic}|\\\\p{Emoji_Component})+$";
 	let Ze;
-	const Yc = /^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])$/, Xc = /^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\\/(3[0-2]|[12]?[0-9])$/, Qc = /^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))$/, ed = /^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))\\/(12[0-8]|1[01][0-9]|[1-9]?[0-9])$/, td = /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/, ad = /^([0-9a-zA-Z-_]{4})*(([0-9a-zA-Z-_]{2}(==)?)|([0-9a-zA-Z-_]{3}(=)?))?$/, Mt = "((\\\\d\\\\d[2468][048]|\\\\d\\\\d[13579][26]|\\\\d\\\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\\\d{4}-((0[13578]|1[02])-(0[1-9]|[12]\\\\d|3[01])|(0[469]|11)-(0[1-9]|[12]\\\\d|30)|(02)-(0[1-9]|1\\\\d|2[0-8])))", rd = new RegExp(\`^\${Mt}$\`);
+	const Xc = /^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])$/, Qc = /^(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\\/(3[0-2]|[12]?[0-9])$/, ed = /^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))$/, td = /^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))\\/(12[0-8]|1[01][0-9]|[1-9]?[0-9])$/, ad = /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/, rd = /^([0-9a-zA-Z-_]{4})*(([0-9a-zA-Z-_]{2}(==)?)|([0-9a-zA-Z-_]{3}(=)?))?$/, Mt = "((\\\\d\\\\d[2468][048]|\\\\d\\\\d[13579][26]|\\\\d\\\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\\\d{4}-((0[13578]|1[02])-(0[1-9]|[12]\\\\d|3[01])|(0[469]|11)-(0[1-9]|[12]\\\\d|30)|(02)-(0[1-9]|1\\\\d|2[0-8])))", sd = new RegExp(\`^\${Mt}$\`);
 	function Ot(e) {
 		let t = "[0-5]\\\\d";
 		e.precision ? t = \`\${t}\\\\.\\\\d{\${e.precision}}\` : e.precision == null && (t = \`\${t}(\\\\.\\\\d+)?\`);
 		const a = e.precision ? "+" : "?";
 		return \`([01]\\\\d|2[0-3]):[0-5]\\\\d(:\${t})\${a}\`;
 	}
-	function sd(e) {
+	function id(e) {
 		return new RegExp(\`^\${Ot(e)}$\`);
 	}
-	function id(e) {
+	function nd(e) {
 		let t = \`\${Mt}T\${Ot(e)}\`;
 		const a = [];
 		return a.push(e.local ? "Z?" : "Z"), e.offset && a.push("([+-]\\\\d{2}:?\\\\d{2})"), t = \`\${t}(\${a.join("|")})\`, new RegExp(\`^\${t}$\`);
 	}
-	function nd(e, t) {
-		return !!((t === "v4" || !t) && Yc.test(e) || (t === "v6" || !t) && Qc.test(e));
-	}
 	function od(e, t) {
-		if (!zc.test(e)) return !1;
+		return !!((t === "v4" || !t) && Xc.test(e) || (t === "v6" || !t) && ed.test(e));
+	}
+	function cd(e, t) {
+		if (!Gc.test(e)) return !1;
 		try {
 			const [a] = e.split(".");
 			if (!a) return !1;
@@ -683,8 +683,8 @@
 			return !1;
 		}
 	}
-	function cd(e, t) {
-		return !!((t === "v4" || !t) && Xc.test(e) || (t === "v6" || !t) && ed.test(e));
+	function dd(e, t) {
+		return !!((t === "v4" || !t) && Qc.test(e) || (t === "v6" || !t) && td.test(e));
 	}
 	var me = class ue extends T {
 		_parse(t) {
@@ -731,37 +731,37 @@
 					exact: !0,
 					message: s.message
 				}), a.dirty());
-			} else if (s.kind === "email") Jc.test(t.data) || (r = this._getOrReturnCtx(t, r), y(r, {
+			} else if (s.kind === "email") Kc.test(t.data) || (r = this._getOrReturnCtx(t, r), y(r, {
 				validation: "email",
 				code: h.invalid_string,
 				message: s.message
 			}), a.dirty());
-			else if (s.kind === "emoji") Ze || (Ze = new RegExp(Kc, "u")), Ze.test(t.data) || (r = this._getOrReturnCtx(t, r), y(r, {
+			else if (s.kind === "emoji") Ze || (Ze = new RegExp(Yc, "u")), Ze.test(t.data) || (r = this._getOrReturnCtx(t, r), y(r, {
 				validation: "emoji",
 				code: h.invalid_string,
 				message: s.message
 			}), a.dirty());
-			else if (s.kind === "uuid") Hc.test(t.data) || (r = this._getOrReturnCtx(t, r), y(r, {
+			else if (s.kind === "uuid") Wc.test(t.data) || (r = this._getOrReturnCtx(t, r), y(r, {
 				validation: "uuid",
 				code: h.invalid_string,
 				message: s.message
 			}), a.dirty());
-			else if (s.kind === "nanoid") Wc.test(t.data) || (r = this._getOrReturnCtx(t, r), y(r, {
+			else if (s.kind === "nanoid") zc.test(t.data) || (r = this._getOrReturnCtx(t, r), y(r, {
 				validation: "nanoid",
 				code: h.invalid_string,
 				message: s.message
 			}), a.dirty());
-			else if (s.kind === "cuid") Uc.test(t.data) || (r = this._getOrReturnCtx(t, r), y(r, {
+			else if (s.kind === "cuid") Fc.test(t.data) || (r = this._getOrReturnCtx(t, r), y(r, {
 				validation: "cuid",
 				code: h.invalid_string,
 				message: s.message
 			}), a.dirty());
-			else if (s.kind === "cuid2") Fc.test(t.data) || (r = this._getOrReturnCtx(t, r), y(r, {
+			else if (s.kind === "cuid2") Vc.test(t.data) || (r = this._getOrReturnCtx(t, r), y(r, {
 				validation: "cuid2",
 				code: h.invalid_string,
 				message: s.message
 			}), a.dirty());
-			else if (s.kind === "ulid") Vc.test(t.data) || (r = this._getOrReturnCtx(t, r), y(r, {
+			else if (s.kind === "ulid") Hc.test(t.data) || (r = this._getOrReturnCtx(t, r), y(r, {
 				validation: "ulid",
 				code: h.invalid_string,
 				message: s.message
@@ -794,39 +794,39 @@
 				code: h.invalid_string,
 				validation: { endsWith: s.value },
 				message: s.message
-			}), a.dirty()) : s.kind === "datetime" ? id(s).test(t.data) || (r = this._getOrReturnCtx(t, r), y(r, {
+			}), a.dirty()) : s.kind === "datetime" ? nd(s).test(t.data) || (r = this._getOrReturnCtx(t, r), y(r, {
 				code: h.invalid_string,
 				validation: "datetime",
 				message: s.message
-			}), a.dirty()) : s.kind === "date" ? rd.test(t.data) || (r = this._getOrReturnCtx(t, r), y(r, {
+			}), a.dirty()) : s.kind === "date" ? sd.test(t.data) || (r = this._getOrReturnCtx(t, r), y(r, {
 				code: h.invalid_string,
 				validation: "date",
 				message: s.message
-			}), a.dirty()) : s.kind === "time" ? sd(s).test(t.data) || (r = this._getOrReturnCtx(t, r), y(r, {
+			}), a.dirty()) : s.kind === "time" ? id(s).test(t.data) || (r = this._getOrReturnCtx(t, r), y(r, {
 				code: h.invalid_string,
 				validation: "time",
 				message: s.message
-			}), a.dirty()) : s.kind === "duration" ? Gc.test(t.data) || (r = this._getOrReturnCtx(t, r), y(r, {
+			}), a.dirty()) : s.kind === "duration" ? Jc.test(t.data) || (r = this._getOrReturnCtx(t, r), y(r, {
 				validation: "duration",
 				code: h.invalid_string,
 				message: s.message
-			}), a.dirty()) : s.kind === "ip" ? nd(t.data, s.version) || (r = this._getOrReturnCtx(t, r), y(r, {
+			}), a.dirty()) : s.kind === "ip" ? od(t.data, s.version) || (r = this._getOrReturnCtx(t, r), y(r, {
 				validation: "ip",
 				code: h.invalid_string,
 				message: s.message
-			}), a.dirty()) : s.kind === "jwt" ? od(t.data, s.alg) || (r = this._getOrReturnCtx(t, r), y(r, {
+			}), a.dirty()) : s.kind === "jwt" ? cd(t.data, s.alg) || (r = this._getOrReturnCtx(t, r), y(r, {
 				validation: "jwt",
 				code: h.invalid_string,
 				message: s.message
-			}), a.dirty()) : s.kind === "cidr" ? cd(t.data, s.version) || (r = this._getOrReturnCtx(t, r), y(r, {
+			}), a.dirty()) : s.kind === "cidr" ? dd(t.data, s.version) || (r = this._getOrReturnCtx(t, r), y(r, {
 				validation: "cidr",
 				code: h.invalid_string,
 				message: s.message
-			}), a.dirty()) : s.kind === "base64" ? td.test(t.data) || (r = this._getOrReturnCtx(t, r), y(r, {
+			}), a.dirty()) : s.kind === "base64" ? ad.test(t.data) || (r = this._getOrReturnCtx(t, r), y(r, {
 				validation: "base64",
 				code: h.invalid_string,
 				message: s.message
-			}), a.dirty()) : s.kind === "base64url" ? ad.test(t.data) || (r = this._getOrReturnCtx(t, r), y(r, {
+			}), a.dirty()) : s.kind === "base64url" ? rd.test(t.data) || (r = this._getOrReturnCtx(t, r), y(r, {
 				validation: "base64url",
 				code: h.invalid_string,
 				message: s.message
@@ -1101,7 +1101,7 @@
 		coerce: e?.coerce ?? !1,
 		...S(e)
 	});
-	function dd(e, t) {
+	function ld(e, t) {
 		const a = (e.toString().split(".")[1] || "").length, r = (t.toString().split(".")[1] || "").length, s = a > r ? a : r;
 		return Number.parseInt(e.toFixed(s).replace(".", "")) % Number.parseInt(t.toFixed(s).replace(".", "")) / 10 ** s;
 	}
@@ -1139,7 +1139,7 @@
 				inclusive: s.inclusive,
 				exact: !1,
 				message: s.message
-			}), r.dirty()) : s.kind === "multipleOf" ? dd(t.data, s.value) !== 0 && (a = this._getOrReturnCtx(t, a), y(a, {
+			}), r.dirty()) : s.kind === "multipleOf" ? ld(t.data, s.value) !== 0 && (a = this._getOrReturnCtx(t, a), y(a, {
 				code: h.not_multiple_of,
 				multipleOf: s.value,
 				message: s.message
@@ -1419,7 +1419,7 @@
 		coerce: e?.coerce || !1,
 		...S(e)
 	});
-	var Ve = class Ec extends T {
+	var Ve = class Ac extends T {
 		_parse(t) {
 			if (this._def.coerce && (t.data = new Date(t.data)), this._getType(t) !== _.date) {
 				const s = this._getOrReturnCtx(t);
@@ -1453,7 +1453,7 @@
 			};
 		}
 		_addCheck(t) {
-			return new Ec({
+			return new Ac({
 				...this._def,
 				checks: [...this._def.checks, t]
 			});
@@ -1960,7 +1960,7 @@
 		...S(t)
 	});
 	const F = (e) => e instanceof be ? F(e.schema) : e instanceof V ? F(e.innerType()) : e instanceof ge ? [e.value] : e instanceof we ? e.options : e instanceof ve ? $.objectValues(e.enum) : e instanceof Se ? F(e._def.innerType) : e instanceof pe ? [void 0] : e instanceof fe ? [null] : e instanceof H ? [void 0, ...F(e.unwrap())] : e instanceof J ? [null, ...F(e.unwrap())] : e instanceof jt || e instanceof Te ? F(e.unwrap()) : e instanceof xe ? F(e._def.innerType) : [];
-	var ld = class Ac extends T {
+	var ud = class Nc extends T {
 		_parse(t) {
 			const { ctx: a } = this._processInputParams(t);
 			if (a.parsedType !== _.object) return y(a, {
@@ -2002,7 +2002,7 @@
 					s.set(d, c);
 				}
 			}
-			return new Ac({
+			return new Nc({
 				typeName: v.ZodDiscriminatedUnion,
 				discriminator: t,
 				options: a,
@@ -2083,7 +2083,7 @@
 		typeName: v.ZodIntersection,
 		...S(a)
 	});
-	var G = class Nc extends T {
+	var G = class Dc extends T {
 		_parse(t) {
 			const { status: a, ctx: r } = this._processInputParams(t);
 			if (r.parsedType !== _.array) return y(r, {
@@ -2115,7 +2115,7 @@
 			return this._def.items;
 		}
 		rest(t) {
-			return new Nc({
+			return new Dc({
 				...this._def,
 				rest: t
 			});
@@ -2130,7 +2130,7 @@
 			...S(t)
 		});
 	};
-	var ud = class kt extends T {
+	var hd = class kt extends T {
 		get keySchema() {
 			return this._def.keyType;
 		}
@@ -2290,7 +2290,7 @@
 		typeName: v.ZodSet,
 		...S(t)
 	});
-	var hd = class Be extends T {
+	var md = class Be extends T {
 		constructor() {
 			super(...arguments), this.validate = this.implement;
 		}
@@ -2759,7 +2759,7 @@
 		unwrap() {
 			return this._def.type;
 		}
-	}, Lt = class Dc extends T {
+	}, Lt = class Mc extends T {
 		_parse(t) {
 			const { status: a, ctx: r } = this._processInputParams(t);
 			if (r.common.async) return (async () => {
@@ -2791,7 +2791,7 @@
 			}
 		}
 		static create(t, a) {
-			return new Dc({
+			return new Mc({
 				in: t,
 				out: a,
 				typeName: v.ZodPipeline
@@ -2830,12 +2830,12 @@
 	ze.create;
 	const g = Q.create, n = M.create;
 	M.strictCreate;
-	const Zt = ye.create, qt = ld.create;
+	const Zt = ye.create, qt = ud.create;
 	_e.create;
-	const md = G.create, ne = ud.create;
+	const pd = G.create, ne = hd.create;
 	Je.create;
 	Ke.create;
-	hd.create;
+	md.create;
 	be.create;
 	const C = ge.create, x = we.create;
 	ve.create;
@@ -2848,10 +2848,10 @@
 	const Ut = n({
 		id: i(),
 		description: i()
-	}), pd = n({
+	}), fd = n({
 		browser: g(Ut).optional(),
 		tab: g(Ut).optional()
-	}), fd = x([
+	}), yd = x([
 		"iab",
 		"extension",
 		"cdp",
@@ -2860,7 +2860,7 @@
 		family: i().trim().min(1).optional(),
 		id: i(),
 		name: i(),
-		type: fd,
+		type: yd,
 		profileName: i().optional(),
 		metadata: n({
 			extensionInstanceId: i().optional(),
@@ -2868,88 +2868,88 @@
 		}).optional()
 	}), Xe = Ft.extend({
 		apiSupportOverrides: ne(k()).optional(),
-		capabilities: pd
+		capabilities: fd
 	});
-	var _d = l({
+	var bd = l({
 		PayloadSchema: () => Vt,
-		ResultSchema: () => bd,
+		ResultSchema: () => gd,
 		commandType: () => Ht,
 		create: () => Wt
 	});
-	const Vt = n({}), bd = g(Ft), Ht = "list_browsers";
+	const Vt = n({}), gd = g(Ft), Ht = "list_browsers";
 	function Wt(e = {}) {
 		return new m(Ht, Vt, e);
 	}
-	var gd = l({
+	var wd = l({
 		PayloadSchema: () => zt,
-		ResultSchema: () => wd,
+		ResultSchema: () => vd,
 		commandType: () => Gt,
 		create: () => Jt
 	});
-	const zt = n({ id: i() }), wd = Xe, Gt = "get_browser";
+	const zt = n({ id: i() }), vd = Xe, Gt = "get_browser";
 	function Jt(e) {
 		return new m(Gt, zt, e);
 	}
-	var vd = l({
+	var Sd = l({
 		PayloadSchema: () => Kt,
-		ResultSchema: () => Sd,
+		ResultSchema: () => xd,
 		commandType: () => Yt,
 		create: () => Xt
 	});
-	const Kt = n({}), Sd = Xe, Yt = "get_default_browser";
+	const Kt = n({}), xd = Xe, Yt = "get_default_browser";
 	function Xt(e = {}) {
 		return new m(Yt, Kt, e);
 	}
-	var xd = l({
+	var Td = l({
 		PayloadSchema: () => Qt,
-		ResultSchema: () => Td,
+		ResultSchema: () => $d,
 		commandType: () => ea,
 		create: () => ta
 	});
-	const Qt = n({ name: i() }), Td = i(), ea = "get_documentation";
+	const Qt = n({ name: i() }), $d = i(), ea = "get_documentation";
 	function ta(e) {
 		return new m(ea, Qt, e);
 	}
-	var $d = l({
+	var kd = l({
 		PayloadSchema: () => aa,
-		ResultSchema: () => kd,
+		ResultSchema: () => Rd,
 		commandType: () => ra,
 		create: () => sa
 	});
-	const aa = n({ browser_id: i() }), kd = i(), ra = "get_browser_documentation";
+	const aa = n({ browser_id: i() }), Rd = i(), ra = "get_browser_documentation";
 	function sa(e) {
 		return new m(ra, aa, e);
 	}
-	var Rd = l({
+	var Cd = l({
 		PayloadSchema: () => ia,
-		ResultSchema: () => Cd,
+		ResultSchema: () => Id,
 		commandType: () => na,
 		create: () => oa
 	});
-	const ia = n({ url: i().url() }), Cd = Xe, na = "get_browser_for_url";
+	const ia = n({ url: i().url() }), Id = Xe, na = "get_browser_for_url";
 	function oa(e) {
 		return new m(na, ia, e);
 	}
-	var Id = l({
+	var Pd = l({
 		PayloadSchema: () => ca,
-		ResultSchema: () => Pd,
+		ResultSchema: () => Ed,
 		commandType: () => da,
 		create: () => la
 	});
-	const ca = n({ browser_id: i() }), Pd = n({ id: i() }), da = "create_tab";
+	const ca = n({ browser_id: i() }), Ed = n({ id: i() }), da = "create_tab";
 	function la(e) {
 		return new m(da, ca, e);
 	}
-	var Ed = l({
+	var Ad = l({
 		PayloadSchema: () => ua,
-		ResultSchema: () => Ad,
+		ResultSchema: () => Nd,
 		commandType: () => ha,
 		create: () => Qe
 	});
 	const ua = n({
 		browser_id: i(),
 		tab_id: i()
-	}), Ad = n({
+	}), Nd = n({
 		id: i(),
 		title: i().optional(),
 		url: i().optional()
@@ -2957,23 +2957,23 @@
 	function Qe(e) {
 		return new m(ha, ua, e);
 	}
-	var Nd = l({
+	var Dd = l({
 		PayloadSchema: () => ma,
-		ResultSchema: () => Dd,
+		ResultSchema: () => Md,
 		commandType: () => pa,
 		create: () => fa
 	});
 	const ma = n({
 		browser_id: i(),
 		tab_id: i()
-	}), Dd = n({}), pa = "close_tab";
+	}), Md = n({}), pa = "close_tab";
 	function fa(e) {
 		return new m(pa, ma, e);
 	}
-	var Md = l({
+	var Od = l({
 		MarkTabStatusSchema: () => ya,
 		PayloadSchema: () => _a,
-		ResultSchema: () => Od,
+		ResultSchema: () => Bd,
 		commandType: () => ba,
 		create: () => ga
 	});
@@ -2981,130 +2981,137 @@
 		browser_id: i(),
 		tab_id: i(),
 		status: ya
-	}), Od = n({}), ba = "mark_tab";
+	}), Bd = n({}), ba = "mark_tab";
 	function ga(e) {
 		return new m(ba, _a, e);
 	}
-	var Bd = l({
-		PayloadSchema: () => va,
-		ResultSchema: () => jd,
+	var jd = l({
+		PayloadSchema: () => Sa,
+		ReasonSchema: () => va,
+		ResultSchema: () => Ld,
 		commandType: () => wa,
-		create: () => Sa
+		create: () => xa
 	});
-	const wa = "tab_manual_handoff_request", va = n({
+	const wa = "tab_manual_handoff_request", va = x([
+		"authentication",
+		"captcha",
+		"user_requested",
+		"other"
+	]), Sa = n({
 		browser_id: i(),
-		tab_id: i()
-	}), jd = n({});
-	function Sa(e) {
-		return new m(wa, va, e);
+		tab_id: i(),
+		reason: va.optional()
+	}), Ld = n({});
+	function xa(e) {
+		return new m(wa, Sa, e);
 	}
-	var Ld = l({
-		PayloadSchema: () => xa,
-		ResultSchema: () => Zd,
-		commandType: () => Ta,
-		create: () => qd
+	var Zd = l({
+		PayloadSchema: () => Ta,
+		ResultSchema: () => qd,
+		commandType: () => $a,
+		create: () => Ud
 	});
-	const xa = n({ browser_id: i() }), Zd = n({ display_truncate_max_chars: u().int().positive().optional() }), Ta = "runtime_config";
-	function qd(e) {
-		return new m(Ta, xa, e);
+	const Ta = n({ browser_id: i() }), qd = n({ display_truncate_max_chars: u().int().positive().optional() }), $a = "runtime_config";
+	function Ud(e) {
+		return new m($a, Ta, e);
 	}
-	var Ud = l({
-		PayloadSchema: () => $a,
-		ResultSchema: () => Fd,
-		commandType: () => ka,
-		create: () => Ra
+	var Fd = l({
+		PayloadSchema: () => ka,
+		ResultSchema: () => Vd,
+		commandType: () => Ra,
+		create: () => Ca
 	});
-	const $a = n({
+	const ka = n({
 		browser_id: i(),
 		name: i()
-	}), Fd = n({}), ka = "name_session";
-	function Ra(e) {
-		return new m(ka, $a, e);
+	}), Vd = n({}), Ra = "name_session";
+	function Ca(e) {
+		return new m(Ra, ka, e);
 	}
-	var Vd = l({
-		PayloadSchema: () => Ca,
-		ResultSchema: () => Hd,
-		commandType: () => Ia,
-		create: () => Pa
+	var Hd = l({
+		PayloadSchema: () => Ia,
+		ResultSchema: () => Wd,
+		commandType: () => Pa,
+		create: () => Ea
 	});
-	const Ca = n({ browser_id: i() }), Hd = n({ id: i().optional() }), Ia = "selected_tab";
-	function Pa(e) {
-		return new m(Ia, Ca, e);
+	const Ia = n({ browser_id: i() }), Wd = n({ id: i().optional() }), Pa = "selected_tab";
+	function Ea(e) {
+		return new m(Pa, Ia, e);
 	}
-	var Wd = l({
-		PayloadSchema: () => Ea,
-		ResultSchema: () => zd,
-		commandType: () => Aa,
-		create: () => Na
+	var zd = l({
+		PayloadSchema: () => Aa,
+		ResultSchema: () => Gd,
+		commandType: () => Na,
+		create: () => Da
 	});
-	const Ea = n({ browser_id: i() }), zd = n({ tabs: g(n({
+	const Aa = n({ browser_id: i() }), Gd = n({ tabs: g(n({
 		id: i(),
 		providerTabId: i().optional(),
 		url: i().optional(),
 		title: i().optional()
-	})) }), Aa = "list_tabs";
-	function Na(e) {
-		return new m(Aa, Ea, e);
+	})) }), Na = "list_tabs";
+	function Da(e) {
+		return new m(Na, Aa, e);
 	}
-	var Gd = l({
-		ContentTypeSchema: () => Da,
-		PayloadSchema: () => Ma,
-		ResultSchema: () => Jd,
-		commandType: () => Oa,
-		create: () => Ba
+	var Jd = l({
+		ContentTypeSchema: () => Ma,
+		PayloadSchema: () => Oa,
+		ResultSchema: () => Kd,
+		commandType: () => Ba,
+		create: () => ja
 	});
-	const Da = x([
+	const Ma = x([
 		"html",
 		"text",
 		"domSnapshot"
-	]), Ma = n({
+	]), Oa = n({
 		browser_id: i(),
 		urls: g(i()),
-		content_type: Da,
+		content_type: Ma,
 		timeout_ms: u().int().positive().optional()
-	}), Jd = n({ results: g(n({
+	}), Kd = n({ results: g(n({
 		url: i(),
 		title: i().nullable(),
 		content: i().nullable()
-	})) }), Oa = "tabs_content";
-	function Ba(e) {
-		return new m(Oa, Ma, e);
+	})) }), Ba = "tabs_content";
+	function ja(e) {
+		return new m(Ba, Oa, e);
 	}
-	const Kd = n({
+	const Yd = n({
 		readOnlyHint: k().optional(),
 		untrustedContentHint: k().optional(),
 		consequentialHint: k().optional()
-	}), Yd = n({
+	}), Xd = n({
 		name: i(),
 		call_name: i(),
 		registration_id: i(),
 		title: i().optional(),
 		description: i().optional(),
 		input_schema: Z(),
-		annotations: Kd.optional(),
+		annotations: Yd.optional(),
 		origin: i().optional(),
 		pageUrl: i().optional()
 	});
-	var Xd = l({
-		PayloadSchema: () => ja,
-		ResultSchema: () => La,
-		commandType: () => Za,
-		create: () => qa
+	var Qd = l({
+		PayloadSchema: () => La,
+		ResultSchema: () => Za,
+		commandType: () => qa,
+		create: () => Ua
 	});
-	const ja = n({
+	const La = n({
 		browser_id: i(),
 		tab_id: i()
-	}), La = n({ tools: g(Yd) }), Za = "webmcp_list_tools";
-	function qa(e) {
-		return new m(Za, ja, e);
+	}), Za = n({ tools: g(Xd) }), qa = "webmcp_list_tools";
+	function Ua(e) {
+		return new m(qa, La, e);
 	}
-	var Qd = l({
-		PayloadSchema: () => Ua,
-		ResultSchema: () => el,
-		commandType: () => Fa,
-		create: () => Va
+	var el = l({
+		PayloadSchema: () => Fa,
+		ResultSchema: () => tl,
+		commandType: () => Va,
+		create: () => Ha
 	});
-	const Ua = n({
+	const Fa = n({
 		browser_id: i(),
 		tab_id: i(),
 		tool_name: i(),
@@ -3114,90 +3121,90 @@
 		registration_id: i(),
 		input: Z(),
 		timeout_ms: u().int().positive().optional()
-	}), el = n({ result: Z() }), Fa = "webmcp_invoke_tool";
-	function Va(e) {
-		return new m(Fa, Ua, e);
+	}), tl = n({ result: Z() }), Va = "webmcp_invoke_tool";
+	function Ha(e) {
+		return new m(Va, Fa, e);
 	}
-	var tl = l({
-		PayloadSchema: () => Ha,
-		ResultSchema: () => al,
-		commandType: () => Wa,
-		create: () => za
+	var al = l({
+		PayloadSchema: () => Wa,
+		ResultSchema: () => rl,
+		commandType: () => za,
+		create: () => Ga
 	});
-	const Ha = n({
+	const Wa = n({
 		browser_id: i(),
 		tab_id: i(),
 		url: i()
-	}), al = n({}), Wa = "navigate_tab_url";
-	function za(e) {
-		return new m(Wa, Ha, e);
+	}), rl = n({}), za = "navigate_tab_url";
+	function Ga(e) {
+		return new m(za, Wa, e);
 	}
-	var rl = l({
-		PayloadSchema: () => Ga,
-		ResultSchema: () => sl,
-		commandType: () => Ja,
+	var sl = l({
+		PayloadSchema: () => Ja,
+		ResultSchema: () => il,
+		commandType: () => Ka,
 		create: () => et
 	});
-	const Ga = n({
+	const Ja = n({
 		browser_id: i(),
 		tab_id: i()
-	}), sl = n({}), Ja = "navigate_tab_back";
+	}), il = n({}), Ka = "navigate_tab_back";
 	function et(e) {
-		return new m(Ja, Ga, e);
+		return new m(Ka, Ja, e);
 	}
-	var il = l({
-		PayloadSchema: () => Ka,
-		ResultSchema: () => nl,
-		commandType: () => Ya,
+	var nl = l({
+		PayloadSchema: () => Ya,
+		ResultSchema: () => ol,
+		commandType: () => Xa,
 		create: () => tt
 	});
-	const Ka = n({
+	const Ya = n({
 		browser_id: i(),
 		tab_id: i()
-	}), nl = n({}), Ya = "navigate_tab_forward";
+	}), ol = n({}), Xa = "navigate_tab_forward";
 	function tt(e) {
-		return new m(Ya, Ka, e);
+		return new m(Xa, Ya, e);
 	}
-	var ol = l({
-		PayloadSchema: () => Xa,
-		ResultSchema: () => cl,
-		commandType: () => Qa,
-		create: () => er
+	var cl = l({
+		PayloadSchema: () => Qa,
+		ResultSchema: () => dl,
+		commandType: () => er,
+		create: () => tr
 	});
-	const Xa = n({
+	const Qa = n({
 		browser_id: i(),
 		tab_id: i()
-	}), cl = n({}), Qa = "navigate_tab_reload";
-	function er(e) {
-		return new m(Qa, Xa, e);
+	}), dl = n({}), er = "navigate_tab_reload";
+	function tr(e) {
+		return new m(er, Qa, e);
 	}
-	var dl = l({
-		PayloadSchema: () => tr,
-		ResultSchema: () => ll,
-		commandType: () => ar,
-		create: () => rr
+	var ll = l({
+		PayloadSchema: () => ar,
+		ResultSchema: () => ul,
+		commandType: () => rr,
+		create: () => sr
 	});
-	const tr = n({
+	const ar = n({
 		browser_id: i(),
 		tab_id: i()
-	}), ll = n({
+	}), ul = n({
 		id: i(),
 		title: i().optional(),
 		url: i().optional()
-	}), ar = "browser_user_claim_tab";
-	function rr(e) {
-		return new m(ar, tr, e);
+	}), rr = "browser_user_claim_tab";
+	function sr(e) {
+		return new m(rr, ar, e);
 	}
-	var ul = l({
-		PayloadSchema: () => sr,
-		ResultSchema: () => ir,
-		commandType: () => nr,
-		create: () => or
+	var hl = l({
+		PayloadSchema: () => ir,
+		ResultSchema: () => nr,
+		commandType: () => or,
+		create: () => cr
 	});
-	const sr = n({
+	const ir = n({
 		browser_id: i(),
 		tab_id: i()
-	}), ir = qt("kind", [
+	}), nr = qt("kind", [
 		n({
 			kind: C("library_file"),
 			libraryFileId: i().min(1),
@@ -3222,53 +3229,53 @@
 			title: i(),
 			url: i()
 		})
-	]), nr = "browser_user_get_tab_context";
-	function or(e) {
-		return new m(nr, sr, e);
+	]), or = "browser_user_get_tab_context";
+	function cr(e) {
+		return new m(or, ir, e);
 	}
-	var hl = l({
-		PayloadSchema: () => cr,
-		ResultSchema: () => ml,
-		commandType: () => dr,
-		create: () => lr
+	var ml = l({
+		PayloadSchema: () => dr,
+		ResultSchema: () => pl,
+		commandType: () => lr,
+		create: () => ur
 	});
-	const cr = n({ browser_id: i() }), ml = n({ tabs: g(n({
+	const dr = n({ browser_id: i() }), pl = n({ tabs: g(n({
 		id: i(),
 		providerTabId: i().optional(),
 		title: i().optional(),
 		url: i().optional(),
 		lastOpened: i().optional(),
 		tabGroup: i().optional()
-	})) }), dr = "browser_user_open_tabs";
-	function lr(e) {
-		return new m(dr, cr, e);
+	})) }), lr = "browser_user_open_tabs";
+	function ur(e) {
+		return new m(lr, dr, e);
 	}
-	var pl = l({
-		PayloadSchema: () => ur,
-		ResultSchema: () => fl,
-		commandType: () => hr,
-		create: () => mr
+	var fl = l({
+		PayloadSchema: () => hr,
+		ResultSchema: () => yl,
+		commandType: () => mr,
+		create: () => pr
 	});
-	const ur = n({
+	const hr = n({
 		browser_id: i(),
 		queries: g(i()).min(1).optional(),
 		limit: u().int().positive().optional(),
 		from: i().optional(),
 		to: i().optional()
-	}), fl = n({ items: g(n({
+	}), yl = n({ items: g(n({
 		url: i(),
 		title: i().optional(),
 		dateVisited: i()
-	})) }), hr = "browser_user_history";
-	function mr(e) {
-		return new m(hr, ur, e);
+	})) }), mr = "browser_user_history";
+	function pr(e) {
+		return new m(mr, hr, e);
 	}
-	var yl = l({
+	var _l = l({
 		LogLevelSchema: () => $e,
-		PayloadSchema: () => pr,
-		ResultSchema: () => _l,
-		commandType: () => fr,
-		create: () => yr
+		PayloadSchema: () => fr,
+		ResultSchema: () => bl,
+		commandType: () => yr,
+		create: () => _r
 	});
 	const $e = x([
 		"debug",
@@ -3276,142 +3283,142 @@
 		"log",
 		"warn",
 		"error"
-	]), pr = n({
+	]), fr = n({
 		browser_id: i(),
 		tab_id: i(),
 		filter: i().optional(),
 		levels: g($e).optional(),
 		limit: u().int().positive().optional()
-	}), _l = n({ logs: g(n({
+	}), bl = n({ logs: g(n({
 		level: $e,
 		message: i(),
 		timestamp: i(),
 		url: i().optional()
-	})) }), fr = "tab_dev_logs";
-	function yr(e) {
-		return new m(fr, pr, e);
+	})) }), yr = "tab_dev_logs";
+	function _r(e) {
+		return new m(yr, fr, e);
 	}
-	var bl = l({
-		JsDialogTypeSchema: () => _r,
-		PayloadSchema: () => gr,
-		ResultDialogSchema: () => br,
-		ResultSchema: () => gl,
-		commandType: () => wr,
-		create: () => vr
+	var gl = l({
+		JsDialogTypeSchema: () => br,
+		PayloadSchema: () => wr,
+		ResultDialogSchema: () => gr,
+		ResultSchema: () => wl,
+		commandType: () => vr,
+		create: () => Sr
 	});
-	const _r = x([
+	const br = x([
 		"alert",
 		"beforeunload",
 		"confirm",
 		"prompt"
-	]), br = n({
+	]), gr = n({
 		id: i(),
-		type: _r
-	}), gr = n({
+		type: br
+	}), wr = n({
 		browser_id: i(),
 		tab_id: i()
-	}), gl = n({ dialog: br.nullable() }), wr = "tab_get_js_dialog";
-	function vr(e) {
-		return new m(wr, gr, e);
+	}), wl = n({ dialog: gr.nullable() }), vr = "tab_get_js_dialog";
+	function Sr(e) {
+		return new m(vr, wr, e);
 	}
-	var wl = l({
-		PayloadSchema: () => Sr,
-		ResultSchema: () => vl,
-		commandType: () => xr,
+	var vl = l({
+		PayloadSchema: () => xr,
+		ResultSchema: () => Sl,
+		commandType: () => Tr,
 		create: () => ke
 	});
-	const Sr = n({
+	const xr = n({
 		action: x(["accept", "dismiss"]),
 		browser_id: i(),
 		dialog_id: i(),
 		prompt_text: i().optional(),
 		tab_id: i()
-	}), vl = n({}), xr = "tab_handle_js_dialog";
+	}), Sl = n({}), Tr = "tab_handle_js_dialog";
 	function ke(e) {
-		return new m(xr, Sr, e);
+		return new m(Tr, xr, e);
 	}
-	var Sl = l({
-		PayloadSchema: () => Tr,
-		ResultSchema: () => xl,
-		commandType: () => $r,
-		create: () => kr
+	var xl = l({
+		PayloadSchema: () => $r,
+		ResultSchema: () => Tl,
+		commandType: () => kr,
+		create: () => Rr
 	});
-	const Tr = n({
+	const $r = n({
 		browser_id: i(),
 		tab_id: i()
-	}), xl = n({ path: i() }), $r = "tab_content_export";
-	function kr(e) {
-		return new m($r, Tr, e);
+	}), Tl = n({ path: i() }), kr = "tab_content_export";
+	function Rr(e) {
+		return new m(kr, $r, e);
 	}
-	var Tl = l({
-		GSuiteExportTypeSchema: () => Rr,
-		PayloadSchema: () => Cr,
-		ResultSchema: () => $l,
-		commandType: () => Ir,
-		create: () => Pr
+	var $l = l({
+		GSuiteExportTypeSchema: () => Cr,
+		PayloadSchema: () => Ir,
+		ResultSchema: () => kl,
+		commandType: () => Pr,
+		create: () => Er
 	});
-	const Rr = x([
+	const Cr = x([
 		"pdf",
 		"md",
 		"xlsx",
 		"csv",
 		"docx",
 		"pptx"
-	]), Cr = n({
+	]), Ir = n({
 		browser_id: i(),
 		tab_id: i(),
-		format: Rr
-	}), $l = n({ path: i() }), Ir = "tab_content_export_gsuite";
-	function Pr(e) {
-		return new m(Ir, Cr, e);
+		format: Cr
+	}), kl = n({ path: i() }), Pr = "tab_content_export_gsuite";
+	function Er(e) {
+		return new m(Pr, Ir, e);
 	}
-	var kl = l({
-		PayloadSchema: () => Er,
-		ResultSchema: () => Rl,
-		commandType: () => Ar,
-		create: () => Nr
+	var Rl = l({
+		PayloadSchema: () => Ar,
+		ResultSchema: () => Cl,
+		commandType: () => Nr,
+		create: () => Dr
 	});
-	const Er = n({
+	const Ar = n({
 		browser_id: i(),
 		tab_id: i()
-	}), Rl = n({ path: i() }), Ar = "tab_content_export_youtube_transcript";
-	function Nr(e) {
-		return new m(Ar, Er, e);
+	}), Cl = n({ path: i() }), Nr = "tab_content_export_youtube_transcript";
+	function Dr(e) {
+		return new m(Nr, Ar, e);
 	}
-	var Cl = l({
-		PayloadSchema: () => Dr,
-		ResultSchema: () => Il,
-		commandType: () => Mr,
-		create: () => Or
+	var Il = l({
+		PayloadSchema: () => Mr,
+		ResultSchema: () => Pl,
+		commandType: () => Or,
+		create: () => Br
 	});
-	const Dr = n({
+	const Mr = n({
 		browser_id: i(),
 		tab_id: i()
-	}), Il = n({ text: i() }), Mr = "tab_clipboard_read_text";
-	function Or(e) {
-		return new m(Mr, Dr, e);
+	}), Pl = n({ text: i() }), Or = "tab_clipboard_read_text";
+	function Br(e) {
+		return new m(Or, Mr, e);
 	}
-	var Pl = l({
-		PayloadSchema: () => Br,
-		ResultSchema: () => El,
-		commandType: () => jr,
-		create: () => Lr
+	var El = l({
+		PayloadSchema: () => jr,
+		ResultSchema: () => Al,
+		commandType: () => Lr,
+		create: () => Zr
 	});
-	const Br = n({
+	const jr = n({
 		browser_id: i(),
 		tab_id: i(),
 		text: i()
-	}), El = n({}), jr = "tab_clipboard_write_text";
-	function Lr(e) {
-		return new m(jr, Br, e);
+	}), Al = n({}), Lr = "tab_clipboard_write_text";
+	function Zr(e) {
+		return new m(Lr, jr, e);
 	}
-	var Al = l({
-		PayloadSchema: () => Zr,
-		ResultSchema: () => Ml,
-		commandType: () => qr,
-		create: () => Ur
+	var Nl = l({
+		PayloadSchema: () => qr,
+		ResultSchema: () => Ol,
+		commandType: () => Ur,
+		create: () => Fr
 	});
-	const Dl = n({
+	const Ml = n({
 		entries: g(n({
 			mime_type: i(),
 			text: i().optional(),
@@ -3427,20 +3434,20 @@
 			"inline",
 			"attachment"
 		]).optional()
-	}), Zr = n({
+	}), qr = n({
 		browser_id: i(),
 		tab_id: i()
-	}), Ml = n({ items: g(Dl) }), qr = "tab_clipboard_read";
-	function Ur(e) {
-		return new m(qr, Zr, e);
+	}), Ol = n({ items: g(Ml) }), Ur = "tab_clipboard_read";
+	function Fr(e) {
+		return new m(Ur, qr, e);
 	}
-	var Ol = l({
-		PayloadSchema: () => Fr,
-		ResultSchema: () => Ll,
-		commandType: () => Vr,
-		create: () => Hr
+	var Bl = l({
+		PayloadSchema: () => Vr,
+		ResultSchema: () => Zl,
+		commandType: () => Hr,
+		create: () => Wr
 	});
-	const jl = n({
+	const Ll = n({
 		entries: g(n({
 			mime_type: i(),
 			text: i().optional(),
@@ -3456,21 +3463,21 @@
 			"inline",
 			"attachment"
 		]).optional()
-	}), Fr = n({
+	}), Vr = n({
 		browser_id: i(),
 		tab_id: i(),
-		items: g(jl)
-	}), Ll = n({}), Vr = "tab_clipboard_write";
-	function Hr(e) {
-		return new m(Vr, Fr, e);
+		items: g(Ll)
+	}), Zl = n({}), Hr = "tab_clipboard_write";
+	function Wr(e) {
+		return new m(Hr, Vr, e);
 	}
-	var Zl = l({
-		PayloadSchema: () => Wr,
-		ResultSchema: () => ql,
-		commandType: () => zr,
-		create: () => Gr
+	var ql = l({
+		PayloadSchema: () => zr,
+		ResultSchema: () => Ul,
+		commandType: () => Gr,
+		create: () => Jr
 	});
-	const Wr = n({
+	const zr = n({
 		browser_id: i(),
 		tab_id: i(),
 		fullPage: k().optional(),
@@ -3478,17 +3485,17 @@
 		cropY: u().optional(),
 		cropWidth: u().optional(),
 		cropHeight: u().optional()
-	}), ql = n({ data: i() }), zr = "tab_screenshot";
-	function Gr(e) {
-		return new m(zr, Wr, e);
+	}), Ul = n({ data: i() }), Gr = "tab_screenshot";
+	function Jr(e) {
+		return new m(Gr, zr, e);
 	}
-	var Ul = l({
-		PayloadSchema: () => Jr,
-		ResultSchema: () => Fl,
-		commandType: () => Kr,
-		create: () => Yr
+	var Fl = l({
+		PayloadSchema: () => Kr,
+		ResultSchema: () => Vl,
+		commandType: () => Yr,
+		create: () => Xr
 	});
-	const Jr = n({
+	const Kr = n({
 		browser_id: i(),
 		tab_id: i(),
 		content: x([
@@ -3497,22 +3504,22 @@
 			"axStateAndScreenshot"
 		]),
 		disable_diffing: k().optional()
-	}), Fl = n({
+	}), Vl = n({
 		state: i().optional(),
 		data: i().optional(),
 		screenshot_unavailable: i().optional()
-	}), Kr = "tab_ax_get_state";
-	function Yr(e) {
-		return new m(Kr, Jr, e);
+	}), Yr = "tab_ax_get_state";
+	function Xr(e) {
+		return new m(Yr, Kr, e);
 	}
-	var Vl = l({
-		ActionSchema: () => Qr,
-		PayloadSchema: () => es,
-		ResultSchema: () => Hl,
-		commandType: () => ts,
-		create: () => as
+	var Hl = l({
+		ActionSchema: () => es,
+		PayloadSchema: () => ts,
+		ResultSchema: () => Wl,
+		commandType: () => as,
+		create: () => rs
 	});
-	const at = md([u(), u()]), K = u().int().nonnegative(), Xr = Zt([K, at]), Qr = qt("kind", [
+	const at = pd([u(), u()]), K = u().int().nonnegative(), Qr = Zt([K, at]), es = qt("kind", [
 		n({
 			kind: C("paste"),
 			element_index: K.nullable(),
@@ -3525,7 +3532,7 @@
 		}),
 		n({
 			kind: C("click"),
-			target: Xr,
+			target: Qr,
 			mouse_button: x([
 				"left",
 				"right",
@@ -3556,7 +3563,7 @@
 		}),
 		n({
 			kind: C("scroll"),
-			target: Xr,
+			target: Qr,
 			direction: x([
 				"up",
 				"down",
@@ -3591,101 +3598,101 @@
 			element_index: K.nullable(),
 			text: i()
 		})
-	]), es = n({
+	]), ts = n({
 		browser_id: i(),
 		tab_id: i(),
-		action: Qr
-	}), Hl = n({}), ts = "tab_ax_action";
-	function as(e) {
-		return new m(ts, es, e);
+		action: es
+	}), Wl = n({}), as = "tab_ax_action";
+	function rs(e) {
+		return new m(as, ts, e);
 	}
-	var Wl = l({
-		PayloadSchema: () => rs,
-		ResultSchema: () => zl,
-		commandType: () => ss,
+	var zl = l({
+		PayloadSchema: () => ss,
+		ResultSchema: () => Gl,
+		commandType: () => is,
 		create: () => Re
 	});
-	const rs = n({
+	const ss = n({
 		browser_id: i(),
 		selector: i().optional(),
 		selector_mode: C("all").optional(),
 		tab_id: i(),
 		script: i(),
 		timeout_ms: u().int().positive().optional()
-	}), zl = n({ value: Z().optional() }), ss = "playwright_evaluate";
+	}), Gl = n({ value: Z().optional() }), is = "playwright_evaluate";
 	function Re(e) {
-		return new m(ss, rs, e);
+		return new m(is, ss, e);
 	}
-	var Gl = l({
-		PayloadSchema: () => is,
-		ResultSchema: () => Jl,
-		commandType: () => ns,
-		create: () => os
+	var Jl = l({
+		PayloadSchema: () => ns,
+		ResultSchema: () => Kl,
+		commandType: () => os,
+		create: () => cs
 	});
-	const is = n({
+	const ns = n({
 		browser_id: i(),
 		tab_id: i(),
 		x: u(),
 		y: u(),
 		button: u().optional(),
 		keys: g(i()).optional()
-	}), Jl = n({}), ns = "cua_click";
-	function os(e) {
-		return new m(ns, is, e);
+	}), Kl = n({}), os = "cua_click";
+	function cs(e) {
+		return new m(os, ns, e);
 	}
-	var Kl = l({
-		PayloadSchema: () => cs,
-		ResultSchema: () => Yl,
-		commandType: () => ds,
-		create: () => ls
+	var Yl = l({
+		PayloadSchema: () => ds,
+		ResultSchema: () => Xl,
+		commandType: () => ls,
+		create: () => us
 	});
-	const cs = n({
+	const ds = n({
 		browser_id: i(),
 		tab_id: i(),
 		x: u(),
 		y: u(),
 		timeout_ms: u().int().positive().optional()
-	}), Yl = n({}), ds = "cua_download_media";
-	function ls(e) {
-		return new m(ds, cs, e);
+	}), Xl = n({}), ls = "cua_download_media";
+	function us(e) {
+		return new m(ls, ds, e);
 	}
-	var Xl = l({
-		PayloadSchema: () => us,
-		ResultSchema: () => Ql,
-		commandType: () => hs,
-		create: () => ms
+	var Ql = l({
+		PayloadSchema: () => hs,
+		ResultSchema: () => eu,
+		commandType: () => ms,
+		create: () => ps
 	});
-	const us = n({
+	const hs = n({
 		browser_id: i(),
 		tab_id: i(),
 		x: u(),
 		y: u(),
 		keys: g(i()).optional()
-	}), Ql = n({}), hs = "cua_double_click";
-	function ms(e) {
-		return new m(hs, us, e);
+	}), eu = n({}), ms = "cua_double_click";
+	function ps(e) {
+		return new m(ms, hs, e);
 	}
-	var eu = l({
-		PayloadSchema: () => ps,
-		ResultSchema: () => tu,
-		commandType: () => fs,
-		create: () => ys
+	var tu = l({
+		PayloadSchema: () => fs,
+		ResultSchema: () => au,
+		commandType: () => ys,
+		create: () => _s
 	});
-	const ps = n({
+	const fs = n({
 		browser_id: i(),
 		tab_id: i(),
 		keys: g(i())
-	}), tu = n({}), fs = "cua_keypress";
-	function ys(e) {
-		return new m(fs, ps, e);
+	}), au = n({}), ys = "cua_keypress";
+	function _s(e) {
+		return new m(ys, fs, e);
 	}
-	var au = l({
-		PayloadSchema: () => _s,
-		ResultSchema: () => ru,
-		commandType: () => bs,
-		create: () => gs
+	var ru = l({
+		PayloadSchema: () => bs,
+		ResultSchema: () => su,
+		commandType: () => gs,
+		create: () => ws
 	});
-	const _s = n({
+	const bs = n({
 		browser_id: i(),
 		tab_id: i(),
 		path: g(n({
@@ -3693,33 +3700,33 @@
 			y: u()
 		})),
 		keys: g(i()).optional()
-	}), ru = n({}), bs = "cua_drag";
-	function gs(e) {
-		return new m(bs, _s, e);
+	}), su = n({}), gs = "cua_drag";
+	function ws(e) {
+		return new m(gs, bs, e);
 	}
-	var su = l({
-		PayloadSchema: () => ws,
-		ResultSchema: () => iu,
-		commandType: () => vs,
-		create: () => Ss
+	var iu = l({
+		PayloadSchema: () => vs,
+		ResultSchema: () => nu,
+		commandType: () => Ss,
+		create: () => xs
 	});
-	const ws = n({
+	const vs = n({
 		browser_id: i(),
 		tab_id: i(),
 		x: u(),
 		y: u(),
 		keys: g(i()).optional()
-	}), iu = n({}), vs = "cua_move";
-	function Ss(e) {
-		return new m(vs, ws, e);
+	}), nu = n({}), Ss = "cua_move";
+	function xs(e) {
+		return new m(Ss, vs, e);
 	}
-	var nu = l({
-		PayloadSchema: () => xs,
-		ResultSchema: () => ou,
-		commandType: () => Ts,
-		create: () => $s
+	var ou = l({
+		PayloadSchema: () => Ts,
+		ResultSchema: () => cu,
+		commandType: () => $s,
+		create: () => ks
 	});
-	const xs = n({
+	const Ts = n({
 		browser_id: i(),
 		tab_id: i(),
 		x: u(),
@@ -3727,136 +3734,136 @@
 		scroll_x: u(),
 		scroll_y: u(),
 		keys: g(i()).optional()
-	}), ou = n({}), Ts = "cua_scroll";
-	function $s(e) {
-		return new m(Ts, xs, e);
+	}), cu = n({}), $s = "cua_scroll";
+	function ks(e) {
+		return new m($s, Ts, e);
 	}
-	var cu = l({
-		PayloadSchema: () => ks,
-		ResultSchema: () => du,
-		commandType: () => Rs,
-		create: () => Cs
+	var du = l({
+		PayloadSchema: () => Rs,
+		ResultSchema: () => lu,
+		commandType: () => Cs,
+		create: () => Is
 	});
-	const ks = n({
+	const Rs = n({
 		browser_id: i(),
 		tab_id: i(),
 		text: i()
-	}), du = n({}), Rs = "cua_type";
-	function Cs(e) {
-		return new m(Rs, ks, e);
+	}), lu = n({}), Cs = "cua_type";
+	function Is(e) {
+		return new m(Cs, Rs, e);
 	}
 	const te = i({
 		required_error: "node_id is required",
 		invalid_type_error: "node_id must be a string"
 	}).min(1, "node_id must not be empty");
-	var lu = l({
+	var uu = l({
 		DomNodeIdSchema: () => te,
-		PayloadSchema: () => Is,
-		ResultSchema: () => uu,
-		commandType: () => Ps,
-		create: () => Es
+		PayloadSchema: () => Ps,
+		ResultSchema: () => hu,
+		commandType: () => Es,
+		create: () => As
 	});
-	const Is = n({
+	const Ps = n({
 		browser_id: i(),
 		tab_id: i(),
 		node_id: te
-	}), uu = n({}), Ps = "dom_cua_click";
-	function Es(e) {
-		return new m(Ps, Is, e);
+	}), hu = n({}), Es = "dom_cua_click";
+	function As(e) {
+		return new m(Es, Ps, e);
 	}
-	var hu = l({
-		PayloadSchema: () => As,
-		ResultSchema: () => mu,
-		commandType: () => Ns,
-		create: () => Ds
+	var mu = l({
+		PayloadSchema: () => Ns,
+		ResultSchema: () => pu,
+		commandType: () => Ds,
+		create: () => Ms
 	});
-	const As = n({
+	const Ns = n({
 		browser_id: i(),
 		tab_id: i(),
 		node_id: te,
 		timeout_ms: u().int().positive().optional()
-	}), mu = n({}), Ns = "dom_cua_download_media";
-	function Ds(e) {
-		return new m(Ns, As, e);
+	}), pu = n({}), Ds = "dom_cua_download_media";
+	function Ms(e) {
+		return new m(Ds, Ns, e);
 	}
-	var pu = l({
-		PayloadSchema: () => Ms,
-		ResultSchema: () => fu,
-		commandType: () => Os,
-		create: () => Bs
+	var fu = l({
+		PayloadSchema: () => Os,
+		ResultSchema: () => yu,
+		commandType: () => Bs,
+		create: () => js
 	});
-	const Ms = n({
+	const Os = n({
 		browser_id: i(),
 		tab_id: i(),
 		node_id: te
-	}), fu = n({}), Os = "dom_cua_double_click";
-	function Bs(e) {
-		return new m(Os, Ms, e);
+	}), yu = n({}), Bs = "dom_cua_double_click";
+	function js(e) {
+		return new m(Bs, Os, e);
 	}
-	var yu = l({
-		PayloadSchema: () => js,
-		ResultSchema: () => _u,
-		commandType: () => Ls,
-		create: () => Zs
+	var _u = l({
+		PayloadSchema: () => Ls,
+		ResultSchema: () => bu,
+		commandType: () => Zs,
+		create: () => qs
 	});
-	const js = n({
+	const Ls = n({
 		browser_id: i(),
 		tab_id: i()
-	}), _u = Z(), Ls = "dom_cua_get_visible_dom";
-	function Zs(e) {
-		return new m(Ls, js, e);
+	}), bu = Z(), Zs = "dom_cua_get_visible_dom";
+	function qs(e) {
+		return new m(Zs, Ls, e);
 	}
-	var bu = l({
-		PayloadSchema: () => qs,
-		ResultSchema: () => gu,
-		commandType: () => Us,
-		create: () => Fs
+	var gu = l({
+		PayloadSchema: () => Us,
+		ResultSchema: () => wu,
+		commandType: () => Fs,
+		create: () => Vs
 	});
-	const qs = n({
+	const Us = n({
 		browser_id: i(),
 		tab_id: i(),
 		keys: g(i())
-	}), gu = n({}), Us = "dom_cua_keypress";
-	function Fs(e) {
-		return new m(Us, qs, e);
+	}), wu = n({}), Fs = "dom_cua_keypress";
+	function Vs(e) {
+		return new m(Fs, Us, e);
 	}
-	var wu = l({
-		PayloadSchema: () => Vs,
-		ResultSchema: () => vu,
-		commandType: () => Hs,
-		create: () => Ws
+	var vu = l({
+		PayloadSchema: () => Hs,
+		ResultSchema: () => Su,
+		commandType: () => Ws,
+		create: () => zs
 	});
-	const Vs = n({
+	const Hs = n({
 		browser_id: i(),
 		tab_id: i(),
 		scroll_x: u(),
 		scroll_y: u(),
 		node_id: te.optional()
-	}), vu = n({}), Hs = "dom_cua_scroll";
-	function Ws(e) {
-		return new m(Hs, Vs, e);
+	}), Su = n({}), Ws = "dom_cua_scroll";
+	function zs(e) {
+		return new m(Ws, Hs, e);
 	}
-	var Su = l({
-		PayloadSchema: () => zs,
-		ResultSchema: () => xu,
-		commandType: () => Gs,
-		create: () => Js
+	var xu = l({
+		PayloadSchema: () => Gs,
+		ResultSchema: () => Tu,
+		commandType: () => Js,
+		create: () => Ks
 	});
-	const zs = n({
+	const Gs = n({
 		browser_id: i(),
 		tab_id: i(),
 		text: i()
-	}), xu = n({}), Gs = "dom_cua_type";
-	function Js(e) {
-		return new m(Gs, zs, e);
+	}), Tu = n({}), Js = "dom_cua_type";
+	function Ks(e) {
+		return new m(Js, Gs, e);
 	}
-	var Tu = l({
-		PayloadSchema: () => Ks,
-		ResultSchema: () => $u,
-		commandType: () => Ys,
-		create: () => Xs
+	var $u = l({
+		PayloadSchema: () => Ys,
+		ResultSchema: () => ku,
+		commandType: () => Xs,
+		create: () => Qs
 	});
-	const Ks = n({
+	const Ys = n({
 		browser_id: i(),
 		tab_id: i(),
 		selector: i(),
@@ -3874,17 +3881,17 @@
 		]).optional(),
 		force: k().optional(),
 		timeout_ms: u().int().positive().optional()
-	}), $u = n({}), Ys = "playwright_locator_click";
-	function Xs(e) {
-		return new m(Ys, Ks, e);
+	}), ku = n({}), Xs = "playwright_locator_click";
+	function Qs(e) {
+		return new m(Xs, Ys, e);
 	}
-	var ku = l({
-		PayloadSchema: () => Qs,
-		ResultSchema: () => Ru,
-		commandType: () => ei,
-		create: () => ti
+	var Ru = l({
+		PayloadSchema: () => ei,
+		ResultSchema: () => Cu,
+		commandType: () => ti,
+		create: () => ai
 	});
-	const Qs = n({
+	const ei = n({
 		browser_id: i(),
 		tab_id: i(),
 		selector: i(),
@@ -3902,81 +3909,81 @@
 		]).optional(),
 		force: k().optional(),
 		timeout_ms: u().int().positive().optional()
-	}), Ru = n({}), ei = "playwright_locator_dblclick";
-	function ti(e) {
-		return new m(ei, Qs, e);
+	}), Cu = n({}), ti = "playwright_locator_dblclick";
+	function ai(e) {
+		return new m(ti, ei, e);
 	}
-	var Cu = l({
-		PayloadSchema: () => ai,
-		ResultSchema: () => Iu,
-		commandType: () => ri,
-		create: () => si
+	var Iu = l({
+		PayloadSchema: () => ri,
+		ResultSchema: () => Pu,
+		commandType: () => si,
+		create: () => ii
 	});
-	const ai = n({
+	const ri = n({
 		browser_id: i(),
 		tab_id: i(),
 		selector: i(),
 		timeout_ms: u().int().positive().optional()
-	}), Iu = n({ path: i() }), ri = "playwright_locator_download_media";
-	function si(e) {
-		return new m(ri, ai, e);
+	}), Pu = n({ path: i() }), si = "playwright_locator_download_media";
+	function ii(e) {
+		return new m(si, ri, e);
 	}
-	var Pu = l({
-		PayloadSchema: () => ii,
-		ResultSchema: () => Eu,
-		commandType: () => ni,
+	var Eu = l({
+		PayloadSchema: () => ni,
+		ResultSchema: () => Au,
+		commandType: () => oi,
 		create: () => rt
 	});
-	const ii = n({
+	const ni = n({
 		browser_id: i(),
 		tab_id: i(),
 		selector: i(),
 		value: i(),
 		replace: k(),
 		timeout_ms: u().int().positive().optional()
-	}), Eu = n({}), ni = "playwright_locator_fill";
+	}), Au = n({}), oi = "playwright_locator_fill";
 	function rt(e) {
-		return new m(ni, ii, e);
+		return new m(oi, ni, e);
 	}
-	var Au = l({
-		PayloadSchema: () => oi,
-		ResultSchema: () => Nu,
-		commandType: () => ci,
-		create: () => di
+	var Nu = l({
+		PayloadSchema: () => ci,
+		ResultSchema: () => Du,
+		commandType: () => di,
+		create: () => li
 	});
-	const oi = n({
+	const ci = n({
 		browser_id: i(),
 		tab_id: i(),
 		selector: i(),
 		value: i(),
 		timeout_ms: u().int().positive().optional()
-	}), Nu = n({}), ci = "playwright_locator_press";
-	function di(e) {
-		return new m(ci, oi, e);
+	}), Du = n({}), di = "playwright_locator_press";
+	function li(e) {
+		return new m(di, ci, e);
 	}
-	var Du = l({
-		PayloadSchema: () => li,
-		ResultSchema: () => Mu,
-		commandType: () => ui,
-		create: () => hi
+	var Mu = l({
+		PayloadSchema: () => ui,
+		ResultSchema: () => Ou,
+		commandType: () => hi,
+		create: () => mi
 	});
-	const li = n({
+	const ui = n({
 		browser_id: i(),
 		tab_id: i(),
 		selector: i(),
 		value: i(),
 		timeout_ms: u().int().positive().optional()
-	}), Mu = n({}), ui = "playwright_locator_press_sequentially";
-	function hi(e) {
-		return new m(ui, li, e);
+	}), Ou = n({}), hi = "playwright_locator_press_sequentially";
+	function mi(e) {
+		return new m(hi, ui, e);
 	}
-	var Ou = l({
-		PayloadSchema: () => mi,
-		ResultSchema: () => Bu,
-		commandType: () => pi,
-		create: () => fi
+	var Bu = l({
+		PayloadSchema: () => pi,
+		ResultSchema: () => ju,
+		commandType: () => fi,
+		create: () => yi
 	});
-	const mi = n({
+	const pi = n({
 		browser_id: i(),
 		tab_id: i(),
 		selector: i(),
@@ -3987,32 +3994,32 @@
 			"hidden"
 		]),
 		timeout_ms: u().int().positive().optional()
-	}), Bu = n({}), pi = "playwright_locator_wait_for";
-	function fi(e) {
-		return new m(pi, mi, e);
+	}), ju = n({}), fi = "playwright_locator_wait_for";
+	function yi(e) {
+		return new m(fi, pi, e);
 	}
-	var ju = l({
-		PayloadSchema: () => yi,
-		ResultSchema: () => Lu,
-		commandType: () => _i,
-		create: () => bi
+	var Lu = l({
+		PayloadSchema: () => _i,
+		ResultSchema: () => Zu,
+		commandType: () => bi,
+		create: () => gi
 	});
-	const yi = n({
+	const _i = n({
 		browser_id: i(),
 		tab_id: i(),
 		selector: i()
-	}), Lu = n({ count: u().int() }), _i = "playwright_locator_count";
-	function bi(e) {
-		return new m(_i, yi, e);
+	}), Zu = n({ count: u().int() }), bi = "playwright_locator_count";
+	function gi(e) {
+		return new m(bi, _i, e);
 	}
-	var Zu = l({
-		PayloadSchema: () => wi,
-		ResultSchema: () => qu,
-		SelectOptionSchema: () => gi,
-		commandType: () => vi,
-		create: () => Si
+	var qu = l({
+		PayloadSchema: () => vi,
+		ResultSchema: () => Uu,
+		SelectOptionSchema: () => wi,
+		commandType: () => Si,
+		create: () => xi
 	});
-	const gi = n({
+	const wi = n({
 		value: i().optional(),
 		label: i().optional(),
 		index: u().int().nonnegative().optional()
@@ -4021,408 +4028,408 @@
 			code: h.custom,
 			message: "Select option requires value, label, or index"
 		});
-	}), wi = n({
+	}), vi = n({
 		browser_id: i(),
 		tab_id: i(),
 		selector: i(),
-		selections: g(gi).min(1),
+		selections: g(wi).min(1),
 		timeout_ms: u().int().positive().optional()
-	}), qu = n({}), vi = "playwright_locator_select_option";
-	function Si(e) {
-		return new m(vi, wi, e);
+	}), Uu = n({}), Si = "playwright_locator_select_option";
+	function xi(e) {
+		return new m(Si, vi, e);
 	}
-	var Uu = l({
-		PayloadSchema: () => xi,
-		ResultSchema: () => Fu,
-		commandType: () => Ti,
-		create: () => $i
+	var Fu = l({
+		PayloadSchema: () => Ti,
+		ResultSchema: () => Vu,
+		commandType: () => $i,
+		create: () => ki
 	});
-	const xi = n({
+	const Ti = n({
 		browser_id: i(),
 		tab_id: i(),
 		selector: i(),
 		checked: k(),
 		force: k().optional(),
 		timeout_ms: u().int().positive().optional()
-	}), Fu = n({}), Ti = "playwright_locator_set_checked";
-	function $i(e) {
-		return new m(Ti, xi, e);
+	}), Vu = n({}), $i = "playwright_locator_set_checked";
+	function ki(e) {
+		return new m($i, Ti, e);
 	}
-	var Vu = l({
-		PayloadSchema: () => ki,
-		ResultSchema: () => Hu,
-		commandType: () => Ri,
-		create: () => Ci
+	var Hu = l({
+		PayloadSchema: () => Ri,
+		ResultSchema: () => Wu,
+		commandType: () => Ci,
+		create: () => Ii
 	});
-	const ki = n({
+	const Ri = n({
 		browser_id: i(),
 		tab_id: i(),
 		selector: i()
-	}), Hu = n({ value: k() }), Ri = "playwright_locator_is_visible";
-	function Ci(e) {
-		return new m(Ri, ki, e);
+	}), Wu = n({ value: k() }), Ci = "playwright_locator_is_visible";
+	function Ii(e) {
+		return new m(Ci, Ri, e);
 	}
-	var Wu = l({
-		PayloadSchema: () => Ii,
-		ResultSchema: () => zu,
-		commandType: () => Pi,
-		create: () => Ei
+	var zu = l({
+		PayloadSchema: () => Pi,
+		ResultSchema: () => Gu,
+		commandType: () => Ei,
+		create: () => Ai
 	});
-	const Ii = n({
+	const Pi = n({
 		browser_id: i(),
 		tab_id: i(),
 		selector: i()
-	}), zu = n({ value: k() }), Pi = "playwright_locator_is_enabled";
-	function Ei(e) {
-		return new m(Pi, Ii, e);
+	}), Gu = n({ value: k() }), Ei = "playwright_locator_is_enabled";
+	function Ai(e) {
+		return new m(Ei, Pi, e);
 	}
-	var Gu = l({
-		PayloadSchema: () => Ai,
-		ResultSchema: () => Ju,
-		commandType: () => Ni,
-		create: () => Di
+	var Ju = l({
+		PayloadSchema: () => Ni,
+		ResultSchema: () => Ku,
+		commandType: () => Di,
+		create: () => Mi
 	});
-	const Ai = n({
+	const Ni = n({
 		browser_id: i(),
 		tab_id: i(),
 		selector: i(),
 		timeout_ms: u().int().positive().optional()
-	}), Ju = n({ values: g(i()) }), Ni = "playwright_locator_all_text_contents";
-	function Di(e) {
-		return new m(Ni, Ai, e);
+	}), Ku = n({ values: g(i()) }), Di = "playwright_locator_all_text_contents";
+	function Mi(e) {
+		return new m(Di, Ni, e);
 	}
-	var Ku = l({
-		PayloadSchema: () => Mi,
-		ResultSchema: () => Yu,
-		commandType: () => Oi,
-		create: () => Bi
+	var Yu = l({
+		PayloadSchema: () => Oi,
+		ResultSchema: () => Xu,
+		commandType: () => Bi,
+		create: () => ji
 	});
-	const Mi = n({
+	const Oi = n({
 		browser_id: i(),
 		tab_id: i(),
 		selector: i(),
 		timeout_ms: u().int().positive().optional()
-	}), Yu = n({ value: i().nullable() }), Oi = "playwright_locator_text_content";
-	function Bi(e) {
-		return new m(Oi, Mi, e);
+	}), Xu = n({ value: i().nullable() }), Bi = "playwright_locator_text_content";
+	function ji(e) {
+		return new m(Bi, Oi, e);
 	}
-	var Xu = l({
-		PayloadSchema: () => ji,
-		ResultSchema: () => Qu,
-		commandType: () => Li,
-		create: () => Zi
+	var Qu = l({
+		PayloadSchema: () => Li,
+		ResultSchema: () => eh,
+		commandType: () => Zi,
+		create: () => qi
 	});
-	const ji = n({
+	const Li = n({
 		browser_id: i(),
 		tab_id: i(),
 		selector: i(),
 		timeout_ms: u().int().positive().optional()
-	}), Qu = n({ value: i() }), Li = "playwright_locator_inner_text";
-	function Zi(e) {
-		return new m(Li, ji, e);
+	}), eh = n({ value: i() }), Zi = "playwright_locator_inner_text";
+	function qi(e) {
+		return new m(Zi, Li, e);
 	}
-	var eh = l({
-		PayloadSchema: () => qi,
-		ResultSchema: () => th,
-		commandType: () => Ui,
-		create: () => Fi
+	var th = l({
+		PayloadSchema: () => Ui,
+		ResultSchema: () => ah,
+		commandType: () => Fi,
+		create: () => Vi
 	});
-	const qi = n({
+	const Ui = n({
 		browser_id: i(),
 		tab_id: i(),
 		selector: i(),
 		name: i(),
 		timeout_ms: u().int().positive().optional()
-	}), th = n({ value: i().nullable() }), Ui = "playwright_locator_get_attribute";
-	function Fi(e) {
-		return new m(Ui, qi, e);
+	}), ah = n({ value: i().nullable() }), Fi = "playwright_locator_get_attribute";
+	function Vi(e) {
+		return new m(Fi, Ui, e);
 	}
-	var ah = l({
-		PayloadSchema: () => Vi,
-		ResultSchema: () => sh,
-		commandType: () => Hi,
-		create: () => Wi
+	var rh = l({
+		PayloadSchema: () => Hi,
+		ResultSchema: () => ih,
+		commandType: () => Wi,
+		create: () => zi
 	});
-	const Vi = n({
+	const Hi = n({
 		browser_id: i(),
 		tab_id: i(),
 		selector: i(),
 		relative_selector: i().optional(),
 		timeout_ms: u().int().positive().optional()
-	}), sh = n({ values: g(n({
+	}), ih = n({ values: g(n({
 		attributes: ne(i()),
 		inner_text: i(),
 		text_content: i().nullable()
-	}).nullable()) }), Hi = "playwright_locator_read_all";
-	function Wi(e) {
-		return new m(Hi, Vi, e);
+	}).nullable()) }), Wi = "playwright_locator_read_all";
+	function zi(e) {
+		return new m(Wi, Hi, e);
 	}
-	var ih = l({
-		PayloadSchema: () => zi,
-		ResultSchema: () => oh,
-		commandType: () => Gi,
-		create: () => Ji
+	var nh = l({
+		PayloadSchema: () => Gi,
+		ResultSchema: () => ch,
+		commandType: () => Ji,
+		create: () => Ki
 	});
-	const nh = x([
+	const oh = x([
 		"load",
 		"domcontentloaded",
 		"networkidle",
 		"commit"
-	]), zi = n({
+	]), Gi = n({
 		browser_id: i(),
 		tab_id: i(),
 		url: i(),
-		wait_until: nh.optional(),
+		wait_until: oh.optional(),
 		timeout_ms: u().int().positive().optional()
-	}), oh = n({ url: i().optional() }), Gi = "playwright_wait_for_url";
-	function Ji(e) {
-		return new m(Gi, zi, e);
+	}), ch = n({ url: i().optional() }), Ji = "playwright_wait_for_url";
+	function Ki(e) {
+		return new m(Ji, Gi, e);
 	}
-	var ch = l({
-		LoadStateSchema: () => Ki,
-		PayloadSchema: () => Yi,
-		ResultSchema: () => dh,
-		commandType: () => Xi,
-		create: () => Qi
+	var dh = l({
+		LoadStateSchema: () => Yi,
+		PayloadSchema: () => Xi,
+		ResultSchema: () => lh,
+		commandType: () => Qi,
+		create: () => en
 	});
-	const Ki = x([
+	const Yi = x([
 		"load",
 		"domcontentloaded",
 		"networkidle"
-	]), Yi = n({
+	]), Xi = n({
 		browser_id: i(),
 		tab_id: i(),
-		state: Ki.optional(),
+		state: Yi.optional(),
 		timeout_ms: u().int().positive().optional()
-	}), dh = n({}), Xi = "playwright_wait_for_load_state";
-	function Qi(e) {
-		return new m(Xi, Yi, e);
+	}), lh = n({}), Qi = "playwright_wait_for_load_state";
+	function en(e) {
+		return new m(Qi, Xi, e);
 	}
-	var lh = l({
-		PayloadSchema: () => en,
-		ResultSchema: () => uh,
-		commandType: () => tn,
-		create: () => an
+	var uh = l({
+		PayloadSchema: () => tn,
+		ResultSchema: () => hh,
+		commandType: () => an,
+		create: () => rn
 	});
-	const en = n({
+	const tn = n({
 		browser_id: i(),
 		tab_id: i(),
 		timeout_ms: u().int().nonnegative()
-	}), uh = n({}), tn = "playwright_wait_for_timeout";
-	function an(e) {
-		return new m(tn, en, e);
+	}), hh = n({}), an = "playwright_wait_for_timeout";
+	function rn(e) {
+		return new m(an, tn, e);
 	}
-	var hh = l({
-		PayloadSchema: () => rn,
-		ResultSchema: () => mh,
-		commandType: () => sn,
-		create: () => nn
+	var mh = l({
+		PayloadSchema: () => sn,
+		ResultSchema: () => ph,
+		commandType: () => nn,
+		create: () => on
 	});
-	const rn = n({
+	const sn = n({
 		browser_id: i(),
 		tab_id: i()
-	}), mh = n({ dom_snapshot: i() }), sn = "playwright_dom_snapshot";
-	function nn(e) {
-		return new m(sn, rn, e);
+	}), ph = n({ dom_snapshot: i() }), nn = "playwright_dom_snapshot";
+	function on(e) {
+		return new m(nn, sn, e);
 	}
-	var ph = l({
-		PayloadSchema: () => on,
-		ResultSchema: () => bh,
-		commandType: () => cn,
-		create: () => dn
+	var fh = l({
+		PayloadSchema: () => cn,
+		ResultSchema: () => gh,
+		commandType: () => dn,
+		create: () => ln
 	});
-	const fh = n({
+	const yh = n({
 		x: u(),
 		y: u(),
 		width: u(),
 		height: u()
-	}), yh = n({
+	}), _h = n({
 		primary: i().nullable().optional(),
 		candidates: g(i()),
 		frameSelectors: g(i()).optional()
-	}), _h = n({
+	}), bh = n({
 		nodeId: u().int().positive().nullable().optional(),
 		tagName: i(),
 		role: i().nullable().optional(),
 		visibleText: i().nullable().optional(),
 		ariaName: i().nullable().optional(),
 		testId: i().nullable().optional(),
-		boundingBox: fh.nullable().optional(),
+		boundingBox: yh.nullable().optional(),
 		preview: i(),
-		selector: yh
-	}), on = n({
+		selector: _h
+	}), cn = n({
 		browser_id: i(),
 		tab_id: i(),
 		x: u(),
 		y: u(),
 		include_non_interactable: k().optional()
-	}), bh = g(_h), cn = "playwright_element_info";
-	function dn(e) {
-		return new m(cn, on, e);
+	}), gh = g(bh), dn = "playwright_element_info";
+	function ln(e) {
+		return new m(dn, cn, e);
 	}
-	var gh = l({
-		PayloadSchema: () => ln,
-		ResultSchema: () => wh,
-		commandType: () => un,
-		create: () => hn
+	var wh = l({
+		PayloadSchema: () => un,
+		ResultSchema: () => vh,
+		commandType: () => hn,
+		create: () => mn
 	});
-	const ln = n({
+	const un = n({
 		browser_id: i(),
 		tab_id: i(),
 		x: u(),
 		y: u(),
 		include_non_interactable: k().optional()
-	}), wh = n({ data: i() }), un = "playwright_element_screenshot";
-	function hn(e) {
-		return new m(un, ln, e);
+	}), vh = n({ data: i() }), hn = "playwright_element_screenshot";
+	function mn(e) {
+		return new m(hn, un, e);
 	}
-	var vh = l({
-		PayloadSchema: () => mn,
-		ResultSchema: () => Sh,
-		commandType: () => pn,
-		create: () => fn
+	var Sh = l({
+		PayloadSchema: () => pn,
+		ResultSchema: () => xh,
+		commandType: () => fn,
+		create: () => yn
 	});
-	const mn = n({
+	const pn = n({
 		browser_id: i(),
 		tab_id: i(),
 		timeout_ms: u().int().positive().optional()
-	}), Sh = n({ download_id: i() }), pn = "playwright_wait_for_download";
-	function fn(e) {
-		return new m(pn, mn, e);
+	}), xh = n({ download_id: i() }), fn = "playwright_wait_for_download";
+	function yn(e) {
+		return new m(fn, pn, e);
 	}
-	var xh = l({
-		PayloadSchema: () => yn,
-		ResultSchema: () => Th,
-		commandType: () => _n,
-		create: () => bn
+	var Th = l({
+		PayloadSchema: () => _n,
+		ResultSchema: () => $h,
+		commandType: () => bn,
+		create: () => gn
 	});
-	const yn = n({
+	const _n = n({
 		browser_id: i(),
 		tab_id: i(),
 		download_id: i(),
 		timeout_ms: u().int().positive().optional()
-	}), Th = n({ path: i().nullable() }), _n = "playwright_download_path";
-	function bn(e) {
-		return new m(_n, yn, e);
+	}), $h = n({ path: i().nullable() }), bn = "playwright_download_path";
+	function gn(e) {
+		return new m(bn, _n, e);
 	}
-	var $h = l({
-		PayloadSchema: () => gn,
-		ResultSchema: () => kh,
-		commandType: () => wn,
-		create: () => vn
+	var kh = l({
+		PayloadSchema: () => wn,
+		ResultSchema: () => Rh,
+		commandType: () => vn,
+		create: () => Sn
 	});
-	const gn = n({
+	const wn = n({
 		browser_id: i(),
 		tab_id: i(),
 		timeout_ms: u().int().positive().optional()
-	}), kh = n({
+	}), Rh = n({
 		file_chooser_id: i(),
 		is_multiple: k()
-	}), wn = "playwright_wait_for_file_chooser";
-	function vn(e) {
-		return new m(wn, gn, e);
+	}), vn = "playwright_wait_for_file_chooser";
+	function Sn(e) {
+		return new m(vn, wn, e);
 	}
-	var Rh = l({
-		PayloadSchema: () => Sn,
-		ResultSchema: () => Ch,
-		commandType: () => xn,
-		create: () => Tn
+	var Ch = l({
+		PayloadSchema: () => xn,
+		ResultSchema: () => Ih,
+		commandType: () => Tn,
+		create: () => $n
 	});
-	const Sn = n({
+	const xn = n({
 		browser_id: i(),
 		tab_id: i(),
 		file_chooser_id: i(),
 		files: g(i()),
 		timeout_ms: u().int().positive().optional()
-	}), Ch = n({}), xn = "playwright_file_chooser_set_files";
-	function Tn(e) {
-		return new m(xn, Sn, e);
+	}), Ih = n({}), Tn = "playwright_file_chooser_set_files";
+	function $n(e) {
+		return new m(Tn, xn, e);
 	}
-	var Ih = l({
+	var Ph = l({
 		AtlasCommand: () => m,
-		BrowserUserClaimTab: () => dl,
-		BrowserUserGetTabContext: () => ul,
-		BrowserUserHistory: () => pl,
-		BrowserUserOpenTabs: () => hl,
-		CloseTab: () => Nd,
-		CreateTab: () => Id,
-		CuaClick: () => Gl,
-		CuaDoubleClick: () => Xl,
-		CuaDownloadMedia: () => Kl,
-		CuaDrag: () => au,
-		CuaKeypress: () => eu,
-		CuaMove: () => su,
-		CuaScroll: () => nu,
-		CuaType: () => cu,
-		DomCuaClick: () => lu,
-		DomCuaDoubleClick: () => pu,
-		DomCuaDownloadMedia: () => hu,
-		DomCuaGetVisibleDom: () => yu,
-		DomCuaKeypress: () => bu,
-		DomCuaScroll: () => wu,
-		DomCuaType: () => Su,
-		GetBrowser: () => gd,
-		GetBrowserDocumentation: () => $d,
-		GetBrowserForUrl: () => Rd,
-		GetDefaultBrowser: () => vd,
-		GetDocumentation: () => xd,
-		GetTab: () => Ed,
-		ListBrowsers: () => _d,
-		ListTabs: () => Wd,
-		ManualHandoff: () => Bd,
-		MarkTab: () => Md,
-		NameSession: () => Ud,
-		NavigateTab: () => tl,
-		NavigateTabBack: () => rl,
-		NavigateTabForward: () => il,
-		NavigateTabReload: () => ol,
-		PlaywrightDomSnapshot: () => hh,
-		PlaywrightDownloadPath: () => xh,
-		PlaywrightElementInfo: () => ph,
-		PlaywrightElementScreenshot: () => gh,
-		PlaywrightEvaluate: () => Wl,
-		PlaywrightFileChooserSetFiles: () => Rh,
-		PlaywrightLocatorAllTextContents: () => Gu,
-		PlaywrightLocatorClick: () => Tu,
-		PlaywrightLocatorCount: () => ju,
-		PlaywrightLocatorDblclick: () => ku,
-		PlaywrightLocatorDownloadMedia: () => Cu,
-		PlaywrightLocatorFill: () => Pu,
-		PlaywrightLocatorGetAttribute: () => eh,
-		PlaywrightLocatorInnerText: () => Xu,
-		PlaywrightLocatorIsEnabled: () => Wu,
-		PlaywrightLocatorIsVisible: () => Vu,
-		PlaywrightLocatorPress: () => Au,
-		PlaywrightLocatorPressSequentially: () => Du,
-		PlaywrightLocatorReadAll: () => ah,
-		PlaywrightLocatorSelectOption: () => Zu,
-		PlaywrightLocatorSetChecked: () => Uu,
-		PlaywrightLocatorTextContent: () => Ku,
-		PlaywrightLocatorWaitFor: () => Ou,
-		PlaywrightWaitForDownload: () => vh,
-		PlaywrightWaitForFileChooser: () => $h,
-		PlaywrightWaitForLoadState: () => ch,
-		PlaywrightWaitForTimeout: () => lh,
-		PlaywrightWaitForURL: () => ih,
-		RuntimeConfig: () => Ld,
-		SelectedTab: () => Vd,
-		TabAxAction: () => Vl,
-		TabAxGetState: () => Ul,
-		TabClipboardRead: () => Al,
-		TabClipboardReadText: () => Cl,
-		TabClipboardWrite: () => Ol,
-		TabClipboardWriteText: () => Pl,
-		TabContentExport: () => Sl,
-		TabContentExportGSuite: () => Tl,
-		TabContentExportYouTubeTranscript: () => kl,
-		TabDevLogs: () => yl,
-		TabGetJsDialog: () => bl,
-		TabHandleJsDialog: () => wl,
-		TabScreenshot: () => Zl,
-		TabsContent: () => Gd,
-		WebMcpInvokeTool: () => Qd,
-		WebMcpListTools: () => Xd
-	}), $n = class {
+		BrowserUserClaimTab: () => ll,
+		BrowserUserGetTabContext: () => hl,
+		BrowserUserHistory: () => fl,
+		BrowserUserOpenTabs: () => ml,
+		CloseTab: () => Dd,
+		CreateTab: () => Pd,
+		CuaClick: () => Jl,
+		CuaDoubleClick: () => Ql,
+		CuaDownloadMedia: () => Yl,
+		CuaDrag: () => ru,
+		CuaKeypress: () => tu,
+		CuaMove: () => iu,
+		CuaScroll: () => ou,
+		CuaType: () => du,
+		DomCuaClick: () => uu,
+		DomCuaDoubleClick: () => fu,
+		DomCuaDownloadMedia: () => mu,
+		DomCuaGetVisibleDom: () => _u,
+		DomCuaKeypress: () => gu,
+		DomCuaScroll: () => vu,
+		DomCuaType: () => xu,
+		GetBrowser: () => wd,
+		GetBrowserDocumentation: () => kd,
+		GetBrowserForUrl: () => Cd,
+		GetDefaultBrowser: () => Sd,
+		GetDocumentation: () => Td,
+		GetTab: () => Ad,
+		ListBrowsers: () => bd,
+		ListTabs: () => zd,
+		ManualHandoff: () => jd,
+		MarkTab: () => Od,
+		NameSession: () => Fd,
+		NavigateTab: () => al,
+		NavigateTabBack: () => sl,
+		NavigateTabForward: () => nl,
+		NavigateTabReload: () => cl,
+		PlaywrightDomSnapshot: () => mh,
+		PlaywrightDownloadPath: () => Th,
+		PlaywrightElementInfo: () => fh,
+		PlaywrightElementScreenshot: () => wh,
+		PlaywrightEvaluate: () => zl,
+		PlaywrightFileChooserSetFiles: () => Ch,
+		PlaywrightLocatorAllTextContents: () => Ju,
+		PlaywrightLocatorClick: () => $u,
+		PlaywrightLocatorCount: () => Lu,
+		PlaywrightLocatorDblclick: () => Ru,
+		PlaywrightLocatorDownloadMedia: () => Iu,
+		PlaywrightLocatorFill: () => Eu,
+		PlaywrightLocatorGetAttribute: () => th,
+		PlaywrightLocatorInnerText: () => Qu,
+		PlaywrightLocatorIsEnabled: () => zu,
+		PlaywrightLocatorIsVisible: () => Hu,
+		PlaywrightLocatorPress: () => Nu,
+		PlaywrightLocatorPressSequentially: () => Mu,
+		PlaywrightLocatorReadAll: () => rh,
+		PlaywrightLocatorSelectOption: () => qu,
+		PlaywrightLocatorSetChecked: () => Fu,
+		PlaywrightLocatorTextContent: () => Yu,
+		PlaywrightLocatorWaitFor: () => Bu,
+		PlaywrightWaitForDownload: () => Sh,
+		PlaywrightWaitForFileChooser: () => kh,
+		PlaywrightWaitForLoadState: () => dh,
+		PlaywrightWaitForTimeout: () => uh,
+		PlaywrightWaitForURL: () => nh,
+		RuntimeConfig: () => Zd,
+		SelectedTab: () => Hd,
+		TabAxAction: () => Hl,
+		TabAxGetState: () => Fl,
+		TabClipboardRead: () => Nl,
+		TabClipboardReadText: () => Il,
+		TabClipboardWrite: () => Bl,
+		TabClipboardWriteText: () => El,
+		TabContentExport: () => xl,
+		TabContentExportGSuite: () => $l,
+		TabContentExportYouTubeTranscript: () => Rl,
+		TabDevLogs: () => _l,
+		TabGetJsDialog: () => gl,
+		TabHandleJsDialog: () => vl,
+		TabScreenshot: () => ql,
+		TabsContent: () => Jd,
+		WebMcpInvokeTool: () => el,
+		WebMcpListTools: () => Qd
+	}), kn = class {
 		#e;
 		#a;
 		#t;
@@ -4460,16 +4467,16 @@
 		async get(e) {
 			return await this.#e.send({ command: ta({ name: e }) });
 		}
-	}, kn = class {
+	}, Rn = class {
 		constructor({ createBrowser: e, onBrowserUsed: t, transport: a }) {
 			if (!a) throw new Error("Agent requires a transport instance");
-			this.documentation = new st(a), this.browsers = new $n({
+			this.documentation = new st(a), this.browsers = new kn({
 				createBrowser: e,
 				onBrowserUsed: t,
 				transport: a
 			});
 		}
-	}, Rn = class {
+	}, Cn = class {
 		#e;
 		#a;
 		#t;
@@ -4481,14 +4488,14 @@
 			return this.#a(e);
 		}
 		async selected() {
-			const e = await this.#t.send({ command: Pa({ browser_id: this.#e }) });
+			const e = await this.#t.send({ command: Ea({ browser_id: this.#e }) });
 			if (e.id) return this.#a(e);
 		}
 		async list() {
-			return (await this.#t.send({ command: Na({ browser_id: this.#e }) })).tabs;
+			return (await this.#t.send({ command: Da({ browser_id: this.#e }) })).tabs;
 		}
 		async content(e) {
-			const t = Ba({
+			const t = ja({
 				browser_id: this.#e,
 				urls: e.urls,
 				content_type: e.contentType,
@@ -4505,12 +4512,12 @@
 			return this.#a(t);
 		}
 	};
-	const Ph = () => \`req-\${Date.now().toString(16)}-\${Math.random().toString(16).slice(2)}\`, Ce = (e) => {
+	const Eh = () => \`req-\${Date.now().toString(16)}-\${Math.random().toString(16).slice(2)}\`, Ce = (e) => {
 		const t = atob(e), a = new Uint8Array(t.length);
 		for (let r = 0; r < t.length; r += 1) a[r] = t.charCodeAt(r);
 		return a;
 	};
-	var Cn = class {
+	var In = class {
 		#e;
 		#a;
 		#t;
@@ -4518,13 +4525,13 @@
 			this.#e = e, this.#a = t, this.#t = a;
 		}
 		async openTabs() {
-			return (await this.#t.send({ command: lr({ browser_id: this.#e }) })).tabs;
+			return (await this.#t.send({ command: ur({ browser_id: this.#e }) })).tabs;
 		}
 		async getTabContext(e) {
-			const t = await this.#t.send({ command: or({
+			const t = await this.#t.send({ command: cr({
 				browser_id: this.#e,
-				tab_id: In(e, "getTabContext")
-			}) }), a = ir.parse(t);
+				tab_id: Pn(e, "getTabContext")
+			}) }), a = nr.parse(t);
 			return a.kind !== "document" ? a : {
 				data: Ce(a.dataBase64),
 				fileName: a.fileName,
@@ -4535,35 +4542,35 @@
 			};
 		}
 		async claimTab(e) {
-			const t = In(e, "claimTab"), a = await this.#t.send({ command: rr({
+			const t = Pn(e, "claimTab"), a = await this.#t.send({ command: sr({
 				browser_id: this.#e,
 				tab_id: t
 			}) });
 			return this.#a(a);
 		}
 	};
-	const In = (e, t) => {
+	const Pn = (e, t) => {
 		if (typeof e == "string") {
 			if (e.length === 0) throw new Error(\`browser.user.\${t} received an empty tab id\`);
 			return e;
 		}
 		if (e && typeof e == "object" && typeof e.id == "string") return e.id;
 		throw new Error(\`browser.user.\${t} expects a tab returned by browser.user.openTabs() or a tab id\`);
-	}, Pn = Object.getOwnPropertyDescriptor(RegExp.prototype, "source")?.get;
+	}, En = Object.getOwnPropertyDescriptor(RegExp.prototype, "source")?.get;
 	function Ie(e) {
-		if (e == null || typeof e != "object" || !Pn) return !1;
+		if (e == null || typeof e != "object" || !En) return !1;
 		try {
-			return Reflect.apply(Pn, e, []), !0;
+			return Reflect.apply(En, e, []), !0;
 		} catch {
 			return !1;
 		}
 	}
-	function En(e) {
+	function An(e) {
 		if (e == null || typeof e != "object") return !1;
 		const t = Object.getPrototypeOf(e);
 		return t === null || Object.getPrototypeOf(t) === null;
 	}
-	function Eh(e, t) {
+	function Ah(e, t) {
 		if (e == null || typeof e != "object") return !1;
 		try {
 			return "message" in e && e.message === t;
@@ -4577,12 +4584,12 @@
 		return e instanceof Error && e.stack && (r.stack = \`\${r.name}: \${r.message}
 \${e.stack}\`), r;
 	}
-	function Ah(e, t) {
+	function Nh(e, t) {
 		const a = e instanceof Error ? e.message : String(e);
 		return /strict mode violation/i.test(a) ? "multiple_matches" : /intercept|receives pointer events/i.test(a) ? "intercepted" : t.matchCount === 0 ? "no_matches" : t.visibleCount === 0 ? "no_visible_match" : "action_failed";
 	}
-	function Nh(e, t) {
-		const a = Nn(t);
+	function Dh(e, t) {
+		const a = Dn(t);
 		if (typeof e == "string") {
 			if (e.length === 0) throw new Error("playwright.evaluate requires a pageFunction");
 			return \`const arg = \${a};
@@ -4596,8 +4603,8 @@ return (\${e});\`;
 \`);
 		throw new Error("playwright.evaluate requires a string or function");
 	}
-	function An(e, t, a) {
-		const r = Nn(t), s = a === "all" ? "locator.evaluateAll" : "locator.evaluate";
+	function Nn(e, t, a) {
+		const r = Dn(t), s = a === "all" ? "locator.evaluateAll" : "locator.evaluate";
 		if (typeof e == "string") {
 			if (e.length === 0) throw new Error(\`\${s} requires a pageFunction\`);
 			return \`const arg = \${r};
@@ -4611,7 +4618,7 @@ return (\${e});\`;
 \`);
 		throw new Error(\`\${s} requires a string or function\`);
 	}
-	function Nn(e) {
+	function Dn(e) {
 		if (e === void 0) return "undefined";
 		try {
 			const t = JSON.stringify(e);
@@ -4621,7 +4628,7 @@ return (\${e});\`;
 		}
 		throw new Error("playwright.evaluate arg must be JSON-serializable");
 	}
-	function Dn(e, t) {
+	function Mn(e, t) {
 		const { x: a, y: r } = t;
 		if (!Number.isFinite(a) || !Number.isFinite(r)) throw new Error(\`\${e} requires numeric x and y coordinates\`);
 		return {
@@ -4629,7 +4636,7 @@ return (\${e});\`;
 			y: r
 		};
 	}
-	function Dh(e) {
+	function Mh(e) {
 		const t = Array.isArray(e) ? e : [e];
 		if (!t.length) throw new Error("locator.selectOption requires at least one value");
 		return t.map((a) => {
@@ -4652,7 +4659,7 @@ return (\${e});\`;
 			return r;
 		});
 	}
-	const Mn = Symbol("browserAuthSelectorDetails");
+	const On = Symbol("browserAuthSelectorDetails");
 	var oe = class I {
 		#e;
 		#a;
@@ -4665,9 +4672,9 @@ return (\${e});\`;
 			this.#e = t, this.#a = a, this.#t = r, this.#r = s, this.#s = c, this.#i = o, this.#n = d;
 		}
 		static browserAuthSelector(t) {
-			return t[Mn]();
+			return t[On]();
 		}
-		[Mn]() {
+		[On]() {
 			return {
 				browserId: this.#e,
 				selector: this.#t,
@@ -4677,7 +4684,7 @@ return (\${e});\`;
 		async click(t = {}) {
 			try {
 				await this.#r.send({
-					command: Xs({
+					command: Qs({
 						browser_id: this.#e,
 						tab_id: this.#a,
 						selector: this.#t,
@@ -4695,7 +4702,7 @@ return (\${e});\`;
 		async dblclick(t = {}) {
 			try {
 				await this.#r.send({
-					command: ti({
+					command: ai({
 						browser_id: this.#e,
 						tab_id: this.#a,
 						selector: this.#t,
@@ -4711,10 +4718,10 @@ return (\${e});\`;
 			}
 		}
 		async selectOption(t, { timeoutMs: a } = {}) {
-			const r = Dh(t);
+			const r = Mh(t);
 			try {
 				await this.#r.send({
-					command: Si({
+					command: xi({
 						browser_id: this.#e,
 						tab_id: this.#a,
 						selector: this.#t,
@@ -4767,7 +4774,7 @@ return (\${e});\`;
 			if (t == null) throw new Error("locator.pressSequentially requires a value");
 			try {
 				await this.#r.send({
-					command: hi({
+					command: mi({
 						browser_id: this.#e,
 						tab_id: this.#a,
 						selector: this.#t,
@@ -4784,7 +4791,7 @@ return (\${e});\`;
 			if (t == null) throw new Error("locator.press requires a value");
 			try {
 				await this.#r.send({
-					command: di({
+					command: li({
 						browser_id: this.#e,
 						tab_id: this.#a,
 						selector: this.#t,
@@ -4801,7 +4808,7 @@ return (\${e});\`;
 			if (typeof t != "boolean") throw new Error("locator.setChecked requires a boolean");
 			try {
 				await this.#r.send({
-					command: $i({
+					command: ki({
 						browser_id: this.#e,
 						tab_id: this.#a,
 						selector: this.#t,
@@ -4825,7 +4832,7 @@ return (\${e});\`;
 			if (!t) throw new Error("locator.waitFor requires a state");
 			try {
 				await this.#r.send({
-					command: fi({
+					command: yi({
 						browser_id: this.#e,
 						tab_id: this.#a,
 						selector: this.#t,
@@ -4839,14 +4846,14 @@ return (\${e});\`;
 			}
 		}
 		async count() {
-			return (await this.#r.send({ command: bi({
+			return (await this.#r.send({ command: gi({
 				browser_id: this.#e,
 				tab_id: this.#a,
 				selector: this.#t
 			}) })).count;
 		}
 		async all() {
-			const t = await this.count(), a = new Mh({
+			const t = await this.count(), a = new Oh({
 				browserId: this.#e,
 				tabId: this.#a,
 				selector: this.#t,
@@ -4864,7 +4871,7 @@ return (\${e});\`;
 		async textContent({ timeoutMs: t } = {}) {
 			const a = await this.cachedRead(t);
 			return a ? a.text_content : (await this.#r.send({
-				command: Bi({
+				command: ji({
 					browser_id: this.#e,
 					tab_id: this.#a,
 					selector: this.#t,
@@ -4876,7 +4883,7 @@ return (\${e});\`;
 		async innerText({ timeoutMs: t } = {}) {
 			const a = await this.cachedRead(t);
 			return a ? a.inner_text : (await this.#r.send({
-				command: Zi({
+				command: qi({
 					browser_id: this.#e,
 					tab_id: this.#a,
 					selector: this.#t,
@@ -4889,7 +4896,7 @@ return (\${e});\`;
 			if (!t) throw new Error("locator.getAttribute requires a name");
 			const r = await this.cachedRead(a);
 			return r ? Object.prototype.hasOwnProperty.call(r.attributes, t) ? r.attributes[t] ?? null : null : (await this.#r.send({
-				command: Fi({
+				command: Vi({
 					browser_id: this.#e,
 					tab_id: this.#a,
 					selector: this.#t,
@@ -4900,14 +4907,14 @@ return (\${e});\`;
 			})).value;
 		}
 		async isVisible() {
-			return (await this.#r.send({ command: Ci({
+			return (await this.#r.send({ command: Ii({
 				browser_id: this.#e,
 				tab_id: this.#a,
 				selector: this.#t
 			}) })).value;
 		}
 		async isEnabled() {
-			return (await this.#r.send({ command: Ei({
+			return (await this.#r.send({ command: Ai({
 				browser_id: this.#e,
 				tab_id: this.#a,
 				selector: this.#t
@@ -4915,7 +4922,7 @@ return (\${e});\`;
 		}
 		async allTextContents({ timeoutMs: t } = {}) {
 			return (await this.#r.send({
-				command: Di({
+				command: Mi({
 					browser_id: this.#e,
 					tab_id: this.#a,
 					selector: this.#t,
@@ -4928,7 +4935,7 @@ return (\${e});\`;
 			return (await this.#r.send({
 				command: Re({
 					browser_id: this.#e,
-					script: An(t, a),
+					script: Nn(t, a),
 					selector: this.#t,
 					tab_id: this.#a,
 					timeout_ms: r?.timeoutMs
@@ -4940,7 +4947,7 @@ return (\${e});\`;
 			return (await this.#r.send({
 				command: Re({
 					browser_id: this.#e,
-					script: An(t, a, "all"),
+					script: Nn(t, a, "all"),
 					selector: this.#t,
 					selector_mode: "all",
 					tab_id: this.#a,
@@ -4966,7 +4973,7 @@ return (\${e});\`;
 				}), void 0, { timeoutMs: 1e3 });
 				return Pe(t, \`\${r}
 Locator diagnostics: \${JSON.stringify({
-					kind: Ah(t, s),
+					kind: Nh(t, s),
 					action: a,
 					locator: this.#t,
 					...s,
@@ -4979,7 +4986,7 @@ Locator diagnostics: \${JSON.stringify({
 		async downloadMedia({ timeoutMs: t = 12e4 } = {}) {
 			try {
 				const a = await this.#r.send({
-					command: si({
+					command: ii({
 						browser_id: this.#e,
 						tab_id: this.#a,
 						selector: this.#t,
@@ -5146,7 +5153,7 @@ Locator diagnostics: \${JSON.stringify({
 			if (!(t instanceof I)) throw new Error(\`\${a} requires a PlaywrightLocator\`);
 			if (t.#e !== this.#e || t.#a !== this.#a) throw new Error("Locators must belong to the same tab");
 		}
-	}, Mh = class {
+	}, Oh = class {
 		#e;
 		#a;
 		#t;
@@ -5167,7 +5174,7 @@ Locator diagnostics: \${JSON.stringify({
 		}
 		async #i(e, t) {
 			return (await this.#r.send({
-				command: Wi({
+				command: zi({
 					browser_id: this.#e,
 					tab_id: this.#a,
 					selector: this.#t,
@@ -5181,15 +5188,15 @@ Locator diagnostics: \${JSON.stringify({
 	function q(e, t) {
 		return e ? t ? \`\${e} >> \${t}\` : e : t || void 0;
 	}
-	function On(e) {
+	function Bn(e) {
 		const t = e;
 		return e.unicode || t.unicodeSets ? String(e) : String(e).replace(/(^|[^\\\\])(\\\\\\\\)*(["'\`])/g, "$1$2\\\\\\\\$3").replace(/>>/g, "\\\\>\\\\>");
 	}
 	function Ee(e, t) {
-		return typeof e != "string" ? On(e) : \`\${JSON.stringify(e)}\${t ? "s" : "i"}\`;
+		return typeof e != "string" ? Bn(e) : \`\${JSON.stringify(e)}\${t ? "s" : "i"}\`;
 	}
 	function it(e, t) {
-		return typeof e != "string" ? On(e) : \`"\${e.replace(/\\\\/g, "\\\\\\\\").replace(/["]/g, "\\\\\\"")}"\${t ? "s" : "i"}\`;
+		return typeof e != "string" ? Bn(e) : \`"\${e.replace(/\\\\/g, "\\\\\\\\").replace(/["]/g, "\\\\\\"")}"\${t ? "s" : "i"}\`;
 	}
 	function nt(e, t) {
 		if (!e) throw new Error("getByRole requires a role");
@@ -5212,7 +5219,7 @@ Locator diagnostics: \${JSON.stringify({
 		if (!e) throw new Error("getByTestId requires a testId");
 		return \`internal:testid=[data-testid=\${it(e, !0)}]\`;
 	}
-	var Bn = class Mc {
+	var jn = class Oc {
 		#e;
 		#a;
 		#t;
@@ -5232,7 +5239,7 @@ Locator diagnostics: \${JSON.stringify({
 		}
 		frameLocator(t) {
 			if (!t) throw new Error("frameLocator.frameLocator requires a selector");
-			return new Mc({
+			return new Oc({
 				browserId: this.#e,
 				tabId: this.#a,
 				frameSelector: \`\${this.#t} >> internal:control=enter-frame >> \${t}\`,
@@ -5254,7 +5261,7 @@ Locator diagnostics: \${JSON.stringify({
 		getByTestId(t) {
 			return this.locator(lt(t));
 		}
-	}, jn = class {
+	}, Ln = class {
 		#e;
 		#a;
 		#t;
@@ -5264,7 +5271,7 @@ Locator diagnostics: \${JSON.stringify({
 		}
 		async path({ timeoutMs: e } = {}) {
 			return (await this.#r.send({
-				command: bn({
+				command: gn({
 					browser_id: this.#e,
 					tab_id: this.#a,
 					download_id: this.#t,
@@ -5273,7 +5280,7 @@ Locator diagnostics: \${JSON.stringify({
 				timeoutMs: e
 			})).path ?? null;
 		}
-	}, Ln = class {
+	}, Zn = class {
 		#e;
 		#a;
 		#t;
@@ -5291,7 +5298,7 @@ Locator diagnostics: \${JSON.stringify({
 			if (!a.length) throw new Error("fileChooser.setFiles requires at least one file");
 			try {
 				await this.#s.send({
-					command: Tn({
+					command: $n({
 						browser_id: this.#e,
 						tab_id: this.#a,
 						file_chooser_id: this.#t,
@@ -5304,7 +5311,7 @@ Locator diagnostics: \${JSON.stringify({
 				throw Pe(r, "fileChooser.setFiles failed");
 			}
 		}
-	}, Zn = class {
+	}, qn = class {
 		#e;
 		#a;
 		#t;
@@ -5327,7 +5334,7 @@ Locator diagnostics: \${JSON.stringify({
 			return (await this.#t.send({
 				command: Re({
 					browser_id: this.#e,
-					script: Nh(e, t),
+					script: Dh(e, t),
 					tab_id: this.#a,
 					timeout_ms: a?.timeoutMs
 				}),
@@ -5360,7 +5367,7 @@ Locator diagnostics: \${JSON.stringify({
 		}
 		frameLocator(e) {
 			if (!e) throw new Error("playwright.frameLocator requires a selector");
-			return new Bn({
+			return new jn({
 				browserId: this.#e,
 				tabId: this.#a,
 				frameSelector: e,
@@ -5370,7 +5377,7 @@ Locator diagnostics: \${JSON.stringify({
 		async waitForURL(e, t = {}) {
 			if (!e) throw new Error("playwright.waitForURL requires a url");
 			await this.#t.send({
-				command: Ji({
+				command: Ki({
 					browser_id: this.#e,
 					tab_id: this.#a,
 					url: e,
@@ -5382,7 +5389,7 @@ Locator diagnostics: \${JSON.stringify({
 		}
 		async waitForLoadState(e = {}) {
 			await this.#t.send({
-				command: Qi({
+				command: en({
 					browser_id: this.#e,
 					tab_id: this.#a,
 					state: e.state,
@@ -5394,7 +5401,7 @@ Locator diagnostics: \${JSON.stringify({
 		async waitForTimeout(e) {
 			if (!Number.isInteger(e) || e < 0) throw new Error("playwright.waitForTimeout requires a non-negative integer");
 			await this.#t.send({
-				command: an({
+				command: rn({
 					browser_id: this.#e,
 					tab_id: this.#a,
 					timeout_ms: e
@@ -5409,14 +5416,14 @@ Locator diagnostics: \${JSON.stringify({
 		async #r(e, t) {
 			if (e === "download") {
 				const a = t.timeoutMs ?? 12e4, r = await this.#t.send({
-					command: fn({
+					command: yn({
 						browser_id: this.#e,
 						tab_id: this.#a,
 						timeout_ms: a
 					}),
 					timeoutMs: a
 				});
-				return new jn({
+				return new Ln({
 					browserId: this.#e,
 					tabId: this.#a,
 					downloadId: r.download_id,
@@ -5425,14 +5432,14 @@ Locator diagnostics: \${JSON.stringify({
 			}
 			if (e === "filechooser") {
 				const a = await this.#t.send({
-					command: vn({
+					command: Sn({
 						browser_id: this.#e,
 						tab_id: this.#a,
 						timeout_ms: t.timeoutMs
 					}),
 					timeoutMs: t.timeoutMs
 				});
-				return new Ln({
+				return new Zn({
 					browserId: this.#e,
 					tabId: this.#a,
 					fileChooserId: a.file_chooser_id,
@@ -5453,8 +5460,8 @@ Locator diagnostics: \${JSON.stringify({
 			return s;
 		}
 		async elementInfo(e) {
-			const t = Dn("playwright.elementInfo", e);
-			return await this.#t.send({ command: dn({
+			const t = Mn("playwright.elementInfo", e);
+			return await this.#t.send({ command: ln({
 				browser_id: this.#e,
 				tab_id: this.#a,
 				x: t.x,
@@ -5463,8 +5470,8 @@ Locator diagnostics: \${JSON.stringify({
 			}) });
 		}
 		async elementScreenshot(e) {
-			const t = Dn("playwright.elementScreenshot", e);
-			return Ce((await this.#t.send({ command: hn({
+			const t = Mn("playwright.elementScreenshot", e);
+			return Ce((await this.#t.send({ command: mn({
 				browser_id: this.#e,
 				tab_id: this.#a,
 				x: t.x,
@@ -5473,12 +5480,12 @@ Locator diagnostics: \${JSON.stringify({
 			}) })).data);
 		}
 		async domSnapshot() {
-			return (await this.#t.send({ command: nn({
+			return (await this.#t.send({ command: on({
 				browser_id: this.#e,
 				tab_id: this.#a
 			}) })).dom_snapshot;
 		}
-	}, qn = class {
+	}, Un = class {
 		#e;
 		#a;
 		#t;
@@ -5486,14 +5493,14 @@ Locator diagnostics: \${JSON.stringify({
 			this.#e = e, this.#a = t, this.#t = a;
 		}
 		async get_visible_dom() {
-			return this.#t.send({ command: Zs({
+			return this.#t.send({ command: qs({
 				browser_id: this.#e,
 				tab_id: this.#a
 			}) });
 		}
 		async click(e) {
 			const t = ut(e?.node_id, "dom_cua.click");
-			await this.#t.send({ command: Es({
+			await this.#t.send({ command: As({
 				browser_id: this.#e,
 				tab_id: this.#a,
 				node_id: t
@@ -5501,7 +5508,7 @@ Locator diagnostics: \${JSON.stringify({
 		}
 		async double_click(e) {
 			const t = ut(e?.node_id, "dom_cua.double_click");
-			await this.#t.send({ command: Bs({
+			await this.#t.send({ command: js({
 				browser_id: this.#e,
 				tab_id: this.#a,
 				node_id: t
@@ -5509,8 +5516,8 @@ Locator diagnostics: \${JSON.stringify({
 		}
 		async scroll({ node_id: e, x: t, y: a }) {
 			if (typeof t != "number" || typeof a != "number") throw new Error("dom_cua.scroll requires x and y numbers");
-			const r = e === void 0 ? void 0 : Un(e, "dom_cua.scroll");
-			await this.#t.send({ command: Ws({
+			const r = e === void 0 ? void 0 : Fn(e, "dom_cua.scroll");
+			await this.#t.send({ command: zs({
 				browser_id: this.#e,
 				tab_id: this.#a,
 				node_id: r,
@@ -5520,7 +5527,7 @@ Locator diagnostics: \${JSON.stringify({
 		}
 		async type({ text: e }) {
 			if (typeof e != "string") throw new Error("dom_cua.type requires text");
-			await this.#t.send({ command: Js({
+			await this.#t.send({ command: Ks({
 				browser_id: this.#e,
 				tab_id: this.#a,
 				text: e
@@ -5528,7 +5535,7 @@ Locator diagnostics: \${JSON.stringify({
 		}
 		async keypress(e) {
 			if (!Array.isArray(e?.keys) || e.keys.length === 0) throw new Error("dom_cua.keypress requires a non-empty keys array");
-			await this.#t.send({ command: Fs({
+			await this.#t.send({ command: Vs({
 				browser_id: this.#e,
 				tab_id: this.#a,
 				keys: e.keys
@@ -5537,7 +5544,7 @@ Locator diagnostics: \${JSON.stringify({
 		async downloadMedia(e) {
 			const t = ut(e?.node_id, "dom_cua.downloadMedia");
 			await this.#t.send({
-				command: Ds({
+				command: Ms({
 					browser_id: this.#e,
 					tab_id: this.#a,
 					node_id: t,
@@ -5549,14 +5556,14 @@ Locator diagnostics: \${JSON.stringify({
 	};
 	function ut(e, t) {
 		if (e === void 0) throw new Error(\`\${t} requires a node_id\`);
-		return Un(e, t);
+		return Fn(e, t);
 	}
-	function Un(e, t) {
+	function Fn(e, t) {
 		const a = te.safeParse(e);
 		if (!a.success) throw new Error(\`\${t} \${a.error.issues[0]?.message ?? "has an invalid node_id"}\`);
 		return a.data;
 	}
-	var Fn = class {
+	var Vn = class {
 		#e;
 		#a;
 		#t;
@@ -5565,7 +5572,7 @@ Locator diagnostics: \${JSON.stringify({
 		}
 		async click(e) {
 			if (typeof e?.x != "number" || typeof e?.y != "number") throw new Error("cua.click requires x and y");
-			await this.#t.send({ command: os({
+			await this.#t.send({ command: cs({
 				browser_id: this.#e,
 				tab_id: this.#a,
 				x: e.x,
@@ -5576,7 +5583,7 @@ Locator diagnostics: \${JSON.stringify({
 		}
 		async scroll(e) {
 			if (typeof e?.x != "number" || typeof e?.y != "number" || typeof e?.scrollX != "number" || typeof e?.scrollY != "number") throw new Error("cua.scroll requires x, y, scrollX, and scrollY");
-			await this.#t.send({ command: $s({
+			await this.#t.send({ command: ks({
 				browser_id: this.#e,
 				tab_id: this.#a,
 				x: e.x,
@@ -5588,7 +5595,7 @@ Locator diagnostics: \${JSON.stringify({
 		}
 		async double_click(e) {
 			if (typeof e?.x != "number" || typeof e?.y != "number") throw new Error("cua.double_click requires x and y");
-			await this.#t.send({ command: ms({
+			await this.#t.send({ command: ps({
 				browser_id: this.#e,
 				tab_id: this.#a,
 				x: e.x,
@@ -5598,7 +5605,7 @@ Locator diagnostics: \${JSON.stringify({
 		}
 		async type(e) {
 			if (typeof e?.text != "string") throw new Error("cua.type requires text");
-			await this.#t.send({ command: Cs({
+			await this.#t.send({ command: Is({
 				browser_id: this.#e,
 				tab_id: this.#a,
 				text: e.text
@@ -5606,7 +5613,7 @@ Locator diagnostics: \${JSON.stringify({
 		}
 		async keypress(e) {
 			if (!Array.isArray(e?.keys) || e.keys.length === 0) throw new Error("cua.keypress requires a non-empty keys array");
-			await this.#t.send({ command: ys({
+			await this.#t.send({ command: _s({
 				browser_id: this.#e,
 				tab_id: this.#a,
 				keys: e.keys
@@ -5614,7 +5621,7 @@ Locator diagnostics: \${JSON.stringify({
 		}
 		async drag(e) {
 			if (!Array.isArray(e?.path) || e.path.length === 0 || e.path.some((t) => typeof t?.x != "number" || typeof t?.y != "number")) throw new Error("cua.drag requires a non-empty path of {x, y} points");
-			await this.#t.send({ command: gs({
+			await this.#t.send({ command: ws({
 				browser_id: this.#e,
 				tab_id: this.#a,
 				path: e.path,
@@ -5623,7 +5630,7 @@ Locator diagnostics: \${JSON.stringify({
 		}
 		async move(e) {
 			if (typeof e?.x != "number" || typeof e?.y != "number") throw new Error("cua.move requires x and y");
-			await this.#t.send({ command: Ss({
+			await this.#t.send({ command: xs({
 				browser_id: this.#e,
 				tab_id: this.#a,
 				x: e.x,
@@ -5634,7 +5641,7 @@ Locator diagnostics: \${JSON.stringify({
 		async downloadMedia(e) {
 			if (typeof e?.x != "number" || typeof e?.y != "number") throw new Error("cua.downloadMedia requires x and y");
 			await this.#t.send({
-				command: ls({
+				command: us({
 					browser_id: this.#e,
 					tab_id: this.#a,
 					x: e.x,
@@ -5644,7 +5651,7 @@ Locator diagnostics: \${JSON.stringify({
 				timeoutMs: e.timeoutMs
 			});
 		}
-	}, Vn = class {
+	}, Hn = class {
 		#e;
 		#a;
 		#t;
@@ -5739,7 +5746,7 @@ Locator diagnostics: \${JSON.stringify({
 			});
 		}
 		async #r(e, t) {
-			const a = await this.#t.send({ command: Yr({
+			const a = await this.#t.send({ command: Xr({
 				browser_id: this.#e,
 				tab_id: this.#a,
 				content: e === "state" ? "axState" : e === "screenshot" ? "screenshot" : "axStateAndScreenshot",
@@ -5772,37 +5779,11 @@ Locator diagnostics: \${JSON.stringify({
 			};
 		}
 		async #s(e) {
-			await this.#t.send({ command: as({
+			await this.#t.send({ command: rs({
 				browser_id: this.#e,
 				tab_id: this.#a,
 				action: e
 			}) });
-		}
-	}, Hn = class {
-		#e;
-		#a;
-		#t;
-		constructor({ browserId: e, tabId: t, transport: a }) {
-			this.#e = e, this.#a = t, this.#t = a;
-		}
-		async export() {
-			return (await this.#t.send({ command: kr({
-				browser_id: this.#e,
-				tab_id: this.#a
-			}) })).path;
-		}
-		async exportGsuite(e) {
-			return (await this.#t.send({ command: Pr({
-				browser_id: this.#e,
-				tab_id: this.#a,
-				format: e
-			}) })).path;
-		}
-		async exportYouTubeTranscript() {
-			return (await this.#t.send({ command: Nr({
-				browser_id: this.#e,
-				tab_id: this.#a
-			}) })).path;
 		}
 	}, Wn = class {
 		#e;
@@ -5811,22 +5792,48 @@ Locator diagnostics: \${JSON.stringify({
 		constructor({ browserId: e, tabId: t, transport: a }) {
 			this.#e = e, this.#a = t, this.#t = a;
 		}
+		async export() {
+			return (await this.#t.send({ command: Rr({
+				browser_id: this.#e,
+				tab_id: this.#a
+			}) })).path;
+		}
+		async exportGsuite(e) {
+			return (await this.#t.send({ command: Er({
+				browser_id: this.#e,
+				tab_id: this.#a,
+				format: e
+			}) })).path;
+		}
+		async exportYouTubeTranscript() {
+			return (await this.#t.send({ command: Dr({
+				browser_id: this.#e,
+				tab_id: this.#a
+			}) })).path;
+		}
+	}, zn = class {
+		#e;
+		#a;
+		#t;
+		constructor({ browserId: e, tabId: t, transport: a }) {
+			this.#e = e, this.#a = t, this.#t = a;
+		}
 		async readText() {
-			return (await this.#t.send({ command: Or({
+			return (await this.#t.send({ command: Br({
 				browser_id: this.#e,
 				tab_id: this.#a
 			}) })).text;
 		}
 		async writeText(e) {
 			if (e == null) throw new Error("tab.clipboard.writeText requires text");
-			await this.#t.send({ command: Lr({
+			await this.#t.send({ command: Zr({
 				browser_id: this.#e,
 				tab_id: this.#a,
 				text: e
 			}) });
 		}
 		async read() {
-			return (await this.#t.send({ command: Ur({
+			return (await this.#t.send({ command: Fr({
 				browser_id: this.#e,
 				tab_id: this.#a
 			}) })).items.map((e) => ({
@@ -5840,7 +5847,7 @@ Locator diagnostics: \${JSON.stringify({
 		}
 		async write(e) {
 			if (!Array.isArray(e) || e.length === 0) throw new Error("tab.clipboard.write requires at least one clipboard item");
-			await this.#t.send({ command: Hr({
+			await this.#t.send({ command: Wr({
 				browser_id: this.#e,
 				tab_id: this.#a,
 				items: e.map((t) => ({
@@ -5853,7 +5860,7 @@ Locator diagnostics: \${JSON.stringify({
 				}))
 			}) });
 		}
-	}, zn = class {
+	}, Gn = class {
 		#e;
 		#a;
 		#t;
@@ -5861,22 +5868,22 @@ Locator diagnostics: \${JSON.stringify({
 			this.#e = e, this.#a = t, this.#t = a;
 		}
 		async logs(e = {}) {
-			const t = Oh(e.filter), a = Bh(e.levels), r = jh(e.limit), s = {
+			const t = Bh(e.filter), a = jh(e.levels), r = Lh(e.limit), s = {
 				browser_id: this.#e,
 				tab_id: this.#a,
 				...t !== void 0 ? { filter: t } : {},
 				...a !== void 0 ? { levels: a } : {},
 				...r !== void 0 ? { limit: r } : {}
 			};
-			return (await this.#t.send({ command: yr(s) })).logs;
+			return (await this.#t.send({ command: _r(s) })).logs;
 		}
 	};
-	const Oh = (e) => {
+	const Bh = (e) => {
 		if (e != null) {
 			if (typeof e != "string") throw new Error("tab.dev.logs received an invalid filter");
 			return e;
 		}
-	}, Bh = (e) => {
+	}, jh = (e) => {
 		if (e != null) {
 			if (!Array.isArray(e) || e.length === 0) throw new Error("tab.dev.logs received invalid levels");
 			return e.map((t) => {
@@ -5885,7 +5892,7 @@ Locator diagnostics: \${JSON.stringify({
 				throw new Error(\`tab.dev.logs received invalid level "\${String(t)}"\`);
 			});
 		}
-	}, jh = (e) => {
+	}, Lh = (e) => {
 		if (e != null) {
 			if (!Number.isInteger(e) || e <= 0) throw new Error("tab.dev.logs received an invalid limit");
 			return e;
@@ -5936,7 +5943,7 @@ Locator diagnostics: \${JSON.stringify({
 			...a == null ? {} : { internalOnly: a }
 		};
 	}
-	var Gn = class {
+	var Jn = class {
 		#e;
 		constructor(e) {
 			this.#e = e;
@@ -5950,34 +5957,37 @@ Locator diagnostics: \${JSON.stringify({
 			return Object.values(this.#e).map((e) => e.info);
 		}
 	};
-	const Zh = n({ reason: x([
+	const qh = n({ reason: x([
 		"captcha_failed",
 		"access_denied",
 		"challenge_loop",
+		"sign_in_blocked",
+		"add_to_cart_blocked",
+		"purchase_blocked",
 		"unexpected_bot_error"
 	]) });
-	var qh = l({
+	var Uh = l({
 		PayloadSchema: () => pt,
-		ResultSchema: () => Kn,
-		commandType: () => Jn,
-		create: () => Yn
+		ResultSchema: () => Yn,
+		commandType: () => Kn,
+		create: () => Xn
 	});
-	const Jn = "tab_bot_detection_report", pt = Zh.extend({
+	const Kn = "tab_bot_detection_report", pt = qh.extend({
 		browser_id: i(),
 		tab_id: i()
-	}), Kn = n({
+	}), Yn = n({
 		status: C("reported"),
 		hostname: i().nullable()
 	});
-	function Yn(e) {
-		return new m(Jn, pt, e);
+	function Xn(e) {
+		return new m(Kn, pt, e);
 	}
-	var Uh = l({ Report: () => qh });
-	const Fh = {
+	var Fh = l({ Report: () => Uh });
+	const Vh = {
 		id: "botDetection",
 		description: "Use when the current tab is blocked by bot detection, a failed CAPTCHA, a hard access denial, or a repeated challenge/login loop."
 	};
-	var Xn = class extends ce {
+	var Qn = class extends ce {
 		constructor({ browserId: e, documentation: t, info: a, tabId: r, transport: s }) {
 			super(s, e, r, t, a);
 		}
@@ -5986,159 +5996,160 @@ Locator diagnostics: \${JSON.stringify({
 				...e,
 				browser_id: this.browserId,
 				tab_id: this.tabId
-			}), a = await this.transport.send({ command: Yn(t) });
-			return Kn.parse(a);
+			}), a = await this.transport.send({ command: Xn(t) });
+			return Yn.parse(a);
 		}
 	};
-	const Qn = de({
-		capability: Xn,
-		info: Fh
-	}), eo = n({
+	const eo = de({
+		capability: Qn,
+		info: Vh
+	}), to = n({
 		session_id: i().min(1).optional(),
 		target_id: i().min(1).optional()
-	}).refine((e) => e.session_id == null != (e.target_id == null), "CDP target must provide exactly one of session_id or target_id."), Vh = n({
+	}).refine((e) => e.session_id == null != (e.target_id == null), "CDP target must provide exactly one of session_id or target_id."), Hh = n({
 		extensionId: i().optional(),
 		sessionId: i().optional(),
 		tabId: u().int().optional(),
 		targetId: i().optional()
-	}), Hh = n({
+	}), Wh = n({
 		sequence: u().int().positive(),
-		source: Vh,
+		source: Hh,
 		method: i().min(1),
 		params: ne(i(), Z()).optional()
 	});
-	var Wh = l({
-		PayloadSchema: () => ao,
-		ResultSchema: () => ro,
-		commandType: () => to,
-		create: () => so
+	var zh = l({
+		PayloadSchema: () => ro,
+		ResultSchema: () => so,
+		commandType: () => ao,
+		create: () => io
 	});
-	const to = "tab_cdp_call", ao = n({
+	const ao = "tab_cdp_call", ro = n({
 		browser_id: i(),
 		tab_id: i(),
 		method: i().min(1),
 		params: ne(i(), Z()).optional(),
-		target: eo.optional(),
+		target: to.optional(),
 		timeout_ms: u().int().positive().optional()
-	}), ro = Z();
-	function so(e) {
-		return new m(to, ao, e);
+	}), so = Z();
+	function io(e) {
+		return new m(ao, ro, e);
 	}
-	var zh = l({
-		PayloadSchema: () => no,
-		ResultSchema: () => oo,
-		commandType: () => io,
-		create: () => co
+	var Gh = l({
+		PayloadSchema: () => oo,
+		ResultSchema: () => co,
+		commandType: () => no,
+		create: () => lo
 	});
-	const io = "tab_cdp_events", no = n({
+	const no = "tab_cdp_events", oo = n({
 		after_sequence: u().int().nonnegative().optional(),
 		browser_id: i(),
 		limit: u().int().positive().max(1e3).optional(),
 		methods: g(i().min(1)).min(1).optional(),
 		tab_id: i(),
-		target: eo.optional(),
+		target: to.optional(),
 		timeout_ms: u().int().nonnegative().optional()
-	}), oo = n({
+	}), co = n({
 		cursor: u().int().nonnegative(),
-		events: g(Hh),
+		events: g(Wh),
 		hasMore: k(),
 		truncated: k()
 	});
-	function co(e) {
-		return new m(io, no, e);
+	function lo(e) {
+		return new m(no, oo, e);
 	}
-	var Gh = l({
-		Call: () => Wh,
-		Events: () => zh
+	var Jh = l({
+		Call: () => zh,
+		Events: () => Gh
 	});
-	const Jh = {
+	const Kh = {
 		id: "cdp",
 		description: "Send raw Chrome DevTools Protocol commands and read debugger events through a supported tab for developer use cases."
-	}, Kh = 2e3;
-	var lo = class extends ce {
+	}, Yh = 2e3;
+	var uo = class extends ce {
 		constructor({ browserId: e, documentation: t, info: a, tabId: r, transport: s }) {
 			super(s, e, r, t, a);
 		}
 		async send(e, t, a) {
 			const r = await this.transport.send({
-				command: so({
+				command: io({
 					browser_id: this.browserId,
 					method: e,
 					params: t,
 					tab_id: this.tabId,
-					target: ho(a?.target),
+					target: mo(a?.target),
 					timeout_ms: a?.timeoutMs
 				}),
 				timeoutMs: a?.timeoutMs
 			});
-			return ro.parse(r);
+			return so.parse(r);
 		}
 		async readEvents(e) {
 			const t = await this.transport.send({
-				command: co({
+				command: lo({
 					after_sequence: e?.afterSequence,
 					browser_id: this.browserId,
 					limit: e?.limit,
 					methods: e?.methods,
 					tab_id: this.tabId,
-					target: ho(e?.target),
+					target: mo(e?.target),
 					timeout_ms: e?.timeoutMs
 				}),
-				timeoutMs: Yh(e?.timeoutMs)
+				timeoutMs: Xh(e?.timeoutMs)
 			});
-			return oo.parse(t);
+			return co.parse(t);
 		}
 	};
-	const uo = de({
-		capability: lo,
-		info: Jh
+	const ho = de({
+		capability: uo,
+		info: Kh
 	});
-	function ho(e) {
+	function mo(e) {
 		if (e != null) return {
 			session_id: e.sessionId,
 			target_id: e.targetId
 		};
 	}
-	function Yh(e) {
-		return e != null && e > 0 ? e + Kh : void 0;
+	function Xh(e) {
+		return e != null && e > 0 ? e + Yh : void 0;
 	}
-	const mo = /^[A-Za-z0-9_-]{1,48}$/, po = new Set([
+	const po = /^[A-Za-z0-9_-]{1,48}$/, fo = new Set([
 		"__proto__",
 		"constructor",
 		"prototype"
-	]), Xh = n({
-		id: i().regex(mo).refine((e) => !po.has(e)),
+	]), Qh = n({
+		id: i().regex(po).refine((e) => !fo.has(e)),
 		label: i(),
 		type: i().min(1),
 		autocomplete: i().nullable().optional(),
 		required: k(),
 		selector: i()
-	}), Qh = n({
+	}), em = n({
 		selector: i(),
 		action: x(["click", "press_enter"])
-	}), em = n({
-		id: i().regex(mo).refine((e) => !po.has(e)),
+	}), tm = n({
+		id: i().regex(po).refine((e) => !fo.has(e)),
 		label: i().trim().min(1).max(120),
 		selector: i().optional(),
 		field_ids: g(i()).max(6).optional()
-	}).refine((e) => e.selector != null != (e.field_ids?.length ?? 0) > 0, "browser auth options require either a selector or credential fields"), tm = n({
+	}).refine((e) => e.selector != null != (e.field_ids?.length ?? 0) > 0, "browser auth options require either a selector or credential fields"), am = n({
 		origin: i(),
-		fields: g(Xh).max(6),
-		options: g(em).min(2).max(10).optional(),
+		account_identifier: i().min(1).max(320).refine((e) => e.trim().length > 0).optional(),
+		fields: g(Qh).max(6),
+		options: g(tm).min(2).max(10).optional(),
 		qr_code: C(!0).optional(),
-		submit: Qh.optional(),
+		submit: em.optional(),
 		otpHandle: i().min(1).max(16384).optional()
-	}).refine((e) => e.fields.length > 0 || e.options != null || e.qr_code === !0, "browser auth requests require credential fields, sign-in options, or a QR code");
-	var am = l({
-		PayloadSchema: () => yo,
-		ResultSchema: () => go,
-		SubmissionAttemptEventSchema: () => _o,
-		SubmissionDiagnosticsSchema: () => bo,
+	}).refine((e) => e.account_identifier == null || e.fields.length === 1 && e.fields[0]?.type === "password" && e.options == null && e.qr_code == null && e.otpHandle == null, "account_identifier is only supported for a password-only sign-in").refine((e) => e.fields.length > 0 || e.options != null || e.qr_code === !0, "browser auth requests require credential fields, sign-in options, or a QR code");
+	var rm = l({
+		PayloadSchema: () => _o,
+		ResultSchema: () => wo,
+		SubmissionAttemptEventSchema: () => bo,
+		SubmissionDiagnosticsSchema: () => go,
 		SubmissionRejectionSchema: () => ft,
-		commandType: () => fo,
-		create: () => wo
+		commandType: () => yo,
+		create: () => vo
 	});
-	const fo = "tab_browser_auth_handoff", yo = tm.and(n({
+	const yo = "tab_browser_auth_handoff", _o = am.and(n({
 		browser_id: i(),
 		tab_id: i()
 	})), ft = n({
@@ -6162,7 +6173,7 @@ Locator diagnostics: \${JSON.stringify({
 			"settled",
 			"not_applicable"
 		])
-	}), _o = n({
+	}), bo = n({
 		sequence: u().int().min(0).max(65535),
 		kind: x([
 			"prompt_completed",
@@ -6210,15 +6221,15 @@ Locator diagnostics: \${JSON.stringify({
 			"cross",
 			"other"
 		]).optional()
-	}), bo = n({
+	}), go = n({
 		schema_version: C(1),
 		request_id: i().uuid(),
 		submission_mode: x(["ordinary", "private"]),
 		first_rejection: ft.optional(),
 		terminal_rejection: ft.optional(),
-		attempt_events: g(_o).max(64).optional(),
+		attempt_events: g(bo).max(64).optional(),
 		dropped_attempt_events: u().int().min(0).max(65535).optional()
-	}), go = n({
+	}), wo = n({
 		status: x([
 			"submitted",
 			"declined",
@@ -6236,23 +6247,23 @@ Locator diagnostics: \${JSON.stringify({
 		}).optional(),
 		selected_option: i().optional(),
 		reason: C("user_took_over").optional(),
-		submission_diagnostics: bo.optional()
+		submission_diagnostics: go.optional()
 	});
-	function wo(e) {
-		return new m(fo, yo, e);
+	function vo(e) {
+		return new m(yo, _o, e);
 	}
-	var rm = l({ Handoff: () => am });
-	const sm = {
+	var sm = l({ Handoff: () => rm });
+	const im = {
 		id: "browserAuth",
 		description: "MUST read its documentation before the first interaction with any authentication or sign-in flow required for the task. Covers method selection, secure user-provided credentials, and post-authentication verification and recovery."
 	};
-	var vo = class extends ce {
+	var So = class extends ce {
 		constructor({ browserId: e, documentation: t, info: a, tabId: r, transport: s }) {
 			super(s, e, r, t, a);
 		}
 		async request(e) {
-			const a = wo({
-				...im(e, {
+			const a = vo({
+				...nm(e, {
 					browserId: this.browserId,
 					tabId: this.tabId
 				}),
@@ -6261,16 +6272,17 @@ Locator diagnostics: \${JSON.stringify({
 			});
 			a.parse();
 			const r = await this.transport.send({ command: a });
-			return go.parse(r);
+			return wo.parse(r);
 		}
 	};
-	const So = de({
-		capability: vo,
-		info: sm
+	const xo = de({
+		capability: So,
+		info: im
 	});
-	function im(e, t) {
+	function nm(e, t) {
 		const a = {
 			origin: e.origin,
+			account_identifier: e.account_identifier,
 			otpHandle: e.otpHandle,
 			fields: e.fields.map((r) => {
 				const s = {
@@ -6301,19 +6313,19 @@ Locator diagnostics: \${JSON.stringify({
 		if (a.browserId !== t.browserId || a.tabId !== t.tabId) throw new Error("browserAuth selector locator must belong to this tab");
 		return a.selector;
 	}
-	const xo = x([
+	const To = x([
 		"font",
 		"image",
 		"script",
 		"stylesheet",
 		"video",
 		"other"
-	]), To = x([
+	]), $o = x([
 		"font",
 		"image",
 		"stylesheet",
 		"video"
-	]), nm = n({
+	]), om = n({
 		kind: x([
 			"attribute",
 			"computedStyle",
@@ -6321,47 +6333,47 @@ Locator diagnostics: \${JSON.stringify({
 		]),
 		nodeId: u().int().positive().optional(),
 		property: i().optional()
-	}), om = n({
-		id: i(),
-		kind: xo,
-		name: i(),
-		sources: g(nm),
-		url: i()
 	}), cm = n({
-		id: i(),
-		markup: i(),
-		name: i()
-	}), dm = n({
-		assets: g(om),
-		id: i(),
-		inlineSvgs: g(cm),
-		pageUrl: i().nullable(),
-		summary: n({
-			byKind: ne(xo, u().int().nonnegative()),
-			inlineSvgCount: u().int().nonnegative(),
-			totalCount: u().int().nonnegative()
-		})
-	}), lm = n({
-		assetIds: g(i()).optional(),
-		inventoryId: i(),
-		kinds: g(To).optional()
-	}), um = n({
-		contentType: i().nullable(),
 		id: i(),
 		kind: To,
 		name: i(),
+		sources: g(om),
+		url: i()
+	}), dm = n({
+		id: i(),
+		markup: i(),
+		name: i()
+	}), lm = n({
+		assets: g(cm),
+		id: i(),
+		inlineSvgs: g(dm),
+		pageUrl: i().nullable(),
+		summary: n({
+			byKind: ne(To, u().int().nonnegative()),
+			inlineSvgCount: u().int().nonnegative(),
+			totalCount: u().int().nonnegative()
+		})
+	}), um = n({
+		assetIds: g(i()).optional(),
+		inventoryId: i(),
+		kinds: g($o).optional()
+	}), hm = n({
+		contentType: i().nullable(),
+		id: i(),
+		kind: $o,
+		name: i(),
 		path: i(),
 		url: i()
-	}), hm = n({
+	}), mm = n({
 		contentType: i().nullable(),
 		id: i(),
 		name: i(),
 		reason: i(),
 		url: i()
-	}), mm = n({
-		assets: g(um),
+	}), pm = n({
+		assets: g(hm),
 		directoryPath: i(),
-		failures: g(hm),
+		failures: g(mm),
 		manifestPath: i(),
 		summary: n({
 			downloadedCount: u().int().nonnegative(),
@@ -6370,68 +6382,68 @@ Locator diagnostics: \${JSON.stringify({
 			requestedCount: u().int().nonnegative()
 		})
 	});
-	var pm = l({
-		PayloadSchema: () => ko,
-		ResultSchema: () => Ro,
-		commandType: () => $o,
-		create: () => Co
-	});
-	const $o = "tab_page_assets_bundle", ko = lm.extend({
-		browser_id: i(),
-		tab_id: i()
-	}), Ro = mm;
-	function Co(e) {
-		return new m($o, ko, e);
-	}
 	var fm = l({
-		PayloadSchema: () => Po,
-		ResultSchema: () => Eo,
-		commandType: () => Io,
-		create: () => Ao
+		PayloadSchema: () => Ro,
+		ResultSchema: () => Co,
+		commandType: () => ko,
+		create: () => Io
 	});
-	const Io = "tab_page_assets_list", Po = n({
+	const ko = "tab_page_assets_bundle", Ro = um.extend({
 		browser_id: i(),
 		tab_id: i()
-	}), Eo = dm;
-	function Ao(e) {
-		return new m(Io, Po, e);
+	}), Co = pm;
+	function Io(e) {
+		return new m(ko, Ro, e);
 	}
 	var ym = l({
-		Bundle: () => pm,
-		List: () => fm
+		PayloadSchema: () => Eo,
+		ResultSchema: () => Ao,
+		commandType: () => Po,
+		create: () => No
 	});
-	const _m = {
+	const Po = "tab_page_assets_list", Eo = n({
+		browser_id: i(),
+		tab_id: i()
+	}), Ao = lm;
+	function No(e) {
+		return new m(Po, Eo, e);
+	}
+	var _m = l({
+		Bundle: () => fm,
+		List: () => ym
+	});
+	const bm = {
 		id: "pageAssets",
 		description: "List assets already observed in the current page state and bundle selected assets into a temporary local artifact."
 	};
-	var No = class extends ce {
+	var Do = class extends ce {
 		constructor({ browserId: e, documentation: t, info: a, tabId: r, transport: s }) {
 			super(s, e, r, t, a);
 		}
 		async list() {
-			const e = await this.transport.send({ command: Ao({
+			const e = await this.transport.send({ command: No({
 				browser_id: this.browserId,
 				tab_id: this.tabId
 			}) });
-			return Eo.parse(e);
+			return Ao.parse(e);
 		}
 		async bundle(e) {
-			const t = await this.transport.send({ command: Co({
+			const t = await this.transport.send({ command: Io({
 				...e,
 				browser_id: this.browserId,
 				tab_id: this.tabId
 			}) });
-			return Ro.parse(t);
+			return Co.parse(t);
 		}
 	};
-	const Do = de({
-		capability: No,
-		info: _m
-	}), Mo = {
+	const Mo = de({
+		capability: Do,
+		info: bm
+	}), Oo = {
 		id: "webmcp",
 		description: "Fetch page-defined WebMCP tools bound to the current document, then call them through the returned object."
 	};
-	function Oo(e) {
+	function Bo(e) {
 		return {
 			name: e.name,
 			call_name: e.call_name,
@@ -6443,21 +6455,21 @@ Locator diagnostics: \${JSON.stringify({
 			...e.pageUrl == null ? {} : { pageUrl: e.pageUrl }
 		};
 	}
-	var Bo = class extends ce {
+	var jo = class extends ce {
 		constructor({ browserId: e, documentation: t, info: a, tabId: r, transport: s }) {
 			super(s, e, r, t, a);
 		}
 		async fetchTools() {
-			const e = La.parse(await this.transport.send({ command: qa({
+			const e = Za.parse(await this.transport.send({ command: Ua({
 				browser_id: this.browserId,
 				tab_id: this.tabId
-			}) })), t = e.tools.map(Oo), a = new Map(e.tools.map((s) => [s.call_name, s])), r = bm(t);
+			}) })), t = e.tools.map(Bo), a = new Map(e.tools.map((s) => [s.call_name, s])), r = gm(t);
 			return Object.freeze({
 				description: () => r,
 				call: async (s, c, o) => {
 					const d = s.trim(), p = a.get(d);
 					if (p == null) throw new Error(\`WebMCP tool \${JSON.stringify(d)} is not available in this snapshot. Call fetchTools() again.\`);
-					return (await this.transport.send({ command: Va({
+					return (await this.transport.send({ command: Ha({
 						browser_id: this.browserId,
 						tab_id: this.tabId,
 						tool_name: p.name,
@@ -6471,7 +6483,7 @@ Locator diagnostics: \${JSON.stringify({
 			});
 		}
 	};
-	function bm(e) {
+	function gm(e) {
 		return e.length === 0 ? "No WebMCP tools are available in this document." : [
 			"WebMCP tools available in this document:",
 			JSON.stringify(e.map(({ call_name: t, ...a }) => ({
@@ -6482,19 +6494,19 @@ Locator diagnostics: \${JSON.stringify({
 		].join(\`
 \`);
 	}
-	const jo = de({
-		capability: Bo,
-		info: Mo
-	}), Lo = [
-		uo,
-		Qn,
-		So,
-		Do,
-		jo
-	], gm = vm(Lo), wm = ({ browserId: e, capabilities: t, documentation: a, tabId: r, transport: s }) => {
+	const Lo = de({
+		capability: jo,
+		info: Oo
+	}), Zo = [
+		ho,
+		eo,
+		xo,
+		Mo,
+		Lo
+	], wm = Sm(Zo), vm = ({ browserId: e, capabilities: t, documentation: a, tabId: r, transport: s }) => {
 		const c = {};
 		for (const o of t ?? []) {
-			const d = gm.get(o.id);
+			const d = wm.get(o.id);
 			d != null && Object.assign(c, { [o.id]: d({
 				browserId: e,
 				documentation: a,
@@ -6503,9 +6515,9 @@ Locator diagnostics: \${JSON.stringify({
 				transport: s
 			}) });
 		}
-		return new Gn(c);
+		return new Jn(c);
 	};
-	function vm(e) {
+	function Sm(e) {
 		return new Map(e.map((t) => [t.id, t.create]));
 	}
 	var Ae = class {
@@ -6520,21 +6532,21 @@ Locator diagnostics: \${JSON.stringify({
 				tab_id: this.tabId
 			}) });
 		}
-	}, Zo = class extends Ae {
+	}, qo = class extends Ae {
 		constructor(e) {
 			super({
 				...e,
 				type: "alert"
 			});
 		}
-	}, qo = class extends Ae {
+	}, Uo = class extends Ae {
 		constructor(e) {
 			super({
 				...e,
 				type: "beforeunload"
 			});
 		}
-	}, Uo = class extends Ae {
+	}, Fo = class extends Ae {
 		constructor(e) {
 			super({
 				...e,
@@ -6549,7 +6561,7 @@ Locator diagnostics: \${JSON.stringify({
 				tab_id: this.tabId
 			}) });
 		}
-	}, Fo = class extends Ae {
+	}, Vo = class extends Ae {
 		constructor(e) {
 			super({
 				...e,
@@ -6571,35 +6583,35 @@ Locator diagnostics: \${JSON.stringify({
 		#a;
 		constructor({ browserId: e, capabilities: t, documentation: a, transport: r, tabPayload: s = {} }) {
 			if (!s.id) throw new Error("Tab requires an id");
-			this.#e = e, this.#a = r, this.id = s.id, this.playwright = new Zn({
+			this.#e = e, this.#a = r, this.id = s.id, this.playwright = new qn({
 				browserId: e,
 				tabId: this.id,
 				transport: this.#a
-			}), this.dom_cua = new qn({
+			}), this.dom_cua = new Un({
 				browserId: e,
 				tabId: this.id,
 				transport: this.#a
-			}), this.cua = new Fn({
+			}), this.cua = new Vn({
 				browserId: e,
 				tabId: this.id,
 				transport: this.#a
-			}), this.ax = new Vn({
+			}), this.ax = new Hn({
 				browserId: e,
 				tabId: this.id,
 				transport: this.#a
-			}), this.content = new Hn({
+			}), this.content = new Wn({
 				browserId: e,
 				tabId: this.id,
 				transport: this.#a
-			}), this.clipboard = new Wn({
+			}), this.clipboard = new zn({
 				browserId: e,
 				tabId: this.id,
 				transport: this.#a
-			}), this.dev = new zn({
+			}), this.dev = new Gn({
 				browserId: e,
 				tabId: this.id,
 				transport: this.#a
-			}), this.capabilities = wm({
+			}), this.capabilities = vm({
 				browserId: this.#e,
 				capabilities: t,
 				documentation: a,
@@ -6610,7 +6622,7 @@ Locator diagnostics: \${JSON.stringify({
 		async goto(e) {
 			if (!e) throw new Error("tab.goto requires a url");
 			if (this.#r(), !this.id) throw new Error("tab.goto requires a tab id");
-			await this.#a.send({ command: za({
+			await this.#a.send({ command: Ga({
 				browser_id: this.#e,
 				tab_id: this.id,
 				url: e
@@ -6623,9 +6635,13 @@ Locator diagnostics: \${JSON.stringify({
 			await this.#t("deliverable");
 		}
 		async requestManualHandoff() {
-			await this.#a.send({ command: Sa({
+			return this.requestUserTakeover();
+		}
+		async requestUserTakeover(e) {
+			await this.#a.send({ command: xa({
 				browser_id: this.#e,
-				tab_id: this.id
+				tab_id: this.id,
+				reason: e
 			}) });
 		}
 		async back() {
@@ -6641,7 +6657,7 @@ Locator diagnostics: \${JSON.stringify({
 			}) });
 		}
 		async reload() {
-			this.#r(), await this.#a.send({ command: er({
+			this.#r(), await this.#a.send({ command: tr({
 				browser_id: this.#e,
 				tab_id: this.id
 			}) });
@@ -6664,7 +6680,7 @@ Locator diagnostics: \${JSON.stringify({
 				if (typeof a != "number" || typeof r != "number" || typeof s != "number" || typeof c != "number") throw new Error("tab.screenshot clip requires x, y, width, and height");
 				t.cropX = a, t.cropY = r, t.cropWidth = s, t.cropHeight = c;
 			}
-			return Ce((await this.#a.send({ command: Gr(t) })).data);
+			return Ce((await this.#a.send({ command: Jr(t) })).data);
 		}
 		async title() {
 			return (await this.#s()).title;
@@ -6674,11 +6690,11 @@ Locator diagnostics: \${JSON.stringify({
 		}
 		async getJsDialog() {
 			this.#r();
-			const e = (await this.#a.send({ command: vr({
+			const e = (await this.#a.send({ command: Sr({
 				browser_id: this.#e,
 				tab_id: this.id
 			}) })).dialog;
-			if (e != null) return Sm({
+			if (e != null) return xm({
 				browserId: this.#e,
 				dialogId: e.id,
 				tabId: this.id,
@@ -6703,27 +6719,27 @@ Locator diagnostics: \${JSON.stringify({
 			}) });
 		}
 	};
-	function Sm({ browserId: e, dialogId: t, tabId: a, transport: r, type: s }) {
+	function xm({ browserId: e, dialogId: t, tabId: a, transport: r, type: s }) {
 		switch (s) {
-			case "alert": return new Zo({
+			case "alert": return new qo({
 				browserId: e,
 				dialogId: t,
 				tabId: a,
 				transport: r
 			});
-			case "beforeunload": return new qo({
+			case "beforeunload": return new Uo({
 				browserId: e,
 				dialogId: t,
 				tabId: a,
 				transport: r
 			});
-			case "confirm": return new Uo({
+			case "confirm": return new Fo({
 				browserId: e,
 				dialogId: t,
 				tabId: a,
 				transport: r
 			});
-			case "prompt": return new Fo({
+			case "prompt": return new Vo({
 				browserId: e,
 				dialogId: t,
 				tabId: a,
@@ -6731,29 +6747,29 @@ Locator diagnostics: \${JSON.stringify({
 			});
 		}
 	}
-	var Vo = l({
+	var Ho = l({
 		PayloadSchema: () => Ne,
-		ResultSchema: () => Ho,
+		ResultSchema: () => Wo,
 		commandType: () => bt,
-		create: () => Wo
+		create: () => zo
 	});
 	const bt = "browser_management_call", Ne = n({
 		args: g(Z()),
 		browser_id: i(),
 		method: i(),
 		namespace: i()
-	}), Ho = n({ value: Z() });
-	function Wo(e) {
+	}), Wo = n({ value: Z() });
+	function zo(e) {
 		return new m(bt, Ne, e);
 	}
-	var zo = l({
-		AuditChangeSchema: () => Jo,
-		PayloadSchema: () => Go,
-		ResultSchema: () => Ko,
+	var Go = l({
+		AuditChangeSchema: () => Ko,
+		PayloadSchema: () => Jo,
+		ResultSchema: () => Yo,
 		commandType: () => gt,
-		create: () => Yo
+		create: () => Xo
 	});
-	const gt = "browser_management_get_audit_trail", Go = Ne.pick({ browser_id: !0 }), Jo = Ne.omit({ browser_id: !0 }).extend({
+	const gt = "browser_management_get_audit_trail", Jo = Ne.pick({ browser_id: !0 }), Ko = Ne.omit({ browser_id: !0 }).extend({
 		before: n({
 			bookmarks: g(n({
 				id: i(),
@@ -6792,38 +6808,38 @@ Locator diagnostics: \${JSON.stringify({
 		}).partial(),
 		createdAt: u(),
 		result: Zt([u(), n({ id: i() })]).optional()
-	}), Ko = n({ changes: g(Jo) });
-	function Yo(e) {
-		return new m(gt, Go, e);
+	}), Yo = n({ changes: g(Ko) });
+	function Xo(e) {
+		return new m(gt, Jo, e);
 	}
-	var xm = l({
-		Call: () => Vo,
-		GetAuditTrail: () => zo,
-		commands: () => Tm
+	var Tm = l({
+		Call: () => Ho,
+		GetAuditTrail: () => Go,
+		commands: () => $m
 	});
-	const Tm = {
-		[bt]: Vo,
-		[gt]: zo
-	}, $m = {
+	const $m = {
+		[bt]: Ho,
+		[gt]: Go
+	}, km = {
 		id: "management",
 		description: "Organize windows, tabs, tab groups, and bookmarks. Use only for user-requested browser organization."
 	};
-	var Xo = class extends ht {
+	var Qo = class extends ht {
 		constructor({ browserId: e, documentation: t, info: a, transport: r }) {
 			super(r, e, t, a), this.windows = this.createNamespace("windows"), this.tabs = this.createNamespace("tabs"), this.tabGroups = this.createNamespace("tabGroups"), this.bookmarks = this.createNamespace("bookmarks");
 		}
 		async getAuditTrail() {
-			const e = await this.transport.send({ command: Yo({ browser_id: this.browserId }) });
-			return Ko.parse(e);
+			const e = await this.transport.send({ command: Xo({ browser_id: this.browserId }) });
+			return Yo.parse(e);
 		}
 		async invoke(e, t, ...a) {
-			const r = await this.transport.send({ command: Wo({
+			const r = await this.transport.send({ command: zo({
 				args: a,
 				browser_id: this.browserId,
 				method: t,
 				namespace: e
 			}) });
-			return Ho.parse(r).value;
+			return Wo.parse(r).value;
 		}
 		createNamespace(e) {
 			return new Proxy({}, { get: (t, a) => {
@@ -6831,128 +6847,128 @@ Locator diagnostics: \${JSON.stringify({
 			} });
 		}
 	};
-	const Qo = mt({
-		capability: Xo,
-		info: $m
+	const ec = mt({
+		capability: Qo,
+		info: km
 	});
-	var ec = l({
-		PayloadSchema: () => tc,
-		ResultSchema: () => ac,
+	var tc = l({
+		PayloadSchema: () => ac,
+		ResultSchema: () => rc,
 		commandType: () => wt,
-		create: () => rc
+		create: () => sc
 	});
-	const wt = "browser_visibility_get", tc = n({ browser_id: i() }), ac = n({ visible: k() });
-	function rc(e) {
-		return new m(wt, tc, e);
+	const wt = "browser_visibility_get", ac = n({ browser_id: i() }), rc = n({ visible: k() });
+	function sc(e) {
+		return new m(wt, ac, e);
 	}
-	var sc = l({
-		PayloadSchema: () => ic,
-		ResultSchema: () => nc,
+	var ic = l({
+		PayloadSchema: () => nc,
+		ResultSchema: () => oc,
 		commandType: () => vt,
-		create: () => oc
+		create: () => cc
 	});
-	const vt = "browser_visibility_set", ic = n({
+	const vt = "browser_visibility_set", nc = n({
 		browser_id: i(),
 		visible: k()
-	}), nc = n({});
-	function oc(e) {
-		return new m(vt, ic, e);
+	}), oc = n({});
+	function cc(e) {
+		return new m(vt, nc, e);
 	}
-	var km = l({
-		Get: () => ec,
-		Set: () => sc,
-		commands: () => Rm
+	var Rm = l({
+		Get: () => tc,
+		Set: () => ic,
+		commands: () => Cm
 	});
-	const Rm = {
-		[wt]: ec,
-		[vt]: sc
-	}, Cm = {
+	const Cm = {
+		[wt]: tc,
+		[vt]: ic
+	}, Im = {
 		id: "visibility",
 		description: "Use to show or hide the browser to the user, and to determine the browser's current visibility. Keep browser work in the background unless the user asks to see it or live viewing is useful. When the browser should be visible, call set(true)."
 	};
-	var cc = class extends ht {
+	var dc = class extends ht {
 		constructor({ browserId: e, documentation: t, info: a, transport: r }) {
 			super(r, e, t, a);
 		}
 		async set(e) {
-			const t = await this.transport.send({ command: oc({
+			const t = await this.transport.send({ command: cc({
 				browser_id: this.browserId,
 				visible: e
 			}) });
-			nc.parse(t);
+			oc.parse(t);
 		}
 		async get() {
-			const e = await this.transport.send({ command: rc({ browser_id: this.browserId }) });
-			return ac.parse(e).visible;
+			const e = await this.transport.send({ command: sc({ browser_id: this.browserId }) });
+			return rc.parse(e).visible;
 		}
 	};
-	const dc = mt({
-		capability: cc,
-		info: Cm
+	const lc = mt({
+		capability: dc,
+		info: Im
 	});
-	var lc = l({
-		PayloadSchema: () => uc,
-		ResultSchema: () => hc,
+	var uc = l({
+		PayloadSchema: () => hc,
+		ResultSchema: () => mc,
 		commandType: () => St,
-		create: () => mc
+		create: () => pc
 	});
-	const St = "browser_viewport_reset", uc = n({ browser_id: i() }), hc = n({});
-	function mc(e) {
-		return new m(St, uc, e);
+	const St = "browser_viewport_reset", hc = n({ browser_id: i() }), mc = n({});
+	function pc(e) {
+		return new m(St, hc, e);
 	}
-	var pc = l({
-		PayloadSchema: () => fc,
-		ResultSchema: () => yc,
+	var fc = l({
+		PayloadSchema: () => yc,
+		ResultSchema: () => _c,
 		commandType: () => xt,
-		create: () => _c
+		create: () => bc
 	});
-	const xt = "browser_viewport_set", fc = n({
+	const xt = "browser_viewport_set", yc = n({
 		browser_id: i(),
 		height: u().int().positive(),
 		width: u().int().positive()
-	}), yc = n({});
-	function _c(e) {
-		return new m(xt, fc, e);
+	}), _c = n({});
+	function bc(e) {
+		return new m(xt, yc, e);
 	}
-	var Im = l({
-		Reset: () => lc,
-		Set: () => pc,
-		commands: () => Pm
+	var Pm = l({
+		Reset: () => uc,
+		Set: () => fc,
+		commands: () => Em
 	});
-	const Pm = {
-		[St]: lc,
-		[xt]: pc
-	}, Em = {
+	const Em = {
+		[St]: uc,
+		[xt]: fc
+	}, Am = {
 		id: "viewport",
 		description: "Controls an explicit browser viewport override for responsive or device-size testing. Use it when a task calls for specific dimensions or breakpoint validation; otherwise leave it unset so the browser uses its normal viewport. Reset temporary overrides before finishing unless the user asked to keep them."
 	};
-	var bc = class extends ht {
+	var gc = class extends ht {
 		constructor({ browserId: e, documentation: t, info: a, transport: r }) {
 			super(r, e, t, a);
 		}
 		async set(e) {
-			const t = await this.transport.send({ command: _c({
+			const t = await this.transport.send({ command: bc({
 				browser_id: this.browserId,
 				...e
 			}) });
-			yc.parse(t);
+			_c.parse(t);
 		}
 		async reset() {
-			const e = await this.transport.send({ command: mc({ browser_id: this.browserId }) });
-			hc.parse(e);
+			const e = await this.transport.send({ command: pc({ browser_id: this.browserId }) });
+			mc.parse(e);
 		}
 	};
-	const gc = mt({
-		capability: bc,
-		info: Em
-	}), wc = [
-		Qo,
-		dc,
-		gc
-	], Am = Dm(wc), Nm = ({ browserId: e, capabilities: t, documentation: a, transport: r }) => {
+	const wc = mt({
+		capability: gc,
+		info: Am
+	}), vc = [
+		ec,
+		lc,
+		wc
+	], Nm = Mm(vc), Dm = ({ browserId: e, capabilities: t, documentation: a, transport: r }) => {
 		const s = {};
 		for (const c of t ?? []) {
-			const o = Am.get(c.id);
+			const o = Nm.get(c.id);
 			o != null && (s[c.id] = o({
 				browserId: e,
 				documentation: a,
@@ -6960,19 +6976,19 @@ Locator diagnostics: \${JSON.stringify({
 				transport: r
 			}));
 		}
-		return new Gn(s);
+		return new Jn(s);
 	};
-	function Dm(e) {
+	function Mm(e) {
 		return new Map(e.map((t) => [t.id, t.create]));
 	}
-	var vc = class {
+	var Sc = class {
 		#e;
 		#a;
 		#t;
 		constructor({ capabilities: e, onBrowserUsed: t, transport: a, browserId: r }) {
 			this.#e = r, this.#a = t, this.#t = a, this.browserId = r;
 			const s = new st(a);
-			this.capabilities = Nm({
+			this.capabilities = Dm({
 				browserId: r,
 				capabilities: e?.browser,
 				documentation: s,
@@ -6985,11 +7001,11 @@ Locator diagnostics: \${JSON.stringify({
 				transport: a,
 				tabPayload: o
 			});
-			this.tabs = new Rn({
+			this.tabs = new Cn({
 				browserId: r,
 				createTab: c,
 				transport: a
-			}), this.user = new Cn({
+			}), this.user = new In({
 				browserId: r,
 				createTab: c,
 				transport: a
@@ -7000,24 +7016,24 @@ Locator diagnostics: \${JSON.stringify({
 		}
 		async history(e = {}) {
 			if (e === null || Array.isArray(e) || typeof e != "object") throw new Error("browser.history expects an options object");
-			const t = { browser_id: this.#e }, a = Mm(e.queries), r = Om(e.limit), s = Sc(e.from, "from"), c = Sc(e.to, "to");
-			return a !== void 0 && (t.queries = a), r !== void 0 && (t.limit = r), s !== void 0 && (t.from = s), c !== void 0 && (t.to = c), (await this.#t.send({ command: mr(t) })).items;
+			const t = { browser_id: this.#e }, a = Om(e.queries), r = Bm(e.limit), s = xc(e.from, "from"), c = xc(e.to, "to");
+			return a !== void 0 && (t.queries = a), r !== void 0 && (t.limit = r), s !== void 0 && (t.from = s), c !== void 0 && (t.to = c), (await this.#t.send({ command: pr(t) })).items;
 		}
 		async nameSession(e) {
 			const t = e.trim();
 			if (!t) throw new Error("browser.nameSession requires a name");
-			await this.#t.send({ command: Ra({
+			await this.#t.send({ command: Ca({
 				browser_id: this.browserId,
 				name: t
 			}) });
 		}
 	};
-	const Sc = (e, t) => {
+	const xc = (e, t) => {
 		if (e == null) return;
 		const a = e instanceof Date ? e : new Date(e);
 		if (Number.isNaN(a.getTime())) throw new Error(\`browser.history received an invalid \${t} date\`);
 		return a.toISOString();
-	}, Mm = (e) => {
+	}, Om = (e) => {
 		if (e == null) return;
 		if (!Array.isArray(e) || e.length === 0) throw new Error("browser.history received invalid queries");
 		const t = [];
@@ -7026,22 +7042,22 @@ Locator diagnostics: \${JSON.stringify({
 			t.push(a);
 		}
 		return t;
-	}, Om = (e) => {
+	}, Bm = (e) => {
 		if (e != null) {
 			if (!Number.isInteger(e) || e <= 0) throw new Error("browser.history received an invalid limit");
 			return e;
 		}
 	};
-	var xc = class {
+	var Tc = class {
 		constructor({ executeAgentCommand: e, displaySideEffect: t } = {}) {
 			if (typeof e != "function") throw new Error("FunctionAgentTransport requires an executeAgentCommand function");
-			this.executeAgentCommand = e, this.displaySideEffect = t ?? Lm;
+			this.executeAgentCommand = e, this.displaySideEffect = t ?? Zm;
 		}
 		async display(e) {
 			await this.displaySideEffect(e);
 		}
 		async send({ command: e, timeoutMs: t }) {
-			const a = e.toJSON(), r = await Bm(await this.executeAgentCommand({
+			const a = e.toJSON(), r = await jm(await this.executeAgentCommand({
 				...a,
 				client_timeout_ms: typeof t == "number" && t > 0 ? t : void 0
 			}), this.displaySideEffect);
@@ -7049,13 +7065,13 @@ Locator diagnostics: \${JSON.stringify({
 			return r;
 		}
 	};
-	const Bm = async (e, t) => {
-		const a = jm.safeParse(e);
+	const jm = async (e, t) => {
+		const a = Lm.safeParse(e);
 		if (!a.success) return e;
 		for (const c of a.data.side_effects) await t(c);
 		const { side_effects: r, ...s } = a.data;
 		return s;
-	}, jm = n({ side_effects: g(i()) }).passthrough(), Lm = async (e) => {
+	}, Lm = n({ side_effects: g(i()) }).passthrough(), Zm = async (e) => {
 		const t = globalThis.display;
 		if (typeof t == "function") {
 			await t(e);
@@ -7063,65 +7079,65 @@ Locator diagnostics: \${JSON.stringify({
 		}
 		console.log(e);
 	};
-	var Zm = l({
-		AXAPI: () => Vn,
-		Agent: () => kn,
-		AlertDialog: () => Zo,
+	var qm = l({
+		AXAPI: () => Hn,
+		Agent: () => Rn,
+		AlertDialog: () => qo,
 		AtlasCommand: () => m,
-		BeforeUnloadDialog: () => qo,
-		BotDetectionTabCapability: () => Xn,
-		Browser: () => vc,
-		BrowserAuthTabCapability: () => vo,
-		BrowserManagementCommands: () => xm,
-		BrowserUser: () => Cn,
-		BrowserViewportCommands: () => Im,
-		BrowserVisibilityCommands: () => km,
-		Browsers: () => $n,
-		CUAAPI: () => Fn,
-		CdpTabCapability: () => lo,
-		Commands: () => Ih,
-		ConfirmDialog: () => Uo,
-		ContentAPI: () => Hn,
+		BeforeUnloadDialog: () => Uo,
+		BotDetectionTabCapability: () => Qn,
+		Browser: () => Sc,
+		BrowserAuthTabCapability: () => So,
+		BrowserManagementCommands: () => Tm,
+		BrowserUser: () => In,
+		BrowserViewportCommands: () => Pm,
+		BrowserVisibilityCommands: () => Rm,
+		Browsers: () => kn,
+		CUAAPI: () => Vn,
+		CdpTabCapability: () => uo,
+		Commands: () => Ph,
+		ConfirmDialog: () => Fo,
+		ContentAPI: () => Wn,
 		Documentation: () => st,
-		DomCUAAPI: () => qn,
-		FunctionAgentTransport: () => xc,
-		ManagementBrowserCapability: () => Xo,
-		PageAssetsTabCapability: () => No,
-		PlaywrightAPI: () => Zn,
-		PlaywrightDownload: () => jn,
-		PlaywrightFileChooser: () => Ln,
-		PlaywrightFrameLocator: () => Bn,
+		DomCUAAPI: () => Un,
+		FunctionAgentTransport: () => Tc,
+		ManagementBrowserCapability: () => Qo,
+		PageAssetsTabCapability: () => Do,
+		PlaywrightAPI: () => qn,
+		PlaywrightDownload: () => Ln,
+		PlaywrightFileChooser: () => Zn,
+		PlaywrightFrameLocator: () => jn,
 		PlaywrightLocator: () => oe,
-		PromptDialog: () => Fo,
+		PromptDialog: () => Vo,
 		Tab: () => _t,
-		TabBotDetectionCommands: () => Uh,
-		TabBrowserAuthCommands: () => rm,
-		TabCdpCommands: () => Gh,
-		TabClipboardAPI: () => Wn,
-		TabDevAPI: () => zn,
-		TabPageAssetsCommands: () => ym,
-		TabWebMcpCapability: () => Bo,
-		Tabs: () => Rn,
-		ViewportBrowserCapability: () => bc,
-		VisibilityBrowserCapability: () => cc,
-		botDetectionTabCapabilityDefinition: () => Qn,
-		browserAuthTabCapabilityDefinition: () => So,
-		browserCapabilityDefinitions: () => wc,
-		cdpTabCapabilityDefinition: () => uo,
-		generateRequestId: () => Ph,
-		hasErrorMessage: () => Eh,
-		isPlainObject: () => En,
+		TabBotDetectionCommands: () => Fh,
+		TabBrowserAuthCommands: () => sm,
+		TabCdpCommands: () => Jh,
+		TabClipboardAPI: () => zn,
+		TabDevAPI: () => Gn,
+		TabPageAssetsCommands: () => _m,
+		TabWebMcpCapability: () => jo,
+		Tabs: () => Cn,
+		ViewportBrowserCapability: () => gc,
+		VisibilityBrowserCapability: () => dc,
+		botDetectionTabCapabilityDefinition: () => eo,
+		browserAuthTabCapabilityDefinition: () => xo,
+		browserCapabilityDefinitions: () => vc,
+		cdpTabCapabilityDefinition: () => ho,
+		generateRequestId: () => Eh,
+		hasErrorMessage: () => Ah,
+		isPlainObject: () => An,
 		isRegExp: () => Ie,
-		managementBrowserCapabilityDefinition: () => Qo,
-		pageAssetsTabCapabilityDefinition: () => Do,
-		tabCapabilityDefinitions: () => Lo,
-		toWebMcpToolDescriptor: () => Oo,
-		viewportBrowserCapabilityDefinition: () => gc,
-		visibilityBrowserCapabilityDefinition: () => dc,
-		webMcpTabCapabilityDefinition: () => jo,
-		webMcpTabCapabilityInfo: () => Mo
+		managementBrowserCapabilityDefinition: () => ec,
+		pageAssetsTabCapabilityDefinition: () => Mo,
+		tabCapabilityDefinitions: () => Zo,
+		toWebMcpToolDescriptor: () => Bo,
+		viewportBrowserCapabilityDefinition: () => wc,
+		visibilityBrowserCapabilityDefinition: () => lc,
+		webMcpTabCapabilityDefinition: () => Lo,
+		webMcpTabCapabilityInfo: () => Oo
 	});
-	function qm({ apiManifest: e, browserInfo: t, disabledMemberIds: a }) {
+	function Um({ apiManifest: e, browserInfo: t, disabledMemberIds: a }) {
 		const r = new Set(a);
 		for (const [s, c] of Object.entries(e.interfaces)) for (const [o, d] of Object.entries(c)) {
 			const p = \`\${s}.\${o}\`;
@@ -7129,20 +7145,20 @@ Locator diagnostics: \${JSON.stringify({
 		}
 		return r;
 	}
-	var Um = class {
+	var Fm = class {
 		apiManifest;
 		disabledMemberIds;
 		view;
 		constructor({ apiManifest: e, decorateTab: t, disabledMemberIds: a }) {
-			this.apiManifest = e, this.disabledMemberIds = a, this.view = Fm(e, t);
+			this.apiManifest = e, this.disabledMemberIds = a, this.view = Vm(e, t);
 		}
 		createBrowser = ({ browserInfo: e, onBrowserUsed: t, transport: a }) => {
-			const r = qm({
+			const r = Um({
 				apiManifest: this.apiManifest,
 				browserInfo: e,
 				disabledMemberIds: this.disabledMemberIds
 			});
-			return this.view(new vc({
+			return this.view(new Sc({
 				browserId: e.id,
 				capabilities: e.capabilities,
 				onBrowserUsed: t,
@@ -7153,25 +7169,25 @@ Locator diagnostics: \${JSON.stringify({
 			return this.view(e, this.disabledMemberIds);
 		}
 		createAgent({ displaySideEffect: e, executeAgentCommand: t }) {
-			return this.wrapAgent(new kn({
+			return this.wrapAgent(new Rn({
 				createBrowser: this.createBrowser,
-				transport: new xc({
+				transport: new Tc({
 					displaySideEffect: e,
 					executeAgentCommand: t
 				})
 			}));
 		}
 	};
-	function Fm(e, t) {
+	function Vm(e, t) {
 		const a = /* @__PURE__ */ new WeakMap(), r = Object.keys(e.interfaces).map((s) => {
-			const c = Reflect.get(Zm, s);
-			if (!Vm(c)) throw new Error(\`Browser API interface has no runtime type: \${s}\`);
+			const c = Reflect.get(qm, s);
+			if (!Hm(c)) throw new Error(\`Browser API interface has no runtime type: \${s}\`);
 			return [c, s];
 		});
 		return (s, c) => {
 			const o = /* @__PURE__ */ new WeakMap(), d = (f) => {
 				if (f == null || typeof f != "object") return f;
-				return a.get(f) ?? (Array.isArray(f) ? f.map(d) : En(f) ? Object.fromEntries(Object.entries(f).map(([P, D]) => [P, d(D)])) : f);
+				return a.get(f) ?? (Array.isArray(f) ? f.map(d) : An(f) ? Object.fromEntries(Object.entries(f).map(([P, D]) => [P, d(D)])) : f);
 			}, p = (f) => {
 				if (f == null || typeof f != "object" || a.has(f)) return f;
 				if (f instanceof Promise) return f.then(p);
@@ -7180,16 +7196,16 @@ Locator diagnostics: \${JSON.stringify({
 				if (R == null) return f;
 				const P = o.get(f);
 				if (P != null) return P;
-				const D = (A) => typeof A != "string" || !c.has(\`\${R}.\${A}\`), kc = /* @__PURE__ */ new Map(), le = new Proxy(f, {
+				const D = (A) => typeof A != "string" || !c.has(\`\${R}.\${A}\`), Rc = /* @__PURE__ */ new Map(), le = new Proxy(f, {
 					get(A, O) {
 						if (!D(O)) return;
 						const U = Reflect.get(A, O, A);
 						if (O === "constructor") return U;
 						if (typeof U != "function") return p(U);
-						const Rc = kc.get(O);
-						if (Rc != null) return Rc;
-						const Cc = (...Km) => p(Reflect.apply(U, A, Km.map((Ym) => d(Ym))));
-						return kc.set(O, Cc), Cc;
+						const Cc = Rc.get(O);
+						if (Cc != null) return Cc;
+						const Ic = (...Xm) => p(Reflect.apply(U, A, Xm.map((Qm) => d(Qm))));
+						return Rc.set(O, Ic), Ic;
 					},
 					getOwnPropertyDescriptor(A, O) {
 						if (!D(O)) return;
@@ -7211,16 +7227,16 @@ Locator diagnostics: \${JSON.stringify({
 			return p(s);
 		};
 	}
-	function Vm(e) {
+	function Hm(e) {
 		return typeof e == "function" && e.prototype != null;
 	}
-	function Hm({ apiManifest: e, decorateTab: t, disabledMemberIds: a, displayBridge: r, executeAgentCommand: s }) {
-		return new Um({
+	function Wm({ apiManifest: e, decorateTab: t, disabledMemberIds: a, displayBridge: r, executeAgentCommand: s }) {
+		return new Fm({
 			apiManifest: e,
 			decorateTab: t,
 			disabledMemberIds: a
 		}).createAgent({
-			displaySideEffect: Zc({
+			displaySideEffect: qc({
 				displayBridge: r,
 				displayTruncateMaxChars: 1e5
 			}),
@@ -7231,6 +7247,7 @@ Locator diagnostics: \${JSON.stringify({
 	(function(e) {
 		return e.Default = "", e.DisabledForLocalTesting = "disabled-for-local-testing", e.GaasBrowserEnvironment = "gaas-browser-environment", e;
 	})({}).Default;
+	new TextEncoder();
 	const De = {
 		distribution: "chrome-web-store",
 		extensionIds: ["lfkehkpjohcoelkpembgemeipeppanef"],
@@ -7238,14 +7255,14 @@ Locator diagnostics: \${JSON.stringify({
 		releaseChannel: "beta",
 		signingIdentity: null,
 		storeUrl: "https://chromewebstore.google.com/detail/codex/lfkehkpjohcoelkpembgemeipeppanef"
-	}, Tc = {
+	}, $c = {
 		distribution: "chrome-web-store",
 		extensionIds: ["hehggadaopoacecdllhhajmbjkdcmajg"],
 		outputModes: [],
 		releaseChannel: "stable",
 		signingIdentity: null,
 		storeUrl: "https://chromewebstore.google.com/detail/chatgpt/hehggadaopoacecdllhhajmbjkdcmajg"
-	}, $c = {
+	}, kc = {
 		distribution: "microsoft-edge-add-ons",
 		extensionIds: ["odlomjlbamekndcpllcnffbgeohgkmjh"],
 		outputModes: [],
@@ -7284,7 +7301,7 @@ Locator diagnostics: \${JSON.stringify({
 				outputModes: ["file"],
 				releaseChannel: "stable",
 				signingIdentity: "stable"
-			}, Tc]
+			}, $c]
 		},
 		edge: {
 			dev: [
@@ -7312,7 +7329,7 @@ Locator diagnostics: \${JSON.stringify({
 					releaseChannel: "beta",
 					signingIdentity: "beta"
 				},
-				$c,
+				kc,
 				De
 			],
 			prod: [
@@ -7323,14 +7340,14 @@ Locator diagnostics: \${JSON.stringify({
 					releaseChannel: "stable",
 					signingIdentity: "stable"
 				},
-				$c,
-				Tc
+				kc,
+				$c
 			]
 		}
 	};
 	ae.chrome.dev, ae.chrome.internal, ae.chrome.prod;
 	ae.edge.dev, ae.edge.internal, ae.edge.prod;
-	var Wm = class {
+	var zm = class {
 		closed = !1;
 		nextId = 1;
 		pendingRequests = /* @__PURE__ */ new Map();
@@ -7439,7 +7456,7 @@ Locator diagnostics: \${JSON.stringify({
 				});
 			}
 		}
-	}, zm = class extends Wm {
+	}, Gm = class extends zm {
 		constructor(e) {
 			super(e), this.setup = this.setup.bind(this), this.execute = this.execute.bind(this), this.display = this.display.bind(this);
 		}
@@ -7452,7 +7469,7 @@ Locator diagnostics: \${JSON.stringify({
 		display(e) {
 			return this.sendRequest("display", e);
 		}
-	}, Gm = class {
+	}, Jm = class {
 		closeListeners = /* @__PURE__ */ new Set();
 		closed = !1;
 		messageCallback;
@@ -7486,21 +7503,31 @@ Locator diagnostics: \${JSON.stringify({
 			}
 		}
 	};
-	function Jm() {
+	function Km(e) {
+		return e instanceof Error ? {
+			message: e.message,
+			name: e.name,
+			stack: e.stack
+		} : {
+			message: typeof e == "string" ? e : "JavaScript execution failed",
+			name: "Error"
+		};
+	}
+	function Ym() {
 		const e = globalThis;
 		let t = { evaluate: globalThis.eval }, a = Promise.resolve();
 		e.addEventListener("message", (r) => {
 			if (r.data.type === "js-kernel:agent-port") {
 				const o = r.ports[0];
 				if (o == null) return;
-				const d = new zm(new Gm(o)), p = async (R) => {
+				const d = new Gm(new Jm(o)), p = async (R) => {
 					await d.display(R);
 				}, f = async (R) => {
 					await d.display(R);
 				};
 				e.nodeRepl = { write: p }, Object.assign(e, { display: p }), e.setupBrowserRuntime = async () => {
 					const { apiManifest: R, disabledMemberIds: P } = await d.setup();
-					return Hm({
+					return Wm({
 						apiManifest: R,
 						disabledMemberIds: new Set(P),
 						displayBridge: {
@@ -7527,14 +7554,7 @@ arguments[0]({ evaluate(source) { return eval(source); } });
 					});
 				} catch (o) {
 					e.postMessage({
-						error: o instanceof Error ? {
-							message: o.message,
-							name: o.name,
-							...o.stack == null ? {} : { stack: o.stack }
-						} : {
-							message: typeof o == "string" ? o : "JavaScript execution failed",
-							name: "Error"
-						},
+						error: Km(o),
 						id: s,
 						ok: !1
 					});
@@ -7542,6 +7562,6 @@ arguments[0]({ evaluate(source) { return eval(source); } });
 			});
 		});
 	}
-	Jm();
+	Ym();
 })();
 `,o=typeof self<"u"&&self.Blob&&new Blob(["(self.URL || self.webkitURL).revokeObjectURL(self.location.href);",c],{type:"text/javascript;charset=utf-8"});function h(n){let e;try{if(e=o&&(self.URL||self.webkitURL).createObjectURL(o),!e)throw"";const t=new Worker(e,{name:n?.name});return t.addEventListener("error",()=>{(self.URL||self.webkitURL).revokeObjectURL(e)}),t}catch{return new Worker("data:text/javascript;charset=utf-8,"+encodeURIComponent(c),{name:n?.name})}}var m=class{pending=new Map;nextRequestId=0;resetError;worker=null;constructor(n){this.onAgentPort=n}executeJs(n){if(this.resetError!=null)return Promise.reject(this.resetError);const e=this.getWorker(),t=String(this.nextRequestId++);return new Promise((s,a)=>{this.pending.set(t,{reject:a,resolve:s});try{e.postMessage({id:t,script:n,type:"js-kernel:execute"})}catch(r){this.fail(r)}})}getWorker(){if(this.worker!=null)return this.worker;const n=new h;n.addEventListener("message",t=>{l(t.data)&&this.handleResponse(t.data)}),n.addEventListener("error",t=>{this.fail(new Error(t.message||"JavaScript worker failed"))}),n.addEventListener("messageerror",()=>{this.fail(new Error("JavaScript worker returned an invalid result"))});const e=new MessageChannel;return n.postMessage({type:"js-kernel:agent-port"},[e.port1]),this.onAgentPort(e.port2),this.worker=n,n}handleResponse(n){const e=this.pending.get(n.id);if(e==null)return;if(this.pending.delete(n.id),n.ok){e.resolve();return}const t=new Error(n.error?.message??"JavaScript execution failed");t.name=n.error?.name??"Error",n.error?.stack!=null&&(t.stack=n.error.stack),e.reject(t)}fail(n){this.worker?.terminate(),this.worker=null;const e=new Error(`${n instanceof Error?n.message:"JavaScript worker stopped"}; this task's JavaScript kernel will be reset.`);e.name="JsKernelWorkerResetError",this.resetError=e;for(const t of this.pending.values())t.reject(e);this.pending.clear()}},p=new m(n=>{window.parent.postMessage({type:"js-kernel:agent-port"},"*",[n])});function f(){window.addEventListener("message",n=>{if(n.source!==window.parent||!d(n.data)||n.data.type!=="js-kernel:execute")return;const e=n.ports[0];e!=null&&_(n.data,e)}),window.parent.postMessage({type:"js-kernel:ready"},"*")}async function _(n,e){try{await p.executeJs(n.script),e.postMessage({id:n.id,ok:!0})}catch(t){e.postMessage({error:u(t),id:n.id,ok:!1})}finally{e.close()}}f();
